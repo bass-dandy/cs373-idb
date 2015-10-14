@@ -7,6 +7,11 @@ https://musicmecca.slack.com/
 
 On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` to initialize the database. 
 
+## Rackspace VM
+104.239.228.125
+user: mm
+pass: hold shift and hit all the number keys from 1-0
+
 ## Using this repo
 
 1. ONLY PUSH COMMITS TO DEV
