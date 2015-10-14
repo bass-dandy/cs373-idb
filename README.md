@@ -9,9 +9,11 @@ On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` 
 
 ## Rackspace VM
 
-104.239.228.125
-user: mm
+104.239.228.125<br>
+user: mm<br>
 pass: hold shift and hit all the number keys from 1-0
+
+The public and private keys can be found in ~/.ssh if you want to use them instead.
 
 ## Using this repo
 
