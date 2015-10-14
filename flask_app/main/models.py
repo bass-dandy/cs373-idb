@@ -13,8 +13,8 @@ class Label(db.Model):
     __tablename__ = 'labels'
 
 
-class Show(db.Model):
-    """ Main table for artist show (tour) info
+class Concert(db.Model):
+    """ Main table for artist concert info
     """
     __tablename__ = 'shows'
 
