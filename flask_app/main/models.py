@@ -53,9 +53,3 @@ class Feature(db.Model):
     """
     __tablename__ = 'features'
 
-
-class Lyric(db.Model):
-    """ Main table for artist song lyric info
-    """
-    __tablename__ = 'lyrics'
-
