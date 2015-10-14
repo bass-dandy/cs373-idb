@@ -1,4 +1,4 @@
-## Music-Mecca
+# Music-Mecca
 
 ## Slack
 https://musicmecca.slack.com/
@@ -8,6 +8,7 @@ https://musicmecca.slack.com/
 On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` to initialize the database. 
 
 ## Rackspace VM
+
 104.239.228.125
 user: mm
 pass: hold shift and hit all the number keys from 1-0
@@ -20,9 +21,9 @@ pass: hold shift and hit all the number keys from 1-0
 4. Once Dev merges with Beta, manually create a new pull request for your Beta changes
 5. When another dev gives you a "ship it," manually merge your Beta changes to Master
 
-Not all changes require a pull request. Specifically:
-1. Cosmetic changes do not require a pull request
-2. Pair-programmed code does not require a pull request (include who you worked with in the commit message)
+Not all changes require a pull request. Specifically:<br>
+* Cosmetic changes do not require a pull request
+* Pair-programmed code does not require a pull request (include who you worked with in the commit message)
 
 Everything else should require a pull request.
 
