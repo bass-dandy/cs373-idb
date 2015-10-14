@@ -35,6 +35,11 @@ class Video(db.Model):
     """ Main table for artist video info
     """
     __tablename__ = 'videos'
+    
+class Award(db.Model):
+    """ Main table for artist awards
+    """
+    __tablename__ = 'awards
 
 
 class Song(db.Model):
