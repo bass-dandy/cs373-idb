@@ -13,8 +13,8 @@ class Label(db.Model):
     __tablename__ = 'labels'
 
 
-class Show(db.Model):
-    """ Main table for artist show (tour) info
+class Concert(db.Model):
+    """ Main table for artist concert info
     """
     __tablename__ = 'shows'
 
@@ -35,6 +35,11 @@ class Video(db.Model):
     """ Main table for artist video info
     """
     __tablename__ = 'videos'
+    
+class Award(db.Model):
+    """ Main table for artist awards
+    """
+    __tablename__ = 'awards
 
 
 class Song(db.Model):
@@ -47,10 +52,4 @@ class Feature(db.Model):
     """ Main table for artist feature info
     """
     __tablename__ = 'features'
-
-
-class Lyric(db.Model):
-    """ Main table for artist song lyric info
-    """
-    __tablename__ = 'lyrics'
 
