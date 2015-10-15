@@ -1,8 +1,14 @@
 from marshmallow import fields
 from marshmallow import Schema
-from flask_app import ma
+from .artist import ArtistSchema
 
 
 class ConcertSchema(Schema):
     """Marshmallow Schema class for the Concert model."""
-    pass
+    id = fields.Integer()
+    name = fields.String(required=True)
+    location = fields.String(allow_none=True)
+    date = fields.Date()
+
+    artist = fields.List(fields.Nested(ArtistSchema))
+

@@ -1,8 +1,11 @@
 from marshmallow import fields
 from marshmallow import Schema
-from flask_app import ma
-
+from .artist import ArtistSchema
 
 class VideoSchema(Schema):
     """Marshmallow Schema class for the Video model."""
-    pass
+    id = fields.Integer()
+    name = fields.String(required=True)
+    year = fields.String(allow_none=True)
+
+    artist = fields.List(fields.Nested(ArtistSchema))
