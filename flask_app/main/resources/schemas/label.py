@@ -3,7 +3,6 @@ from marshmallow import Schema
 from flask_app import ma
 
 
-class ArtistSchema(Schema):
-    """Marshmallow Schema class for the Artist model."""
+class LabelSchema(Schema):
+    """Marshmallow Schema class for the Label model."""
     pass
-
