@@ -22,8 +22,6 @@ class Artist(db.Model):
     concerts = db.relationship('Concert')
     release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
     releases = db.relationship('Release')
-    song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
-    songs = db.relationship('Song')
 
 
 class Label(db.Model):

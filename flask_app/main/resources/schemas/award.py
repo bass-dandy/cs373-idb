@@ -1,6 +1,5 @@
 from marshmallow import fields
 from marshmallow import Schema
-from .artist import ArtistSchema
 
 
 class AwardSchema(Schema):
@@ -9,4 +8,4 @@ class AwardSchema(Schema):
     name = fields.String(required=True)
     year = fields.String(allow_none=True)
 
-    artist = fields.List(fields.Nested(ArtistSchema))
+    artist = fields.List(fields.Nested('ArtistSchema'))
