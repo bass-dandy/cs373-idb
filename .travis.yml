@@ -1,3 +1,22 @@
+language: python
+
+python:
+    - "3.4"
+
+sudo: false
+
+install:
+
+
+before_script:
+    - uname -a
+    - printenv
+    - pip3 list
+
+script:
+    - date
+    - ls -lah
+
 after_success: |
     if [ "$TRAVIS_BRANCH" != "dev" ]; then
         exit 0;
