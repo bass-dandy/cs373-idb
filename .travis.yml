@@ -28,7 +28,7 @@ after_success: |
         export GIT_COMMITTER_EMAIL=travis
         export GIT_COMMITTER_NAME=travis
 
-        git checkout master
+        git fetch --all
         git branch -v -a
         git checkout beta || exit
         git merge "$TRAVIS_COMMIT" || exit
