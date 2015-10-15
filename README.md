@@ -5,7 +5,23 @@ https://musicmecca.slack.com/
 
 ## Database
 
-On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` to initialize the database. 
+On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` to initialize the database.
+ 
+## Virtual Environment 
+
+Create a new virtual by going into Pycharm/Settings/Project/Project Interpreter/ then click on the gear and select <br>
+'create new virtual environment' name it music-mecca_venv. Make sure it's python 3.4
+
+
+## Config 
+
+On your local machine create/add to your ~/.profile this environmental variable CONFIG_PATH and set it <br>
+equal to the location of config.py. Or if you're using Pycharm edit the configuration of manage and add CONFIG_PATH <br>
+as well as the path. 
+
+## Requirements
+
+run pip install -r requirements.txt to install all flask modules needed 
 
 ## Rackspace VM
 
