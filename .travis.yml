@@ -31,6 +31,6 @@ after_success: |
         git clone https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git merge
         cd merge
         git checkout beta || exit
-        git merge dev || exit
+        git merge origin/dev || exit
         git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
     fi
