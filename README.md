@@ -9,7 +9,7 @@ On your local machine, run `psql -d postgres -f <music-mecca_root>/init_db.sql` 
  
 ## Virtual Environment 
 
-Create a new virtual by going into Pycharm/Settings/Project/Project Interpreter/ then click on the gear and select 'create new virtual environment' name it music-mecca_venv. Make sure it's python 3.4
+Create a new virtual by going into Pycharm/Settings/Project/Project Interpreter/ then click on the gear and select 'create new virtual environment' name it music-mecca_virtualenv. Make sure it's python 3.4
 
 
 ## Config 
