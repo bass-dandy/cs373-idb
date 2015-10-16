@@ -28,10 +28,10 @@ after_success: |
         export GIT_COMMITTER_EMAIL=travis
         export GIT_COMMITTER_NAME=travis
 
-        git remote -v
+        git checkout dev
         git fetch --all
+        git remote -v
         git branch -v -a
-        git checkout dev || exit
         git checkout beta || exit
         git merge "$TRAVIS_COMMIT" || exit
         git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
