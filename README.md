@@ -1,7 +1,7 @@
 # Music-Mecca
 
 ## Using this repo
-1. ONLY PUSH COMMITS TO DEV
+1. <span style="color:red"><b>ONLY PUSH COMMITS TO DEV</b></span>
 2. A push to dev will initiate integration tests
 3. Dev will automatically merge with Beta if the integration tests are successful
 4. Once Dev merges with Beta, manually create a new pull request for your Beta changes
