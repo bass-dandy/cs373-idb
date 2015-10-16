@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask
 from flask_restful import Api
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -7,7 +7,6 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-#api_bp = Blueprint('api', __name__, url_prefix='/api')
 api = Api(app)
 
 app.config.from_envvar('CONFIG_PATH')
