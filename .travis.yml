@@ -1,3 +1,7 @@
+notifications:
+    email: false
+    slack: musicmecca:V9OTfTGBTJXHwDY2DNKUVc7Y
+
 language: python
 
 python:
