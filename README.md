@@ -17,8 +17,8 @@ Everything else should require a pull request.
 * Slack: https://musicmecca.slack.com/
 * Travis: https://travis-ci.org/naughtyfiddle/music-mecca
 * Rackspace VM: 104.239.228.125
---* user: mm
---* pass: hold shift and hit all the number keys from 1-0
+  * user: mm
+  * pass: hold shift and hit all the number keys from 1-0
 
 The public and private keys can be found in ~/.ssh if you want to use them instead.
 
