@@ -31,7 +31,8 @@ after_success: |
         git remote -v
         git fetch --all
         git branch -v -a
-        git checkout remotes/origin/beta || exit
+        git checkout dev || exit
+        git checkout beta || exit
         git merge "$TRAVIS_COMMIT" || exit
         git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
     fi
