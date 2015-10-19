@@ -17,3 +17,6 @@ api.add_resource(HelloWorldAPI, '/')
 
 from flask.ext.app.main.resources.artist import ArtistIDAPI
 api.add_resource(ArtistIDAPI, '/artist/<id>')
+
+from flask.ext.app.main.resources.song import SongIDAPI
+api.add_resource(SongIDAPI, '/song/<id>')
