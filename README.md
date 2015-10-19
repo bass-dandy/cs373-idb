@@ -1,11 +1,13 @@
 # Music-Mecca
 
 ## Using this repo
-1. <span style="color:red"><b>ONLY PUSH COMMITS TO DEV</b></span>
-2. A push to dev will initiate integration tests
-3. Dev will automatically merge with Beta if the integration tests are successful
-4. Once Dev merges with Beta, manually create a new pull request for your Beta changes
-5. When another dev gives you a "ship it," manually merge your Beta changes to Master
+1. Create a branch for whatever feature you're working on (You can have multiple)
+2. <span style="color:red"><b>ONLY PUSH COMMITS TO YOUR PERSONAL BRANCHES</b></span>
+3. When your branch is feature-complete, create a pull request to merge it with Dev
+4. When another group member gives you a "ship it," merge your branch with Dev. Changes to Dev will initiate integration testing.
+5. Dev will automatically merge into Beta if the integration tests are successful
+6. Once Dev merges into Beta we'll all monitor the status of the Beta server
+7. If we agree the Beta server looks stable we'll merge Beta into Master
 
 Not all changes require a pull request. Specifically:
 * Cosmetic changes do not require a pull request
