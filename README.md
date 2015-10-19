@@ -1,7 +1,7 @@
 # Music-Mecca
 
 ## Using this repo
-0. <span style="color:red"><strike><b>ONLY PUSH COMMITS TO DEV</b></strike></span>
+   <span style="color:red"><strike><b>ONLY PUSH COMMITS TO DEV</b></strike></span>
 1. Create your own branch and send a pull request to dev once you believe your issue has been resolved. 
 2. A merge to dev will initiate integration tests
 3. Dev will automatically merge with Beta if the integration tests are successful
