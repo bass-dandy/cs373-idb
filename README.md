@@ -1,8 +1,8 @@
 # Music-Mecca
 
 ## Using this repo
-0. <strike><b>ONLY PUSH COMMITS TO DEV</b></strike>
-1. <span style="color:red">Create your own branch and send a pull request to dev once you believe your issue has been resolved.</span>
+0. <strike>ONLY PUSH COMMITS TO DEV</strike>
+1. <b>Create your own branch and send a pull request to dev once you believe your issue has been resolved.</b>
 2. A merge to dev will initiate integration tests
 3. Dev will automatically merge with Beta if the integration tests are successful
 4. Once Dev merges with Beta, manually create a new pull request for your Beta changes
