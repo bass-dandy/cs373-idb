@@ -26,6 +26,15 @@
     width: 100%;   
 }
 
+.about_card div {
+    height: auto;
+    width: 100%;   
+    background-color: #556993;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
 .about_subsection {
     display: block;
     margin-top: 10px;
