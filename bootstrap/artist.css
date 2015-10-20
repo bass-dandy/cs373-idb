@@ -99,3 +99,32 @@ body {
 .artist_release i {
     display: block;
 }
+
+.event {
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px dotted #dbdbdb;
+}
+
+.calendar {
+    display: inline-block;
+    font-size: 40px;
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 10px;
+    color: black;
+    text-align: center;
+    border: 1px solid #b7b7b7;
+}
+
+.calendar div {
+    width: 100%;
+    height: auto;
+    background-color: #f53b48;
+    font-size: 0.5em;
+    color: white;
+}
+
+.event_info {
+    display: inline-block;
+    vertical-align: top;
+}
