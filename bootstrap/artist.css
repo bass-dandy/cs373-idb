@@ -1,0 +1,84 @@
+body {
+    background-color: #dbdbdb;
+}
+
+#artist_container {
+    width: 1000px;
+    text-align: left;
+    background-color: white;
+}
+
+#artist_image {
+    width: 250px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#artist_panel_main {
+    display: block;
+    padding: 0px 0px 10px 0px;
+    margin: 10px 0px 0px 0px;
+}
+
+#artist_main_content {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+.artist_section {
+    width: 100%;
+    height: 150px;
+    line-height: 150px;
+    margin-top: 20px;
+    background-image: url("images/test.jpg");
+    background-position: bottom;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
+
+.tint {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+}
+
+.artist_panel_title {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.artist_info {
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.artist_selector {
+    display: table-cell;
+    padding: 10px 10px 10px 10px;
+    background-color: #1E293E;
+}
+
+.artist_selector:hover {
+    background-color: #2B3A58;
+}
+
+.artist_release {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+}
+
+.artist_release img {
+    width: 150px;
+    height: 150px;
+}
+
+.artist_release i {
+    display: block;
+}
