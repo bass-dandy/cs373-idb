@@ -8,10 +8,43 @@ body {
     background-color: white;
 }
 
-#artist_image {
-    width: 250px;
-    height: auto;
+/* Brief artist overview */
+#artist_info {
+    width: 100%;
+    height: 250px;
+    text-align: left;
+}
+
+#artist_info img {
+    float: left;
+    width: auto;
+    height: 100%;
     margin-right: 10px;
+}
+
+#artist_info div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* The main artist info panel */
+#artist_selector {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* A link in the main artist info selector */
+#artist_selector span {
+    display: table-cell;
+    padding: 10px 10px 10px 10px;
+    background-color: #1E293E;
+}
+
+#artist_selector span:hover {
+    background-color: #2B3A58;
 }
 
 #artist_panel_main {
@@ -25,51 +58,33 @@ body {
     text-align: center;
 }
 
+/* Major section heading */
 .artist_section_head {
+    font-size: 30px;
     width: 100%;
-    height: 150px;
-    line-height: 150px;
+    height: 5em;
+    line-height: 5em;
     background-image: url("images/test.jpg");
     background-position: bottom;
     background-attachment: fixed;
     color: white;
     text-align: center;
+    user-select: none;
 }
 
+/* Tints major section headings */
+.tint {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 75, 0.5);
+}
+
+/* Major section content */
 .artist_section {
     padding: 20px 20px 20px 20px;
 }
 
-.tint {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 30px;
-}
-
-.artist_panel_title {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    color: white;
-    text-align: center;
-}
-
-.artist_info {
-    display: inline-block;
-    text-align: left;
-}
-
-.artist_selector {
-    display: table-cell;
-    padding: 10px 10px 10px 10px;
-    background-color: #1E293E;
-}
-
-.artist_selector:hover {
-    background-color: #2B3A58;
-}
-
+/* An album cover and some info */
 .artist_release {
     display: inline-block;
     text-align: center;
