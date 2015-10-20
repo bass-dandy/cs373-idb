@@ -1,5 +1,5 @@
 body {
-    background-color: #dbdbdb;
+    background-color: #efefef;
 }
 
 #artist_container {
@@ -25,16 +25,19 @@ body {
     text-align: center;
 }
 
-.artist_section {
+.artist_section_head {
     width: 100%;
     height: 150px;
     line-height: 150px;
-    margin-top: 20px;
     background-image: url("images/test.jpg");
     background-position: bottom;
     background-attachment: fixed;
     color: white;
     text-align: center;
+}
+
+.artist_section {
+    padding: 20px 20px 20px 20px;
 }
 
 .tint {
@@ -55,7 +58,6 @@ body {
 .artist_info {
     display: inline-block;
     text-align: left;
-    margin-top: 10px;
 }
 
 .artist_selector {
