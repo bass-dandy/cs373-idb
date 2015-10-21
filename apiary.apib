@@ -9,6 +9,79 @@ Music Mecca is a source for information about musicians and bands, as well as th
 
 Artists are all musicians stored in our database. That includes solo artists or bands. 
 
+## Artist [/artist/{artistId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/artist/2
+      
+
+    + Body
+    
+            {
+                "id": 2,
+                "name": "Eminem",
+                "bio": "Eminem bio",
+                "photo": Raw photo data,
+                "videos": [
+                    {
+                        "id": 2,
+                        "name": "Mockingbird",
+                        "year": "1998"
+                    }
+                ],
+                "label": {
+                    "id": 2,
+                    "name": "Slim Shady Records",
+                    "bio": "Bio goes here"
+                },
+                "awards": [
+                    {
+                        "id": 3,
+                        "name": "Album of the Year",
+                        "year": "2012"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Billboard Top 40",
+                        "year": "2008"
+                    }
+                ],
+                "concerts": [
+                    {
+                        "id": 3,
+                        "name": "1989 Tour",
+                        "location": "Austin",
+                        "date": "2015-07-04 13:00:00-00"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Warp Tour",
+                        "location": "Alton",
+                        "date": "2015-31-04 16:00:00-00"
+                    }
+                ],
+                "releases": [
+                    {
+                        "id": 3,
+                        "name": "Curtain Call",
+                        "year": "1989"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Relapse",
+                        "year": "2010"
+                    }
+                ]
+            }
+
+### Get an Artist [GET]
++ Parameters
+    + artistId (id) - ID of the Artist
+
++ Response 200
+[Artist][]
+
 ## Artist Collection [/artists]
 
 + Model (application/json)
@@ -142,78 +215,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
 + Response 200
 
     [Artist Collection][]
-
-
-## Artist [/artist/{artistId}]
-
-+ Model (application/json)
-    + Headers
-      Location: http://downing.club/artist/2
-
-      + Body
-            {
-                "id": 2,
-                "name": "Eminem",
-                "bio": "Eminem bio",
-                "photo": Raw photo data,
-                "videos": [
-                    {
-                        "id": 2,
-                        "name": "Mockingbird",
-                        "year": "1998"
-                    }
-                ],
-                "label": {
-                    "id": 2,
-                    "name": "Slim Shady Records",
-                    "bio": "Bio goes here"
-                },
-                "awards": [
-                    {
-                        "id": 3,
-                        "name": "Album of the Year",
-                        "year": "2012"
-                    },
-                    {
-                        "id": 4,
-                        "name": "Billboard Top 40",
-                        "year": "2008"
-                    }
-                ],
-                "concerts": [
-                    {
-                        "id": 3,
-                        "name": "1989 Tour",
-                        "location": "Austin",
-                        "date": "2015-07-04 13:00:00-00"
-                    },
-                    {
-                        "id": 4,
-                        "name": "Warp Tour",
-                        "location": "Alton",
-                        "date": "2015-31-04 16:00:00-00"
-                    }
-                ],
-                "releases": [
-                    {
-                        "id": 3,
-                        "name": "Curtain Call",
-                        "year": "1989"
-                    },
-                    {
-                        "id": 4,
-                        "name": "Relapse",
-                        "year": "2010"
-                    }
-                ]
-            }
-
-### Get an Aritist
-+ Parameters
-    + artistId (id) - ID of the song in the form of an integer
-
-+ Response 200
-[Artist][]
 
 ## Song [/song/{song_id}]
     + song_id (number) - ID of the song in the form of an integer
