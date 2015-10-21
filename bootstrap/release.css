@@ -1,0 +1,25 @@
+#track-list {
+    white-space: nowrap;
+}
+
+#track-list th {
+    background-color: #2B3A58;
+    color: white;
+}
+
+#track-list th:hover {
+    background-color: #2B3A58;
+    color: white;
+}
+
+#track-list tr:hover {
+    background-color: #e7e7e7;
+}
+
+#track-title {
+    width: 100%;
+}
+
+.track-length {
+    text-align: right;
+}

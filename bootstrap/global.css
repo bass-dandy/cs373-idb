@@ -1,17 +1,78 @@
-.panel {
-    display: inline-block;
-    border: 1px solid #DBDBDB;
-    border-bottom: 3px solid #DBDBDB;
-    padding: 10px 10px 10px 10px;
-    margin: 20px 10px 0px 10px;
-    vertical-align: top;
-    border-radius: 0px;
-    text-align: left;
+body {
+    background-color: #efefef;
 }
 
+#fixed-width-container {
+    width: 1000px;
+    text-align: left;
+    background-color: white;
+}
+
+/* general-purpose container */
+.panel {
+    border: 1px solid #DBDBDB;
+    border-bottom: 3px solid #DBDBDB;
+    border-radius: 0px;
+}
+
+/* Major section heading */
+.section-head {
+    font-size: 30px;
+    width: 100%;
+    height: 5em;
+    line-height: 5em;
+    background-image: url("images/test.jpg");
+    background-position: bottom;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+/* Tints major section headings */
+.tint {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 75, 0.5);
+}
+
+/* Major section content */
+.section {
+    padding: 20px 20px 20px 20px;
+}
+
+/* Minor section heading */
 .subsection {
     display: block;
     margin-top: 10px;
     font-weight: bold;
     color: #B7B7B7;
+}
+
+/* Brief model overview */
+.overview {
+    width: 100%;
+    height: 250px;
+    text-align: left;
+}
+
+.overview img {
+    float: left;
+    width: auto;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.overview div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* For convenience */
+.margin-top {
+    margin-top: 10px;
+}
+
+.padded {
+    padding: 10px 10px 10px 10px;
 }
