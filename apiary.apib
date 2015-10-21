@@ -33,46 +33,60 @@ Music Mecca is a source for information about musicians and bands, as well as th
             }
         ]
 
-## Users [/user/user_id]
+## Song [/song/{song_id}]
+    + song_id (number) - ID of the song in the form of an integer
 
-### Create a New User [POST]
+### View Song Info [GET]
 
-+ Request (application/json)
++ Response 200 (application/json)
+
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "id": 0001
+            "name": "Bad Blood"
+            "lyrics": "Lyrics go here"
+            "artist": [00001, 00002]
+            "release": [00001, 000004]
         }
 
-+ Response 201 (application/json)
+## Award [/award/{award_id}]
+    + award_id (number) - ID of the award in the form of an integer
 
-    + Headers
+### View Award Info [GET]
 
-            Location: /artist/2
++ Response 200 (application/json)
 
-    + Body
+        {
+            "id": 00001
+            "name": "Album of the Year"
+            "year": "2015"
+            "artist" : [00001]
+        }
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+## Label [/label/{label_id}]
+    + label_id (number) - ID of the label in the form of an integer
+
+### View Label Info [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "Big Machine Records"
+            "bio": "Bio goes here"
+            "photo": raw photo data
+            "artist": [00001, 00003, 00005]
+        }
+
+## Release [/release/{release_id}]
+    + release_id - ID of the release in the form of an integer
+
+### View Release Info [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "1989"
+            "artist": [00001]
+        }
