@@ -37,14 +37,17 @@ body {
 }
 
 /* A link in the main artist info selector */
-#artist_selector span {
+#artist_selector a {
     display: table-cell;
     padding: 10px 10px 10px 10px;
     background-color: #1E293E;
+    text-decoration: none;
+    color: white;
 }
 
-#artist_selector span:hover {
+#artist_selector a:hover {
     background-color: #2B3A58;
+    text-decoration: none;
 }
 
 #artist_panel_main {
