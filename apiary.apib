@@ -33,6 +33,26 @@ Music Mecca is a source for information about musicians and bands, as well as th
             }
         ]
 
+## Artist [/artist/{artist_id}]
+    + song_id (number) - ID of the song in the form of an integer
+
+### View Artist Info [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "Taylor Swift"
+            "bio": "Taylor Swift bio"
+            "photo": Raw photo data
+            "videos": [00001]
+            "label": 00001
+            "awards": [00001]
+            "concerts": [00001]
+            "releases": [00001]
+            "songs": [00001]
+        }
+
 ## Song [/song/{song_id}]
     + song_id (number) - ID of the song in the form of an integer
 
@@ -79,7 +99,7 @@ Music Mecca is a source for information about musicians and bands, as well as th
         }
 
 ## Release [/release/{release_id}]
-    + release_id - ID of the release in the form of an integer
+    + release_id (number) - ID of the release in the form of an integer
 
 ### View Release Info [GET]
 
@@ -90,3 +110,19 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "name": "1989"
             "artist": [00001]
         }
+
+## Concert [/concert/{concert_id}]
+    + concert_id (number) - ID of the concert in the form of an integer
+
+### View Concert Info [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "1989 Tour"
+            "location": "Austin"
+            "date": "2015-07-04 13:00:00-00"
+            "artist": [00001]
+        }
+
