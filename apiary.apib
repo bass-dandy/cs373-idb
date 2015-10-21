@@ -5,33 +5,86 @@ HOST: http://downing.club/
 
 Music Mecca is a source for information about musicians and bands, as well as the music they release.
 
+# Group Artists
+
+Artists are all musicians stored in our database. That includes solo artists or bands. 
+
 ## Artist Collection [/artists]
+
++ Model (application/json)
+
+    + Body
+
+        {
+            "count": 2,
+            "results": [
+                {
+                    "id": 1,
+                    "name": "Taylor Swift",
+                    "bio": "Taylor Swift bio",
+                    "photo": Raw photo data,
+                    "videos": [
+                        {
+                            "id": 1,
+                            "name": "Too Cool For School",
+                            "year": 1989
+                        }
+                    ],
+                    "label": {
+                        "id": 1,
+                        "name": "Big Machine Records",
+                        "bio": "Bio goes here"
+                    },
+                    "awards": [
+                        {
+                            "id": 1,
+                            "name": "Album of the Year",
+                            "year": "2015"
+                        },
+                        {
+                            "id": 1,
+                            "name": "Billboard Top 40",
+                            "year": "2006"
+                        }
+                    ],
+                    "concerts": [
+                        {
+                            "id": 1,
+                            "name": "1989 Tour",
+                            "location": "Austin",
+                            "date": "2015-07-04 13:00:00-00"
+                        },
+                        {
+                            "id": 1,
+                            "name": "Warp Tour",
+                            "location": "Alton",
+                            "date": "2015-31-04 16:00:00-00"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "id": 1,
+                            "name": "Too Cool For School",
+                            "year": 1989
+                        },
+                        {
+                            "id": 1,
+                            "name": "Just Dance",
+                            "year": 2010
+                        }
+                    ]
+
+
+                }
+            ]
+        }
 
 ### List All Artists [GET]
 
-+ Response 200 (application/json)
++ Response 200
 
-        [
-            {
-                "name": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
+    [Artist Collection][]
+
 
 ## Artist [/artist/{artist_id}]
     + song_id (number) - ID of the song in the form of an integer
@@ -50,7 +103,6 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "awards": [00001]
             "concerts": [00001]
             "releases": [00001]
-            "songs": [00001]
         }
 
 ## Song [/song/{song_id}]
@@ -94,7 +146,6 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "id": 00001
             "name": "Big Machine Records"
             "bio": "Bio goes here"
-            "photo": raw photo data
             "artist": [00001, 00003, 00005]
         }
 
