@@ -27,7 +27,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
                             {
                                 "id": 1,
                                 "name": "Too Cool For School",
-                                "year": 1989
+                                "year": "1989"
                             }
                         ],
                         "label": {
@@ -42,7 +42,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
                                 "year": "2015"
                             },
                             {
-                                "id": 1,
+                                "id": 2,
                                 "name": "Billboard Top 40",
                                 "year": "2006"
                             }
@@ -55,7 +55,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
                                 "date": "2015-07-04 13:00:00-00"
                             },
                             {
-                                "id": 1,
+                                "id": 2,
                                 "name": "Warp Tour",
                                 "location": "Alton",
                                 "date": "2015-31-04 16:00:00-00"
@@ -65,12 +65,70 @@ Artists are all musicians stored in our database. That includes solo artists or 
                             {
                                 "id": 1,
                                 "name": "Too Cool For School",
-                                "year": 1989
+                                "year": "1989"
                             },
                             {
-                                "id": 1,
+                                "id": 2,
                                 "name": "Just Dance",
-                                "year": 2010
+                                "year": "2010"
+                            }
+                        ]
+
+
+                    },
+                    {
+                        "id": 2,
+                        "name": "Eminem",
+                        "bio": "Eminem bio",
+                        "photo": Raw photo data,
+                        "videos": [
+                            {
+                                "id": 2,
+                                "name": "Mockingbird",
+                                "year": "1998"
+                            }
+                        ],
+                        "label": {
+                            "id": 2,
+                            "name": "Slim Shady Records",
+                            "bio": "Bio goes here"
+                        },
+                        "awards": [
+                            {
+                                "id": 3,
+                                "name": "Album of the Year",
+                                "year": "2012"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Billboard Top 40",
+                                "year": "2008"
+                            }
+                        ],
+                        "concerts": [
+                            {
+                                "id": 3,
+                                "name": "1989 Tour",
+                                "location": "Austin",
+                                "date": "2015-07-04 13:00:00-00"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Warp Tour",
+                                "location": "Alton",
+                                "date": "2015-31-04 16:00:00-00"
+                            }
+                        ],
+                        "releases": [
+                            {
+                                "id": 3,
+                                "name": "Curtain Call",
+                                "year": "1989"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Relapse",
+                                "year": "2010"
                             }
                         ]
 
@@ -86,24 +144,76 @@ Artists are all musicians stored in our database. That includes solo artists or 
     [Artist Collection][]
 
 
-## Artist [/artist/{artist_id}]
-    + song_id (number) - ID of the song in the form of an integer
+## Artist [/artist/{artistId}]
 
-### View Artist Info [GET]
++ Model (application/json)
+    + Headers
+      Location: http://downing.club/artist/2
 
-+ Response 200 (application/json)
+      + Body
+            {
+                "id": 2,
+                "name": "Eminem",
+                "bio": "Eminem bio",
+                "photo": Raw photo data,
+                "videos": [
+                    {
+                        "id": 2,
+                        "name": "Mockingbird",
+                        "year": "1998"
+                    }
+                ],
+                "label": {
+                    "id": 2,
+                    "name": "Slim Shady Records",
+                    "bio": "Bio goes here"
+                },
+                "awards": [
+                    {
+                        "id": 3,
+                        "name": "Album of the Year",
+                        "year": "2012"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Billboard Top 40",
+                        "year": "2008"
+                    }
+                ],
+                "concerts": [
+                    {
+                        "id": 3,
+                        "name": "1989 Tour",
+                        "location": "Austin",
+                        "date": "2015-07-04 13:00:00-00"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Warp Tour",
+                        "location": "Alton",
+                        "date": "2015-31-04 16:00:00-00"
+                    }
+                ],
+                "releases": [
+                    {
+                        "id": 3,
+                        "name": "Curtain Call",
+                        "year": "1989"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Relapse",
+                        "year": "2010"
+                    }
+                ]
+            }
 
-        {
-            "id": 00001
-            "name": "Taylor Swift"
-            "bio": "Taylor Swift bio"
-            "photo": Raw photo data
-            "videos": [00001]
-            "label": 00001
-            "awards": [00001]
-            "concerts": [00001]
-            "releases": [00001]
-        }
+### Get an Aritist
++ Parameters
+    + artistId (id) - ID of the song in the form of an integer
+
++ Response 200
+[Artist][]
 
 ## Song [/song/{song_id}]
     + song_id (number) - ID of the song in the form of an integer
