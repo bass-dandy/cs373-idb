@@ -8,12 +8,14 @@
         <title>Music Mecca</title>
 
         <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="global.css" rel="stylesheet">
-        <link href="home.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         
-        <!-- TODO: Delete these when SSI is working -->
-        <link href="navbar.css" rel="stylesheet">
+        <!-- Other -->
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/release.css" rel="stylesheet">
+        
+        <!-- TODO: delete -->
+        <link href="css/navbar.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,7 +26,7 @@
     </head>
     <body>
         
-        <!-- Navbar TODO: define once and use SSI -->
+        <!-- Navbar -->
         <div id="navbar">
             <!-- Logo -->
             <div class="navbutton">
@@ -42,17 +44,58 @@
         </div>
       
         <center>
-            <div id="main">
-                <div id="main-tint"></div>
-                <div id="splash">
-                    <h1>Welcome to Music Mecca</h1>
-                    <div class="panel padded margin-top">
-                        This site is currently under construction.<br>
-                        Here are some pages you can look at right now:<br>
-                        <a href="">About</a> 
-                        <a href="">Models</a>
+            <div id="fixed-width-container">
+                <div class="section-head">
+                    <div class="tint">The World is a Beautiful Place & I Am No Longer Afraid To Die</div>
+                </div>
+                <div class="section">
+                    
+                    <!-- Release overview -->
+                    <div class="overview">
+                        <img src="images/placeholder.png"></img>
+                        <div>
+                            <strong class="subsection text-uppercase">Title</strong>
+                            Harmlessness
+                            <strong class="subsection text-uppercase">Released</strong>
+                            2015
+                            <strong class="subsection text-uppercase">Label</strong>
+                            Tiny Engines
+                            <strong class="subsection text-uppercase">Genre</strong>
+                            Emo
+                        </div>
                     </div>
-                <div>
+
+                    <!-- Track list -->
+                    <div class="panel margin-top">
+                        <table id="track-list" class="table table-striped">
+                            <th>#</th>
+                            <th id="track-title">Track</th>
+                            <th class="track-length">Length</th>
+
+                            <tr>
+                                <td>1</td>
+                                <td>You Can't Live There Forever</td>
+                                <td class="track-length">3:40</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>You Can't Live There Forever</td>
+                                <td class="track-length">3:40</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>You Can't Live There Forever</td>
+                                <td class="track-length">3:40</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>You Can't Live There Forever</td>
+                                <td class="track-length">3:40</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
             </div>
         </center>
       
@@ -79,9 +122,10 @@
             </symbol>
         </svg>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+    
+        <!-- Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
 </html>
