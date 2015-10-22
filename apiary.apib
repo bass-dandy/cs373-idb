@@ -33,10 +33,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
             }
         ]
 
-## Artist [/artist/{artist_id}]
-    + song_id (number) - ID of the song in the form of an integer
+## Artist ID [/artist/{artist_id}]
+    + artist_id (number) - ID of the artist in the form of an integer
 
-### View Artist Info [GET]
+### View Artist Info by ID [GET]
 
 + Response 200 (application/json)
 
@@ -53,10 +53,46 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "songs": [00001]
         }
 
-## Song [/song/{song_id}]
+## Artist Name [/artist/{artist_name}]
+    + artist_name (string) - name of the artist in the form of a string (spaces must be replaced by underscores)
+
+### View Artist Info by Name [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "Taylor Swift"
+            "bio": "Taylor Swift bio"
+            "photo": Raw photo data
+            "videos": [00001]
+            "label": 00001
+            "awards": [00001]
+            "concerts": [00001]
+            "releases": [00001]
+            "songs": [00001]
+        }
+
+## Song ID [/song/{song_id}]
     + song_id (number) - ID of the song in the form of an integer
 
-### View Song Info [GET]
+### View Song Info by ID [GET]
+
++ Response 200 (application/json)
+
+
+        {
+            "id": 0001
+            "name": "Bad Blood"
+            "lyrics": "Lyrics go here"
+            "artist": [00001, 00002]
+            "release": [00001, 000004]
+        }
+        
+## Song Name [/song/{song_name}]
+    + song_name (string) - name of the song in the form of a string (spaces must be underscores)
+
+### View Song Info by Name [GET]
 
 + Response 200 (application/json)
 
@@ -69,10 +105,24 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "release": [00001, 000004]
         }
 
-## Award [/award/{award_id}]
+## Award ID [/award/{award_id}]
     + award_id (number) - ID of the award in the form of an integer
 
-### View Award Info [GET]
+### View Award Info by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "Album of the Year"
+            "year": "2015"
+            "artist" : [00001]
+        }
+        
+## Award Name [/award/{award_name}]
+    + award_name (string) - name of the award in the form of a string (spaces must be underscores)
+
+### View Award Info by Name [GET]
 
 + Response 200 (application/json)
 
@@ -83,10 +133,25 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "artist" : [00001]
         }
 
-## Label [/label/{label_id}]
+## Label ID [/label/{label_id}]
     + label_id (number) - ID of the label in the form of an integer
 
-### View Label Info [GET]
+### View Label Info by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "Big Machine Records"
+            "bio": "Bio goes here"
+            "photo": raw photo data
+            "artist": [00001, 00003, 00005]
+        }
+        
+## Label Name [/label/{label_name}]
+    + label_name (string) - name of the label in the form of a string (spaces must be underscores)
+
+### View Label Info by Name [GET]
 
 + Response 200 (application/json)
 
@@ -98,10 +163,23 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "artist": [00001, 00003, 00005]
         }
 
-## Release [/release/{release_id}]
+## Release ID [/release/{release_id}]
     + release_id (number) - ID of the release in the form of an integer
 
-### View Release Info [GET]
+### View Release Info by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "1989"
+            "artist": [00001]
+        }
+        
+## Release Name [/release/{release_name}]
+    + release_name (string) - Name of the release in the form of a string (spaces must be underscores)
+
+### View Release Info by Name [GET]
 
 + Response 200 (application/json)
 
@@ -111,10 +189,25 @@ Music Mecca is a source for information about musicians and bands, as well as th
             "artist": [00001]
         }
 
-## Concert [/concert/{concert_id}]
+## Concert ID [/concert/{concert_id}]
     + concert_id (number) - ID of the concert in the form of an integer
 
-### View Concert Info [GET]
+### View Concert Info by ID [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 00001
+            "name": "1989 Tour"
+            "location": "Austin"
+            "date": "2015-07-04 13:00:00-00"
+            "artist": [00001]
+        }
+        
+## Concert Name [/concert/{concert_name}]
+    + concert_name (string) - name of the concert in the form of a string (spaces must be underscores)
+
+### View Concert Info by Name [GET]
 
 + Response 200 (application/json)
 
