@@ -63,7 +63,7 @@ class MusicMeccaModelsTests(TestCase):
         assertEquals(song.lyrics, "Lyrics")
         artist = Artist.query.get(song.artist[0])
         assertEquals(artist.name, "Kendrick Lamar")
-        
+
 
 
 
