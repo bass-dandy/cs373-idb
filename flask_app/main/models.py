@@ -6,30 +6,42 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+"""
+Many-to-Many relationship between artists and videos
+"""
 artists_video_association_table = db.Table('artistsVideo', Base.metadata,
                                        db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
                                        db.Column('video_id', db.Integer, db.ForeignKey('videos.id')))
-
+"""
+Many-to-Many relationship between artists and concerts
+"""
 artists_concerts_association_table = db.Table('artistsConcerts', Base.metaData,
                                              db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
                                              db.Column('concert_id', db.Integer, db.ForeignKey('concerts.id')))
-
+"""
+Many-to-Many relationship between artists and releases
+"""
 artists_releases_association_table = db.Table('artistsReleases', Base.metaData,
                                              db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
                                              db.Column('release_id', db.Integer, db.ForeignKey('releases.id')))
-
+"""
+Many-to-Many relationship between artists and songs
+"""
 artists_songs_association_table = db.Table('artistsSongs', Base.metaData,
                                            db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
                                            db.Column('song_id', db.Integer, db.ForeignKey('songs.id')))
-
+"""
+Many-to-Many relationship between releases and songs
+"""
 releases_songs_association_table = db.Table('releasesSongs', Base.metaData,
                                             db.Column('release_id', db.Integer, db.ForeignKey('releases.id')),
                                             db.Column('song_id', db.Integer, db.ForeignKey('songs.id')))
 
 
-
 class Artist(db.Model):
-    """ Main table for artist info
+    """
+    Model of Artists
+
     """
     __tablename__ = 'artists'
     id = db.Column(db.Integer, primary_key=True)
@@ -62,7 +74,9 @@ class Artist(db.Model):
 
 
 class Label(db.Model):
-    """ Main table for Label info
+    """
+    Model for Label
+    A label is a company that funds an artist to make music
     """
     __tablename__ = 'labels'
     id = db.Column(db.Integer, primary_key=True)
@@ -76,7 +90,9 @@ class Label(db.Model):
 
 
 class Concert(db.Model):
-    """ Main table for artist concert info
+    """
+    Model for Concert
+    A Concert is an event where artists perform songs at certain location on a date. Usually apart of a tour
     """
     __tablename__ = 'concerts'
     id = db.Column(db.Integer, primary_key=True)
@@ -103,7 +119,9 @@ class Concert(db.Model):
 
 
 class Release(db.Model):
-    """ Main table for artist releases info
+    """
+    Model for Release
+    A release is generally an album of songs put out by an artist or multiple artists
     """
     __tablename__ = 'releases'
     id = db.Column(db.Integer, primary_key=True)
@@ -117,7 +135,9 @@ class Release(db.Model):
 
 
 class Video(db.Model):
-    """ Main table for artist video info
+    """
+    Model for Video
+    A video a video version of a song generally a music video by an artist(s)
     """
     __tablename__ = 'videos'
     id = db.Column(db.Integer, primary_key=True)
@@ -131,7 +151,9 @@ class Video(db.Model):
 
     
 class Award(db.Model):
-    """ Main table for artist awards
+    """
+    Model for Award
+    An Award is reconginition of an artist doing something good.
     """
     __tablename__ = 'awards'
     id = db.Column(db.Integer, primary_key=True)
@@ -143,7 +165,9 @@ class Award(db.Model):
 
 
 class Song(db.Model):
-    """ Main table for artist song info
+    """
+    Model for Song
+    A Song is a piece of work put out by an artist that can be listened to.
     """
     __tablename__ = 'songs'
     id = db.Column(db.Integer, primary_key=True)
