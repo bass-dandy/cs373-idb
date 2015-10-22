@@ -41,7 +41,7 @@ releases_songs_association_table = db.Table('releasesSongs', Base.metaData,
 class Artist(db.Model):
     """
     Model of Artists
-
+    A Artist is a single person or collection of people that attempt to create music
     """
     __tablename__ = 'artists'
     id = db.Column(db.Integer, primary_key=True)
