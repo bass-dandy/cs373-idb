@@ -2,6 +2,11 @@ body {
     background-color: #efefef;
 }
 
+table th, table th:hover {
+    background-color: #2B3A58;
+    color: white;
+}
+
 #fixed-width-container {
     width: 1000px;
     text-align: left;
