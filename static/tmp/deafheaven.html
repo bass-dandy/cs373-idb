@@ -10,11 +10,11 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         
-        <link href="css/global.css" rel="stylesheet">
-        <link href="css/models.css" rel="stylesheet">
+        <link href="../css/global.css" rel="stylesheet">
+        <link href="../css/artist.css" rel="stylesheet">
         
         <!-- TODO: delete -->
-        <link href="css/navbar.css" rel="stylesheet">
+        <link href="../css/navbar.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,14 +28,12 @@
         <!-- Navbar -->
         <div id="navbar">
             <!-- Logo -->
-            <a href="/index.html">
-                <div class="navbutton">
-                    <svg viewBox="0 0 18.269 18.269">
-                        <use xlink:href="#svg_mecca"></use>
-                    </svg>
-                    <div>Music Mecca</div>
-                </div>
-            </a>
+            <div class="navbutton">
+                <svg viewBox="0 0 18.269 18.269">
+                    <use xlink:href="#svg_mecca"></use>
+                </svg>
+                <div>Music Mecca</div>
+            </div>
             <!-- Search Icon -->
             <div id="search" class="navbutton">
                 <svg viewBox="0 0 62.993 62.993">
@@ -46,32 +44,70 @@
       
         <div id="main">
             <div id="fixed-width-container">
+                <div class="section-head">Deafheaven</div>
+                <div class="section">
+                    
+                    <!-- Artist Info -->
+                    <div class="overview">
+                        <img src="images/placeholder.png">
+                        <div>
+                            <strong class="subsection text-uppercase">Label</strong>
+                            <a href="deathwish.html">Deathwish</a>
+                            <strong class="subsection text-uppercase">Genre</strong>
+                            Blackgaze
+                        </div>
+                    </div>
+
+                    <!-- Bio, releases, etc -->
+                    <div class="panel margin-top">
+
+                        <!-- Selector links -->
+                        <div id="artist_selector">
+                            <a href="#about">About</a>
+                            <a href="#releases">Releases</a>
+                            <a href="#videos">Videos</a>
+                        </div>
+
+                        <!-- Selector content -->
+                        <div class="padded text-center">
+                            <a href="nonow.html">
+                                <div class="artist_release">
+                                    <img src="images/placeholder.png">
+                                    <i>Sunbather</i>
+                                    2014
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-head">Upcoming Concerts</div>
                 <div class="section">
                     <div class="panel">
-                        <!-- Label list -->
-                        <table class="table table-striped">
-                            <tr><th>Labels</th></tr>
-
-                            <tr><td><a href="tmp/tinyengines.html">Tiny Engines</a></td></tr>
-                            <tr><td><a href="tmp/bellaunion.html">Bella Union</a></td></tr>
-                            <tr><td><a href="tmp/deathwish.html">Deathwish</a></td></tr>
-                        </table>
-                        <!-- Artist list -->
-                        <table class="table table-striped">
-                            <tr><th>Artists</th></tr>
-
-                            <tr><td><a href="tmp/twiabp.html">The World is a Beautiful Place & I Am No Longer Afraid To Die</a></td></tr>
-                            <tr><td><a href="tmp/clarence.html">Clarence Clarity</td></tr></a>
-                            <tr><td><a href="tmp/deafheaven.html">Deafheaven</a></td></tr>
-                        </table>
-                        <!-- Release list -->
-                        <table class="table table-striped">
-                            <tr><th>Releases</th></tr>
-
-                            <tr><td><a href="tmp/harmlessness.html">Harmlessness</a></td></tr>
-                            <tr><td><a href="tmp/nonow.html">No Now</a></td></tr>
-                            <tr><td><a href="tmp/sunbather.html">Sunbather</a></td></tr>
-                        </table>
+                        <div class="event">
+                            <div class="calendar">
+                                <div>Oct</div>
+                                31
+                            </div>
+                            <div class="event_info">
+                                Event info goes here!
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="calendar">
+                                <div>Oct</div>
+                                31
+                            </div>
+                            <div class="event_info">
+                                Event info goes here!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-head">Discussion</div>
+                <div class="section">
+                    <div class="panel padded text-center">
+                        Discussion coming soon!
                     </div>
                 </div>
             </div>
