@@ -1,0 +1,85 @@
+table th, table th:hover {
+    background-color: #2B3A58;
+    color: white;
+}
+
+/* Everything below the navbar */
+#main {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: linear-gradient(rgba(220, 220, 220, 0.8), rgba(255, 255, 255, 0.8)), url("../images/splash.jpg");
+}
+
+#fixed-width-container {
+    width: 1000px;
+    text-align: left;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* general-purpose container */
+.panel {
+    border: 1px solid #DBDBDB;
+    border-bottom: 3px solid #DBDBDB;
+    border-radius: 0px;
+}
+
+/* Major section heading */
+.section-head {
+    font-size: 30px;
+    width: 100%;
+    height: 5em;
+    line-height: 5em;
+    background-image: linear-gradient(rgba(0, 0, 75, 0.5), rgba(0, 0, 75, 0.5)), url("../images/test.jpg");
+    background-position: bottom;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+/* Major section content */
+.section {
+    padding: 20px 20px 20px 20px;
+}
+
+/* Minor section heading */
+.subsection {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #B7B7B7;
+}
+
+/* Brief model overview */
+.overview {
+    width: 100%;
+    height: 250px;
+    text-align: left;
+}
+
+.overview img {
+    float: left;
+    width: auto;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.overview div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* For convenience */
+.margin-top {
+    margin-top: 10px;
+}
+
+.padded {
+    padding: 10px 10px 10px 10px;
+}

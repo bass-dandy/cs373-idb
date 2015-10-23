@@ -1,0 +1,68 @@
+/* The main artist info panel */
+#artist_selector {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* A link in the main artist info selector */
+#artist_selector a {
+    display: table-cell;
+    padding: 10px 10px 10px 10px;
+    background-color: #1E293E;
+    text-decoration: none;
+    color: white;
+}
+
+#artist_selector a:hover {
+    background-color: #2B3A58;
+    text-decoration: none;
+}
+
+/* An album cover and some info */
+.artist_release {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+}
+
+.artist_release img {
+    width: 150px;
+    height: 150px;
+}
+
+.artist_release i {
+    display: block;
+}
+
+.event {
+    padding: 10px 0px 10px 0px;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px dotted #dbdbdb;
+}
+
+.event_info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.calendar {
+    display: inline-block;
+    font-size: 40px;
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 10px;
+    color: black;
+    text-align: center;
+    border: 1px solid #b7b7b7;
+}
+
+.calendar div {
+    width: 100%;
+    height: auto;
+    background-color: #f53b48;
+    font-size: 0.5em;
+    color: white;
+}

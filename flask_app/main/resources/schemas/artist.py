@@ -21,5 +21,4 @@ class ArtistSchema(Schema):
     concerts = fields.List(fields.Nested(ConcertSchema))
     tvpresence = fields.List(fields.Nested(TVPresenceSchema))
     releases = fields.List(fields.Nested(ReleaseSchema))
-    songs = fields.List(fields.Nested(SongSchema))
 

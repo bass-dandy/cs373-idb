@@ -1,6 +1,5 @@
 from marshmallow import fields
 from marshmallow import Schema
-from .artist import ArtistSchema
 
 
 class TVPresenceSchema(Schema):
@@ -11,5 +10,5 @@ class TVPresenceSchema(Schema):
     genre = fields.String()
     info = fields.String()
 
-    artist = fields.List(fields.Nested(ArtistSchema))
+    artist = fields.List(fields.Nested('ArtistSchema'))
 

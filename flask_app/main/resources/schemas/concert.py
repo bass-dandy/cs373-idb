@@ -1,6 +1,5 @@
 from marshmallow import fields
 from marshmallow import Schema
-from .artist import ArtistSchema
 
 
 class ConcertSchema(Schema):
@@ -10,5 +9,5 @@ class ConcertSchema(Schema):
     location = fields.String(allow_none=True)
     date = fields.Date()
 
-    artist = fields.List(fields.Nested(ArtistSchema))
+    artist = fields.List(fields.Nested('ArtistSchema'))
 

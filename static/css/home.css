@@ -1,0 +1,17 @@
+#splash {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 10px 10px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#splash a {
+    display: inline-block;
+    width: 40%;
+    margin-top: 10px;
+}
