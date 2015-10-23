@@ -1,3 +1,7 @@
-a tr:hover {
+td:hover {
     background-color: #e7e7e7;
+}
+
+#artist-table th:hover, #label-table th:hover, #release-table th:hover {
+    background-color: #2B3A58;
 }
