@@ -5,34 +5,6 @@ HOST: http://downing.club/
 
 Music Mecca is a source for information about musicians and bands, as well as the music they release.
 
-## Artist Collection [/artists]
-
-### List All Artists [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "name": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
 ## Artist ID [/artist/{artist_id}]
 
     Get the artist by id
@@ -110,10 +82,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
 
 
         {
-            "id": 0001
-            "name": "Bad Blood"
-            "lyrics": "Lyrics go here"
-            "artist": [00001, 00002]
+            "id": 0001,
+            "name": "Bad Blood",
+            "lyrics": "Lyrics go here",
+            "artist": [00001, 00002],
             "release": [00001, 000004]
         }
 
@@ -128,9 +100,9 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "Album of the Year"
-            "year": "2015"
+            "id": 00001,
+            "name": "Album of the Year",
+            "year": "2015",
             "artist" : [00001]
         }
 
@@ -145,9 +117,9 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "Album of the Year"
-            "year": "2015"
+            "id": 00001,
+            "name": "Album of the Year",
+            "year": "2015",
             "artist" : [00001]
         }
 
@@ -162,10 +134,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "Big Machine Records"
-            "bio": "Bio goes here"
-            "photo": raw photo data
+            "id": 00001,
+            "name": "Big Machine Records",
+            "bio": "Bio goes here",
+            "photo": raw photo data,
             "artist": [00001, 00003, 00005]
         }
 
@@ -180,10 +152,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "Big Machine Records"
-            "bio": "Bio goes here"
-            "photo": raw photo data
+            "id": 00001,
+            "name": "Big Machine Records",
+            "bio": "Bio goes here",
+            "photo": raw photo data,
             "artist": [00001, 00003, 00005]
         }
 
@@ -199,8 +171,8 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "1989"
+            "id": 00001,
+            "name": "1989",
             "artist": [00001]
         }
 
@@ -216,8 +188,8 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "1989"
+            "id": 00001,
+            "name": "1989",
             "artist": [00001]
         }
 
@@ -232,10 +204,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "1989 Tour"
-            "location": "Austin"
-            "date": "2015-07-04 13:00:00-00"
+            "id": 00001,
+            "name": "1989 Tour",
+            "location": "Austin",
+            "date": "2015-07-04 13:00:00-00",
             "artist": [00001]
         }
 
@@ -250,10 +222,10 @@ Music Mecca is a source for information about musicians and bands, as well as th
 + Response 200 (application/json)
 
         {
-            "id": 00001
-            "name": "1989 Tour"
-            "location": "Austin"
-            "date": "2015-07-04 13:00:00-00"
+            "id": 00001,
+            "name": "1989 Tour",
+            "location": "Austin",
+            "date": "2015-07-04 13:00:00-00",
             "artist": [00001]
         }
 
