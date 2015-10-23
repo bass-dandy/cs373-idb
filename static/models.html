@@ -10,11 +10,10 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         
-        <!-- Other -->
         <link href="css/global.css" rel="stylesheet">
-        <link href="css/home.css" rel="stylesheet">
+        <link href="css/models.css" rel="stylesheet">
         
-        <!-- TODO: Delete these when SSI is working -->
+        <!-- TODO: delete -->
         <link href="css/navbar.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,7 +25,7 @@
     </head>
     <body>
         
-        <!-- Navbar TODO: define once and use SSI -->
+        <!-- Navbar -->
         <div id="navbar">
             <!-- Logo -->
             <a href="/index.html">
@@ -46,13 +45,34 @@
         </div>
       
         <div id="main">
-            <div id="splash">
-                <h1>Welcome to Music Mecca</h1>
-                <div class="panel padded margin-top">
-                    This site is currently under construction.<br>
-                    Here are some pages you can look at right now:<br>
-                    <a href="about.html">About</a> 
-                    <a href="models.html">Models</a>
+            <div id="fixed-width-container">
+                <div class="section">
+                    <div class="panel">
+                        <!-- Label list -->
+                        <table class="table table-striped">
+                            <tr><th>Labels</th></tr>
+
+                            <tr><td><a href="tmp/tinyengines.html">Tiny Engines</a></td></tr>
+                            <a href="tmp/bellaunion.html"><tr><td>Bella Union</td></tr></a>
+                            <a href="tmp/deathwish.html"><tr><td>Deathwish</td></tr></a>
+                        </table>
+                        <!-- Artist list -->
+                        <table class="table table-striped">
+                            <tr><th>Artists</th></tr>
+
+                            <a href="tmp/twiabp.html"><tr><td>The World is a Beautiful Place & I Am No Longer Afraid To Die</td></tr></a>
+                            <a href="tmp/clarence.html"><tr><td>Clarence Clarity</td></tr></a>
+                            <a href="tmp/deafheaven.html"><tr><td>Deafheaven</td></tr></a>
+                        </table>
+                        <!-- Release list -->
+                        <table class="table table-striped">
+                            <tr><th>Releases</th></tr>
+
+                            <a href="tmp/harmlessness.html"><tr><td>Harmlessness</td></tr></a>
+                            <a href="tmp/nonow.html"><tr><td>No Now</td></tr></a>
+                            <a href="tmp/sunbather.html"><tr><td>Sunbather</td></tr></a>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,9 +100,9 @@
             </symbol>
         </svg>
 
-        <!-- jQuery -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                
+        
         <!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
