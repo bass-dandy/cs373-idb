@@ -120,8 +120,84 @@ class MusicMeccaModelsTests(TestCase):
         label = Label.query.filter_by(name="Barclay Records").first()
         self.assertIsNone(label)
 
-    
 
+    #---------------
+    # Concert Tests
+    #---------------
+
+    def test_concert_by_id(self):
+        db.session.add(Concert(location="Austin", name="Taylor Swift 1989 Tour"))
+        db.session.commit()
+
+        concert = Concert.query.get(1)
+
+        self.assertEqual(concert.location, "Austin")
+        self.assertEqual(concert.name, "Taylor Swift 1989 Tour")
+
+    def test_concert_by_location(self):
+        db.session.add(Concert(location="Austin", name="Taylor Swift 1989 Tour"))
+        db.session.commit()
+
+        concerts = Concert.query.filter_by(location="Austin")
+        self.assertEquals(concerts[0].name, "Taylor Swift 1989 Tour")
+
+    def test_concert_not_available(self):
+        concerts = Concert.query.filter_by(location="Anchorage").first()
+        self.assertIsNone(concerts)
+
+    #---------------
+    # Release Tests
+    #---------------
+
+    def test_release_by_id(self):
+        db,session.add(Release(name="1989", year="2015"))
+        db.session.commit()
+
+        release = Release.query.get(1)
+
+        self.assertEqual(release.name, "1989")
+        self.assertEqual(release.year, "2015")
+
+    def test_release_by_name(self):
+        db.session.add(Release(name="Revival", year="2015"))
+        db.session.commit()
+
+        release = Release.query.filter_by(name="Revival").first()
+
+        self.assertEqual(release.name, "Revival")
+        self.assertEqual(release.year, "2015")
+
+    def test_release_not_available(self):
+        release = Release.query.filter_by(name="Unbreakable").first()
+        self.assertIsNone(release)
+
+
+    #-------------
+    # Award Tests
+    #-------------
+
+    def test_award_by_id(self):
+        db.session.add(Award(name="Best Artist", year="2015"))
+        db.session.commit()
+
+        award = Award.query.get(1)
+
+        self.assertEqual(award.name, "Best Artist")
+        self.assertEqual(award.year, "2015")
+
+    def test_award_by_name(self):
+        db.session.add(Award(name="Best Rock Song", year="2015"))
+        db.session.add(Award(name="Best Rock Song", year="2014"))
+        db.session.commit()
+
+        awards = Award.query.filter_by(name="Best Rock Song")
+
+        self.assertEqual(len(awards), 2)
+        self.assertEqual(awards[0].year, "2015")
+
+    def test_award_not_available(self):
+        award = Award.query.filter_by(name="Best Country Song").first()
+        self.assertIsNone(award)
 
 
 if __name__ == '__main__':
