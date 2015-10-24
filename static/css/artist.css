@@ -16,7 +16,7 @@
     color: white;
 }
 
-#artist_selector a:hover {
+#artist_selector a:hover, #artist_selector .selected {
     background-color: #2B3A58;
     text-decoration: none;
 }
