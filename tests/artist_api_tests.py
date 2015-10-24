@@ -2,6 +2,7 @@ from tests.constants import EMINEM
 from tests.nd_test_case import NDTestCase
 from flask_app import app
 
+
 class TicketAPITest(NDTestCase):
 
     def setUp(self):

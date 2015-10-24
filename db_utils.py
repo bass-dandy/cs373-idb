@@ -1,8 +1,8 @@
 import csv
 import os
 from sqlalchemy.exc import SQLAlchemyError
-from flask.ext.app import db
-from flask.ext.app.main.models import Artist, Award
+from flask_app import db
+from flask_app.main.models import Artist, Award, Concert, Label, Release, Song, Video
 
 
 def recreate_db():
@@ -50,7 +50,7 @@ def _map_dict_to_object(dict_to_map, obj):
 
 
 def _seed_csv_artists():
-    csv_filename = '/seed_data/artists.csv'
+    csv_filename = 'seed_data/artists.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for artist_dict in dicts:
@@ -60,7 +60,7 @@ def _seed_csv_artists():
 
 
 def _seed_csv_awards():
-    csv_filename = '/seed_data/awards.csv'
+    csv_filename = 'seed_data/awards.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for award_dict in dicts:
@@ -70,51 +70,51 @@ def _seed_csv_awards():
 
 
 def _seed_csv_concerts():
-    csv_filename = '/seed_data/concerts.csv'
+    csv_filename = 'seed_data/concerts.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for concerts_dict in dicts:
-        concerts = Artist()
+        concerts = Concert()
         _map_dict_to_object(concerts_dict, concerts)
         db.session.add(concerts)
 
 
 def _seed_csv_labels():
-    csv_filename = '/seed_data/labels.csv'
+    csv_filename = 'seed_data/labels.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for labels_dict in dicts:
-        labels = Artist()
+        labels = Label()
         _map_dict_to_object(labels_dict, labels)
         db.session.add(labels)
 
 
 def _seed_csv_releases():
-    csv_filename = '/seed_data/releases.csv'
+    csv_filename = 'seed_data/releases.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for releases_dict in dicts:
-        releases = Artist()
+        releases = Release()
         _map_dict_to_object(releases_dict, releases)
         db.session.add(releases)
 
 
 def _seed_csv_songs():
-    csv_filename = '/seed_data/songs.csv'
+    csv_filename = 'seed_data/songs.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for songs_dict in dicts:
-        songs = Artist()
+        songs = Song()
         _map_dict_to_object(songs_dict, songs)
         db.session.add(songs)
 
 
 def _seed_csv_videos():
-    csv_filename = '/seed_data/videos.csv'
+    csv_filename = 'seed_data/videos.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for videos_dict in dicts:
-        videos = Artist()
+        videos = Video()
         _map_dict_to_object(videos_dict, videos)
         db.session.add(videos)
 
@@ -127,12 +127,4 @@ def seed_database_dev():
     _seed_csv_concerts()
     _seed_csv_awards()
     _seed_csv_artists()
-
-
-def reset_postgres_id_sequences():
-    tables = ['artists', 'awards', 'concerts', 'labels', 'releases', 'songs', 'videos']
-
-    for table in tables:
-        sql = "SELECT setval('{0}_id_seq', MAX(id)) FROM {0};".format(table)
-        db.engine.execute(sql)
 

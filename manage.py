@@ -10,7 +10,6 @@ manager.add_command("runserver", Server(host="0.0.0.0", port=8000))
 def rebuild_database():
     db_utils.recreate_db()
     db_utils.seed_database_dev()
-    db_utils.reset_postgres_id_sequences()
 
 
 if __name__ == '__main__':
