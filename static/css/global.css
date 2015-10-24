@@ -87,6 +87,18 @@ table th, table th:hover {
     vertical-align: top;
 }
 
+/* For mobile */
+@media screen and (max-width: 1000px) {
+    .overview {
+        text-align: center;
+    }
+
+    .overview div {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
 /* For convenience */
 .margin-top {
     margin-top: 10px;

@@ -38,22 +38,23 @@
 }
 
 .event {
-    padding: 10px 0px 10px 0px;
-    margin: 0px 10px 0px 10px;
+    display: table;
+    border-spacing: 10px;
     border-bottom: 1px dotted #dbdbdb;
 }
 
 .event_info {
-    display: inline-block;
+    display: table-cell;
     vertical-align: top;
+    margin-left: 10px;
 }
 
 .calendar {
-    display: inline-block;
+    display: table-cell;
     font-size: 40px;
     width: 2.5em;
     height: 2.5em;
-    margin-right: 10px;
+    line-height: 2em;
     color: black;
     text-align: center;
     border: 1px solid #b7b7b7;
@@ -62,6 +63,7 @@
 .calendar div {
     width: 100%;
     height: auto;
+    line-height: 1em;
     background-color: #f53b48;
     font-size: 0.5em;
     color: white;
