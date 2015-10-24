@@ -11,6 +11,7 @@ class Artist(db.Model):
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
     photo = db.Column(db.BLOB)
+    uri = db.Column(db.String)
 
     primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
     primary_label = db.relationship('Label', backref='artists', foreign_keys='Artist.primary_label_id')
@@ -18,7 +19,6 @@ class Artist(db.Model):
     concerts = db.relationship('Concert', secondary='artist_concerts')
     releases = db.relationship('Release', secondary='artist_releases')
     awards = db.relationship('Award', secondary='artist_awards')
-
 
 
 class Label(db.Model):
@@ -30,10 +30,11 @@ class Label(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
+    uri = db.Column(db.String)
 
     artists = db.relationship("Artist", backref="labels")
-
     artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+
 
 class ArtistConcert(db.Model):
     """
@@ -55,6 +56,7 @@ class Concert(db.Model):
     location = db.Column(db.String(128))
     name = db.Column(db.String(128))
     date = db.Column(db.Date)
+    uri = db.Column(db.String)
 
 
 class ArtistRelease(db.Model):
@@ -76,6 +78,7 @@ class Release(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
+    uri = db.Column(db.String)
 
     songs = db.relationship('Song', secondary='release_songs')
 
@@ -99,9 +102,7 @@ class Video(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
-
-    song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
-    song = db.relationship('Song')
+    uri = db.Column(db.String)
 
 
 class ArtistAward(db.Model):
@@ -123,6 +124,7 @@ class Award(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
+    uri = db.Column(db.String)
 
 
 class Song(db.Model):
@@ -134,5 +136,9 @@ class Song(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lyrics = db.Column(db.String)
     name = db.Column(db.String(128))
+    uri = db.Column(db.String)
     audio_url = db.Column(db.String)
-    videos = db.relationship("Video", backref="songs")
+
+    video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
+    video = db.relationship('Video')
+
