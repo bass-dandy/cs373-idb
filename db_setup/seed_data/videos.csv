@@ -1,4 +1,4 @@
-    id = db.Column(db.Integer, primary_key=True)
-    year = db.Column(db.String(128))
-    name = db.Column(db.String(128))
-    uri = db.Column(db.String)
+id,year,name
+1,2001,FACK
+2,2002,Stan
+3,2003,W.T.P

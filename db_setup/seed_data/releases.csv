@@ -1,6 +1,3 @@
-    id = db.Column(db.Integer, primary_key=True)
-    year = db.Column(db.String(128))
-    name = db.Column(db.String(128))
-    uri = db.Column(db.String)
-
-    songs = db.relationship('Song', secondary='release_songs')
+1,2001,Curtain Calls
+2,2002,Marshal Mathers LP
+3,2003,Recovery
