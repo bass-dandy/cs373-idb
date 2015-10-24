@@ -42,6 +42,12 @@ body {
     transform: translateY(-50%);
 }
 
+@media screen and (max-width: 1000px) {
+    .navbutton div {
+        display: none;
+    }
+}
+
 #search {
     float: right;
 }
