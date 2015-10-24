@@ -47,6 +47,7 @@ def _seed_csv_artists():
         _map_dict_to_object(artist_dict, artist)
         db.session.add(artist)
 
+
 def _seed_csv_awards():
     csv_filename = '/seed_data/awards.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
@@ -68,7 +69,7 @@ def _seed_csv_concerts():
 
 
 def _seed_csv_labels():
-    csv_filename = '/seed_data/artistss.csv'
+    csv_filename = '/seed_data/labels.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for labels_dict in dicts:
@@ -78,7 +79,7 @@ def _seed_csv_labels():
 
 
 def _seed_csv_releases():
-    csv_filename = '/seed_data/artistss.csv'
+    csv_filename = '/seed_data/releases.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for releases_dict in dicts:
@@ -88,7 +89,7 @@ def _seed_csv_releases():
 
 
 def _seed_csv_songs():
-    csv_filename = '/seed_data/artistss.csv'
+    csv_filename = '/seed_data/songs.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for songs_dict in dicts:
@@ -98,7 +99,7 @@ def _seed_csv_songs():
 
 
 def _seed_csv_videos():
-    csv_filename = '/seed_data/artistss.csv'
+    csv_filename = '/seed_data/videos.csv'
     dicts = _map_csv_to_list_of_dicts(csv_filename)
 
     for videos_dict in dicts:
@@ -106,4 +107,13 @@ def _seed_csv_videos():
         _map_dict_to_object(videos_dict, videos)
         db.session.add(videos)
 
+
+def seed_database_dev():
+    _seed_csv_videos()
+    _seed_csv_songs()
+    _seed_csv_releases()
+    _seed_csv_labels()
+    _seed_csv_concerts()
+    _seed_csv_awards()
+    _seed_csv_artists()
 
