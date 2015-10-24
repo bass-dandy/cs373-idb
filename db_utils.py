@@ -1,7 +1,18 @@
 import csv
 import os
+from sqlalchemy.exc import SQLAlchemyError
 from flask.ext.app import db
 from flask.ext.app.main.models import Artist, Award
+
+
+def recreate_db():
+    try:
+        db.reflect()
+        db.drop_all()
+    except SQLAlchemyError:
+        pass
+
+    db.session.commit()
 
 
 def _map_csv_to_list_of_dicts(filename):
@@ -116,4 +127,12 @@ def seed_database_dev():
     _seed_csv_concerts()
     _seed_csv_awards()
     _seed_csv_artists()
+
+
+def reset_postgres_id_sequences():
+    tables = ['artists', 'awards', 'concerts', 'labels', 'releases', 'songs', 'videos']
+
+    for table in tables:
+        sql = "SELECT setval('{0}_id_seq', MAX(id)) FROM {0};".format(table)
+        db.engine.execute(sql)
 
