@@ -1,0 +1,12 @@
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128))
+    bio = db.Column(db.String)
+    photo = db.Column(db.BLOB)
+    uri = db.Column(db.String)
+
+    primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
+    primary_label = db.relationship('Label', backref='artists', foreign_keys='Artist.primary_label_id')
+
+    concerts = db.relationship('Concert', secondary='artist_concerts')
+    releases = db.relationship('Release', secondary='artist_releases')
+    awards = db.relationship('Award', secondary='artist_awards')

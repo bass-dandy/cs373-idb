@@ -1,0 +1,6 @@
+    id = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.String(128))
+    name = db.Column(db.String(128))
+    uri = db.Column(db.String)
+
+    songs = db.relationship('Song', secondary='release_songs')
