@@ -9,11 +9,11 @@ Music Mecca is a source for information about musicians and bands, as well as th
 
 Artists are all musicians stored in our database. That includes solo artists or bands.
 
-## Artist [/artist/{artistId}]
+## Artist [/artists/{artistId}]
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/artist/2
+              Location: http://downing.club/artists/2
 
     + Body
             {
@@ -85,7 +85,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
 + Model (application/json)
 
     + Body
-
             {
                 "count": 2,
                 "results": [
@@ -214,181 +213,153 @@ Artists are all musicians stored in our database. That includes solo artists or 
 
     [Artist Collection][]
 
-## Song ID [/song/{song_id}]
+# Group Songs
 
-    Get the song by id
+Songs are any pieces of music the artist has created.
 
-    + song_id (number) - ID of the song in the form of an integer
+## Song [/songs/{songId}]
 
-### View Song Info by ID [GET]
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/songs/2
 
-+ Response 200 (application/json)
+    + Body
+            {
+                "id": 2,
+                "name": "Eminem",
+                "lyrics": "blah blah blah",
+                "uri": "/songs/2",
+                "audioUrl": "www.youtube.com/blahblahblah",
+                "video": {
+                    "id": 1,
+                    "name": "Fack Video",
+                    "year": "2003"
+                }
+            }
 
+### Get a Song [GET]
++ Parameters
+    + songId (id) - ID of the Song
 
-        {
-            "id": 0001
-            "name": "Bad Blood"
-            "lyrics": "Lyrics go here"
-            "artist": [00001, 00002]
-            "release": [00001, 000004]
-        }
++ Response 200
+[Song][]
 
-## Song Name [/song/{song_name}]
+# Group Awards
 
-    Get the song by name
+Any award the Artist has acquired.
 
-    + song_name (string) - name of the song in the form of a string (spaces must be underscores)
+## Award [/awards/{awardId}]
 
-### View Song Info by Name [GET]
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/awards/2
 
-+ Response 200 (application/json)
+    + Body
+            {
+                "id": 4,
+                "name": "Billboard Top 40",
+                "year": "2008"
+            }
 
+### Get an Award [GET]
++ Parameters
+    + awardId (id) - ID of the Award
 
-        {
-            "id": 0001,
-            "name": "Bad Blood",
-            "lyrics": "Lyrics go here",
-            "artist": [00001, 00002],
-            "release": [00001, 000004]
-        }
++ Response 200
+[Award][]
 
-## Award ID [/award/{award_id}]
+# Group Labels
 
-    Get the award by ID
+Any label the Artist has been part of.
 
-    + award_id (number) - ID of the award in the form of an integer
+## Label [/labels/{labelId}]
 
-### View Award Info by ID [GET]
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/2
 
-+ Response 200 (application/json)
+    + Body
+            {
+                "id": 2,
+                "name": "Slim Shady Records",
+                "bio": "Bio goes here"
+            }
 
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
+### Get a Label [GET]
++ Parameters
+    + labelId (id) - ID of the Label
 
-## Award Name [/award/{award_name}]
++ Response 200
+[Label][]
 
-    Get the award by name
+# Group Releases
 
-    + award_name (string) - name of the award in the form of a string (spaces must be underscores)
+Any release the Artist has released.
 
-### View Award Info by Name [GET]
+## Release [/releases/{releaseId}]
 
-+ Response 200 (application/json)
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/releases/2
 
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
+    + Body
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
 
-## Label ID [/label/{label_id}]
+### Get a Release [GET]
++ Parameters
+    + releaseId (id) - ID of the Release
 
-    Get the label by ID
++ Response 200
+[Release][]
 
-    + label_id (number) - ID of the label in the form of an integer
+# Group Concert
 
-### View Label Info by ID [GET]
+Any concert the Artist will take part in.
 
-+ Response 200 (application/json)
+## Concert [/concerts/{concertId}]
 
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/concerts/2
 
-## Label Name [/label/{label_name}]
+    + Body
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
 
-    Get the label by name
+### Get a Concert [GET]
++ Parameters
+    + concertId (id) - ID of the Concert
 
-    + label_name (string) - name of the label in the form of a string (spaces must be underscores)
++ Response 200
+[Concert][]
 
-### View Label Info by Name [GET]
+# Group Video
 
-+ Response 200 (application/json)
+Any video the Artist has taken part in.
 
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
+## Video [/videos/{videoId}]
 
-## Release ID [/release/{release_id}]
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/videos/2
 
-    Get the release by ID
-    Think of a release as an album
+    + Body
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
 
-    + release_id (number) - ID of the release in the form of an integer
+### Get a Video [GET]
++ Parameters
+    + videoId (id) - ID of the Video
 
-### View Release Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Release Name [/release/{release_name}]
-
-    Get the release by name
-    Think of a release as an album
-
-    + release_name (string) - Name of the release in the form of a string (spaces must be underscores)
-
-### View Release Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Concert ID [/concert/{concert_id}]
-
-    Get concert by ID
-
-    + concert_id (number) - ID of the concert in the form of an integer
-
-### View Concert Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
-
-## Concert Name [/concert/{concert_name}]
-
-    Get the concert by name.
-
-    + concert_name (string) - name of the concert in the form of a string (spaces must be underscores)
-
-### View Concert Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
-
++ Response 200
+[Video][]
