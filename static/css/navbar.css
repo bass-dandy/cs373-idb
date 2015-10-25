@@ -45,7 +45,17 @@ body {
 
 @media screen and (max-width: 1000px) {
     .navbutton div {
-        display: none;
+        font-size: 0px;
+        margin: 0px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .navbutton div {
+        font-size: 30px;
+        margin-left: 10px;
+        transition: 0.5s;
     }
 }
 
