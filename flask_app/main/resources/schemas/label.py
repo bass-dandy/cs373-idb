@@ -1,6 +1,6 @@
 from marshmallow import fields
 from marshmallow import Schema
-from flask.ext.app import ma
+from flask_app import ma
 
 
 class LabelSchema(Schema):
@@ -11,4 +11,4 @@ class LabelSchema(Schema):
     photo = fields.Raw()
     uri = ma.URLFor('.labelidapi', id='<id>')
 
-    artists = fields.Nested('Artist', only=['uri'])
+    # artists = fields.Nested('ArtistSchema', only=['uri'])
