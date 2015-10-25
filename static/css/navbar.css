@@ -9,6 +9,7 @@ body {
     top: 0px;
     background-color: #1E293E;
     overflow: visible;
+    z-index: 1000;
 }
 
 .navbutton {

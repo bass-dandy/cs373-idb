@@ -3,6 +3,11 @@ table th, table th:hover {
     color: white;
 }
 
+body {
+    background-image: linear-gradient(rgba(240, 240, 240, 0.8), rgba(240, 240, 240, 0.8)), url("../images/splash.jpg");
+    background-attachment: fixed;
+}
+
 /* Everything below the navbar */
 #main {
     width: 100%;
