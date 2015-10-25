@@ -10,7 +10,7 @@ body {
     position: fixed;
     top: 0px;
     background-color: #1E293E;
-    overflow: visible;
+    overflow: hidden;
     z-index: 1000;
 }
 
@@ -27,15 +27,15 @@ body {
     color: #DBDBDB;    
 }
 
-.navbutton svg {
+.navbutton > svg {
     display: block;
-    float:left;
+    float: left;
     height: 100%;
     fill: currentColor;
 }
 
-.navbutton div {
-    display: inline-block;
+.navbutton > div {
+    float: left;
     height: 100%;
     position: relative;
     top: -10px;
@@ -43,18 +43,18 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    .navbutton div {
+    .navbutton > div {
+        margin-left: 0px;
         font-size: 0em;
-        margin: 0px;
-        transition: 0.5s;
+        transition: 0.3s;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .navbutton div {
-        font-size: 1em;
+    .navbutton > div {
         margin-left: 10px;
-        transition: 0.5s;
+        font-size: 1em;
+        transition: 0.3s;
     }
 }
 
