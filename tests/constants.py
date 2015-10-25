@@ -11,7 +11,7 @@ ACL = 1
 SLIM_SHADY_RECORDS = 1
 
 ### Test Releases ###
-RECOVERY = 3
+CURTAIN_CALL = 1
 
 ### Test Songs ###
 FACK = 1
