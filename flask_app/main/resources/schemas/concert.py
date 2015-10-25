@@ -1,5 +1,6 @@
 from marshmallow import fields
 from marshmallow import Schema
+from flask.ext.app import ma
 
 
 class ConcertSchema(Schema):
@@ -8,6 +9,6 @@ class ConcertSchema(Schema):
     name = fields.String(required=True)
     location = fields.String(allow_none=True)
     date = fields.Date()
+    uri = ma.URLFor('.concertidapi', id='<id>')
 
-    artist = fields.List(fields.Nested('ArtistSchema'))
 

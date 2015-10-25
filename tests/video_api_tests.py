@@ -1,15 +1,15 @@
-from tests.constants import EMINEM
+from tests.constants import FACK_VIDEO
 from tests.nd_test_case import NDTestCase
 from flask_app import app
 
 
-class ArtistAPITest(NDTestCase):
+class VideoAPITest(NDTestCase):
 
     def setUp(self):
-        super(ArtistAPITest, self).setUp()
+        super(VideoAPITest, self).setUp()
 
     def test_get(self):
-        get_uri = '{}/artists/{}'.format(app.config['BASE_URL'], EMINEM)
+        get_uri = '{}/videos/{}'.format(app.config['BASE_URL'], FACK_VIDEO)
         response = self.json_get(get_uri)
 
         reponse_dict = self.dict_from_response(response)

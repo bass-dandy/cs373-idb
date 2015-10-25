@@ -1,42 +1,5 @@
 from flask_app import db
 
-#from sqlalchemy import Table, Column, Integer, ForeignKey
-#from sqlalchemy.orm import relationship, backref
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
-
-"""
-Many-to-Many relationship between artists and videos
-"""
-artists_video_association_table = db.Table('artistsVideo', Base.metadata,
-                                       db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
-                                       db.Column('video_id', db.Integer, db.ForeignKey('videos.id')))
-"""
-Many-to-Many relationship between artists and concerts
-"""
-artists_concerts_association_table = db.Table('artistsConcerts', Base.metaData,
-                                             db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
-                                             db.Column('concert_id', db.Integer, db.ForeignKey('concerts.id')))
-"""
-Many-to-Many relationship between artists and releases
-"""
-artists_releases_association_table = db.Table('artistsReleases', Base.metaData,
-                                             db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
-                                             db.Column('release_id', db.Integer, db.ForeignKey('releases.id')))
-"""
-Many-to-Many relationship between artists and songs
-"""
-artists_songs_association_table = db.Table('artistsSongs', Base.metaData,
-                                           db.Column('artist_id', db.Integer, db.ForeignKey('artists.id')),
-                                           db.Column('song_id', db.Integer, db.ForeignKey('songs.id')))
-"""
-Many-to-Many relationship between releases and songs
-"""
-releases_songs_association_table = db.Table('releasesSongs', Base.metaData,
-                                            db.Column('release_id', db.Integer, db.ForeignKey('releases.id')),
-                                            db.Column('song_id', db.Integer, db.ForeignKey('songs.id')))
-
 
 class Artist(db.Model):
     """
@@ -47,30 +10,15 @@ class Artist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
-    photo = db.Column(db.BLOB)
+    # photo = db.Column(db.BLOB)
+    uri = db.Column(db.String)
 
-    label_id = db.Column(db.Integer, db.ForeignKey('labels.id'))
+    primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
+    primary_label = db.relationship('Label', backref='artists', foreign_keys='Artist.primary_label_id')
 
-    videos = db.relationship("Video", secondary=artists_video_association_table, backref="artists")
-    concerts = db.relationship("Concert", secondary=artists_concerts_association_table, backref="artists")
-    releases = db.relationship("Song", secondary=artists_releases_association_table, backref="artists")
-    songs = db.relationship("Song", secondary=artists_songs_association_table, backref="artists")
-    awards = db.relationship("Award", backref="artists")
-
-
-
-    #video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
-    #videos = db.relationship('Video')
-    #label_id = db.Column(db.Integer, db.ForeignKey('labels.id'))
-    #label = db.relationship('Label')
-    #tvpresence_id = db.Column(db.Integer, db.ForeignKey('tvpresences.id'))
-    #tvpresence = db.relationship('TVPresence')
-    #awards_id = db.Column(db.Integer, db.ForeignKey('awards.id'))
-    #awards = db.relationship('Award')
-    #concerts_id = db.Column(db.Integer, db.ForeignKey('concerts.id'))
-    #concerts = db.relationship('Concert')
-    #release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
-    #releases = db.relationship('Release')
+    concerts = db.relationship('Concert', secondary='artist_concerts')
+    releases = db.relationship('Release', secondary='artist_releases')
+    awards = db.relationship('Award', secondary='artist_awards')
 
 
 class Label(db.Model):
@@ -82,11 +30,20 @@ class Label(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
+    uri = db.Column(db.String)
 
-    artists = db.relationship("Artist", backref="labels")
+    #artists = db.relationship("Artist", backref="labels")
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
 
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
+
+class ArtistConcert(db.Model):
+    """
+    Linking table for Artists and their Concerts
+    """
+    __tablename__ = 'artist_concerts'
+    id = db.Column(db.Integer, primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    concert_id = db.Column(db.Integer, db.ForeignKey('concerts.id'))
 
 
 class Concert(db.Model):
@@ -99,23 +56,17 @@ class Concert(db.Model):
     location = db.Column(db.String(128))
     name = db.Column(db.String(128))
     date = db.Column(db.Date)
-
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
+    uri = db.Column(db.String)
 
 
-#class TVPresence(db.Model):
-#    """ Main table for artist tv presence info
-#    """
-#    __tablename__ = 'tvpresence'
-#    id = db.Column(db.Integer, primary_key=True)
-#    year = db.Column(db.String(128))
-#    name = db.Column(db.String(128))
-#    genre = db.Column(db.String(128))
-#    bio = db.Column(db.String)
-
-#    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-#    artist = db.relationship('Artist')
+class ArtistRelease(db.Model):
+    """
+    Linking table for Artists and their Releases
+    """
+    __tablename__ = 'artist_releases'
+    id = db.Column(db.Integer, primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
 
 
 class Release(db.Model):
@@ -127,11 +78,19 @@ class Release(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
+    uri = db.Column(db.String)
 
-    songs = db.relationship('Song', secondary=releases_songs_association_table, backref='releases')
+    songs = db.relationship('Song', secondary='release_songs')
 
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
+
+class ReleaseSong(db.Model):
+    """
+    Linking table for Releases and their songs
+    """
+    __tablename__ = 'release_songs'
+    id = db.Column(db.Integer, primary_key=True)
+    release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
+    song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
 
 
 class Video(db.Model):
@@ -143,13 +102,19 @@ class Video(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
-    song_id = db.Column(db.Integer, db.ForeignKey("songs.id"))
+    uri = db.Column(db.String)
 
 
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
+class ArtistAward(db.Model):
+    """
+    Linking table for Artists and their Awards
+    """
+    __tablename__ = 'artist_awards'
+    id = db.Column(db.Integer, primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    award_id = db.Column(db.Integer, db.ForeignKey('awards.id'))
 
-    
+
 class Award(db.Model):
     """
     Model for Award
@@ -159,9 +124,7 @@ class Award(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
-
-    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
+    uri = db.Column(db.String)
 
 
 class Song(db.Model):
@@ -173,12 +136,9 @@ class Song(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lyrics = db.Column(db.String)
     name = db.Column(db.String(128))
+    uri = db.Column(db.String)
     audio_url = db.Column(db.String)
-    videos = db.relationship("Video", backref="songs")
 
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    #artist = db.relationship('Artist')
-    #release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
-    #release = db.relationship('Release')
-
+    video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
+    video = db.relationship('Video')
 

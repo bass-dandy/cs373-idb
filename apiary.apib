@@ -5,227 +5,369 @@ HOST: http://downing.club/
 
 Music Mecca is a source for information about musicians and bands, as well as the music they release.
 
-## Artist ID [/artist/{artist_id}]
-
-    Get the artist by id
-
-    + artist_id (number) - ID of the artist in the form of an integer
-
-### View Artist Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001
-            "name": "Taylor Swift"
-            "bio": "Taylor Swift bio"
-            "photo": Raw photo data
-            "videos": [00001]
-            "label": 00001
-            "awards": [00001]
-            "concerts": [00001]
-            "releases": [00001]
-            "songs": [00001]
-        }
-
-## Artist Name [/artist/{artist_name}]
-
-    Get the artist by name
-
-    + artist_name (string) - name of the artist in the form of a string (spaces must be replaced by underscores)
-
-### View Artist Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001
-            "name": "Taylor Swift"
-            "bio": "Taylor Swift bio"
-            "photo": Raw photo data
-            "videos": [00001]
-            "label": 00001
-            "awards": [00001]
-            "concerts": [00001]
-            "releases": [00001]
-            "songs": [00001]
-        }
-
-## Song ID [/song/{song_id}]
-
-    Get the song by id
-
-    + song_id (number) - ID of the song in the form of an integer
-
-### View Song Info by ID [GET]
-
-+ Response 200 (application/json)
-
-
-        {
-            "id": 0001
-            "name": "Bad Blood"
-            "lyrics": "Lyrics go here"
-            "artist": [00001, 00002]
-            "release": [00001, 000004]
-        }
-
-## Song Name [/song/{song_name}]
-
-    Get the song by name
-
-    + song_name (string) - name of the song in the form of a string (spaces must be underscores)
-
-### View Song Info by Name [GET]
-
-+ Response 200 (application/json)
-
-
-        {
-            "id": 0001,
-            "name": "Bad Blood",
-            "lyrics": "Lyrics go here",
-            "artist": [00001, 00002],
-            "release": [00001, 000004]
-        }
-
-## Award ID [/award/{award_id}]
-
-    Get the award by ID
-
-    + award_id (number) - ID of the award in the form of an integer
-
-### View Award Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
-
-## Award Name [/award/{award_name}]
-
-    Get the award by name
-
-    + award_name (string) - name of the award in the form of a string (spaces must be underscores)
-
-### View Award Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
-
-## Label ID [/label/{label_id}]
-
-    Get the label by ID
-
-    + label_id (number) - ID of the label in the form of an integer
-
-### View Label Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
-
-## Label Name [/label/{label_name}]
-
-    Get the label by name
-
-    + label_name (string) - name of the label in the form of a string (spaces must be underscores)
-
-### View Label Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
-
-## Release ID [/release/{release_id}]
-
-    Get the release by ID
-    Think of a release as an album
-
-    + release_id (number) - ID of the release in the form of an integer
-
-### View Release Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Release Name [/release/{release_name}]
-
-    Get the release by name
-    Think of a release as an album
-
-    + release_name (string) - Name of the release in the form of a string (spaces must be underscores)
-
-### View Release Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Concert ID [/concert/{concert_id}]
-
-    Get concert by ID
-
-    + concert_id (number) - ID of the concert in the form of an integer
-
-### View Concert Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
-
-## Concert Name [/concert/{concert_name}]
-
-    Get the concert by name.
-
-    + concert_name (string) - name of the concert in the form of a string (spaces must be underscores)
-
-### View Concert Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
-
+# Group Artists
+
+Artists are all musicians stored in our database. That includes solo artists or bands.
+
+## Artist [/artists/{artistId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/artists/2
+
+    + Body
+
+            {
+                "id": 2,
+                "name": "Eminem",
+                "bio": "Eminem bio",
+                "photo": Raw photo data,
+                "videos": [
+                    {
+                        "id": 2,
+                        "name": "Mockingbird",
+                        "year": "1998"
+                    }
+                ],
+                "label": {
+                    "id": 2,
+                    "name": "Slim Shady Records",
+                    "bio": "Bio goes here"
+                },
+                "awards": [
+                    {
+                        "id": 3,
+                        "name": "Album of the Year",
+                        "year": "2012"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Billboard Top 40",
+                        "year": "2008"
+                    }
+                ],
+                "concerts": [
+                    {
+                        "id": 3,
+                        "name": "1989 Tour",
+                        "location": "Austin",
+                        "date": "2015-07-04 13:00:00-00"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Warp Tour",
+                        "location": "Alton",
+                        "date": "2015-31-04 16:00:00-00"
+                    }
+                ],
+                "releases": [
+                    {
+                        "id": 3,
+                        "name": "Curtain Call",
+                        "year": "1989"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Relapse",
+                        "year": "2010"
+                    }
+                ]
+            }
+
+### Get an Artist [GET]
++ Parameters
+    + artistId (id) - ID of the Artist
+
++ Response 200
+[Artist][]
+
+## Artist Collection [/artists]
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "count": 2,
+                "results": [
+                    {
+                        "id": 1,
+                        "name": "Taylor Swift",
+                        "bio": "Taylor Swift bio",
+                        "photo": Raw photo data,
+                        "videos": [
+                            {
+                                "id": 1,
+                                "name": "Too Cool For School",
+                                "year": "1989"
+                            }
+                        ],
+                        "label": {
+                            "id": 1,
+                            "name": "Big Machine Records",
+                            "bio": "Bio goes here"
+                        },
+                        "awards": [
+                            {
+                                "id": 1,
+                                "name": "Album of the Year",
+                                "year": "2015"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Billboard Top 40",
+                                "year": "2006"
+                            }
+                        ],
+                        "concerts": [
+                            {
+                                "id": 1,
+                                "name": "1989 Tour",
+                                "location": "Austin",
+                                "date": "2015-07-04 13:00:00-00"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warp Tour",
+                                "location": "Alton",
+                                "date": "2015-31-04 16:00:00-00"
+                            }
+                        ],
+                        "releases": [
+                            {
+                                "id": 1,
+                                "name": "Too Cool For School",
+                                "year": "1989"
+                            },
+                            {
+                                "id": 2,
+                                "name": "Just Dance",
+                                "year": "2010"
+                            }
+                        ]
+
+
+                    },
+                    {
+                        "id": 2,
+                        "name": "Eminem",
+                        "bio": "Eminem bio",
+                        "photo": Raw photo data,
+                        "videos": [
+                            {
+                                "id": 2,
+                                "name": "Mockingbird",
+                                "year": "1998"
+                            }
+                        ],
+                        "label": {
+                            "id": 2,
+                            "name": "Slim Shady Records",
+                            "bio": "Bio goes here"
+                        },
+                        "awards": [
+                            {
+                                "id": 3,
+                                "name": "Album of the Year",
+                                "year": "2012"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Billboard Top 40",
+                                "year": "2008"
+                            }
+                        ],
+                        "concerts": [
+                            {
+                                "id": 3,
+                                "name": "1989 Tour",
+                                "location": "Austin",
+                                "date": "2015-07-04 13:00:00-00"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Warp Tour",
+                                "location": "Alton",
+                                "date": "2015-31-04 16:00:00-00"
+                            }
+                        ],
+                        "releases": [
+                            {
+                                "id": 3,
+                                "name": "Curtain Call",
+                                "year": "1989"
+                            },
+                            {
+                                "id": 4,
+                                "name": "Relapse",
+                                "year": "2010"
+                            }
+                        ]
+
+
+                    }
+                ]
+            }
+
+### List All Artists [GET]
+
++ Response 200
+
+    [Artist Collection][]
+
+# Group Songs
+
+Songs are any pieces of music the artist has created.
+
+## Song [/songs/{songId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/songs/2
+
+    + Body
+
+            {
+                "id": 2,
+                "name": "Eminem",
+                "lyrics": "blah blah blah",
+                "uri": "/songs/2",
+                "audioUrl": "www.youtube.com/blahblahblah",
+                "video": {
+                    "id": 1,
+                    "name": "Fack Video",
+                    "year": "2003"
+                }
+            }
+
+### Get a Song [GET]
++ Parameters
+    + songId (id) - ID of the Song
+
++ Response 200
+[Song][]
+
+# Group Awards
+
+Any award the Artist has acquired.
+
+## Award [/awards/{awardId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/awards/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Billboard Top 40",
+                "year": "2008"
+            }
+
+### Get an Award [GET]
++ Parameters
+    + awardId (id) - ID of the Award
+
++ Response 200
+[Award][]
+
+# Group Labels
+
+Any label the Artist has been part of.
+
+## Label [/labels/{labelId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/2
+
+    + Body
+
+            {
+                "id": 2,
+                "name": "Slim Shady Records",
+                "bio": "Bio goes here"
+            }
+
+### Get a Label [GET]
++ Parameters
+    + labelId (id) - ID of the Label
+
++ Response 200
+[Label][]
+
+# Group Releases
+
+Any release the Artist has released.
+
+## Release [/releases/{releaseId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/releases/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
+
+### Get a Release [GET]
++ Parameters
+    + releaseId (id) - ID of the Release
+
++ Response 200
+[Release][]
+
+# Group Concert
+
+Any concert the Artist will take part in.
+
+## Concert [/concerts/{concertId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/concerts/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
+
+### Get a Concert [GET]
++ Parameters
+    + concertId (id) - ID of the Concert
+
++ Response 200
+[Concert][]
+
+# Group Video
+
+Any video the Artist has taken part in.
+
+## Video [/videos/{videoId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/videos/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
+
+### Get a Video [GET]
++ Parameters
+    + videoId (id) - ID of the Video
+
++ Response 200
+[Video][]
