@@ -10,7 +10,7 @@ class Artist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
-    photo = db.Column(db.BLOB)
+    # photo = db.Column(db.BLOB)
     uri = db.Column(db.String)
 
     primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
