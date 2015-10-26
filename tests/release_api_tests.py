@@ -1,15 +1,15 @@
-from tests.constants import EMINEM
+from tests.constants import CURTAIN_CALL
 from tests.nd_test_case import NDTestCase
 from flask_app import app
 
 
-class ArtistAPITest(NDTestCase):
+class ReleaseAPITest(NDTestCase):
 
     def setUp(self):
-        super(ArtistAPITest, self).setUp()
+        super(ReleaseAPITest, self).setUp()
 
     def test_get(self):
-        get_uri = '{}/artists/{}'.format(app.config['BASE_URL'], EMINEM)
+        get_uri = '{}/releases/{}'.format(app.config['BASE_URL'], CURTAIN_CALL)
         response = self.json_get(get_uri)
 
         reponse_dict = self.dict_from_response(response)

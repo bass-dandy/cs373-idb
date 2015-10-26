@@ -1,5 +1,6 @@
 from marshmallow import fields
 from marshmallow import Schema
+from flask.ext.app import ma
 
 
 class ReleaseSchema(Schema):
@@ -7,6 +8,7 @@ class ReleaseSchema(Schema):
     id = fields.Integer()
     name = fields.String(required=True)
     year = fields.String(allow_none=True)
+    uri = ma.URLFor('.releaseidapi', id='<id>')
 
-    artist = fields.List(fields.Nested('ArtistSchema'))
+    songs = fields.List(fields.Nested('Song'))
 
