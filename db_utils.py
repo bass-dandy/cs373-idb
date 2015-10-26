@@ -9,8 +9,10 @@ def recreate_db():
     try:
         db.reflect()
         db.drop_all()
-    except SQLAlchemyError:
-        pass
+    except SQLAlchemyError as e:
+        raise ValueError(e)
+
+    db.create_all()
 
     db.session.commit()
 
@@ -127,4 +129,7 @@ def seed_database_dev():
     _seed_csv_concerts()
     _seed_csv_awards()
     _seed_csv_artists()
+
+    db.session.commit()
+
 
