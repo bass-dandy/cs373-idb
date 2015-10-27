@@ -1,19 +1,21 @@
 body {
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 #navbar {
     width: 100%;
-    height: 60px;
+    font-size: 25px;
+    height: 2em;
+    line-height: 2em;
     position: fixed;
     top: 0px;
     background-color: #1E293E;
-    overflow: visible;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 .navbutton {
     display: inline-block;
-    position: relative;
     height: 100%;
     padding: 10px 10px 10px 10px;
     background-color: #2B3A58;
@@ -25,21 +27,35 @@ body {
     color: #DBDBDB;    
 }
 
-.navbutton svg {
+.navbutton > svg {
     display: block;
-    float:left;
+    float: left;
     height: 100%;
     fill: currentColor;
 }
 
-.navbutton div {
-    display: inline-block;
+.navbutton > div {
+    float: left;
     height: 100%;
     position: relative;
+    top: -10px;
     margin-left: 10px;
-    font-size: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1000px) {
+    .navbutton > div {
+        margin-left: 0px;
+        font-size: 0em;
+        transition: 0.3s;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .navbutton > div {
+        margin-left: 10px;
+        font-size: 1em;
+        transition: 0.3s;
+    }
 }
 
 #search {
