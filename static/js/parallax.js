@@ -1,6 +1,8 @@
 function parallax() {
     var scrolled = $(window).scrollTop();
-    $(".parallax-bg").css("transform", "translateY(-" + scrolled * 0.2 + "px)");
+    $(".parallax-bg").each(function() {
+        $(this).css("transform", "translateY(" + scrolled * $(this).data("speed") + "px)")
+    });
 }
 
 $(window).bind('scroll', function(e) {
