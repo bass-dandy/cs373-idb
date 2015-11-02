@@ -1,7 +1,7 @@
 <div id="fixed-width-container" ng-controller="releaseController">
     <a href="{{ release.artist.url }}">
         <div class="section-head parallax">
-            <div class="parallax-bg" data-speed="0.2"></div>
+            <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + release.artist.banner + ')'}"></div>
             <div class="parallax-fg">{{ release.artist.name }}</div>
         </div>
     </a>

@@ -30,7 +30,7 @@
             <div class="padded text-center">
                 <a href="{{ release.url }}" ng-repeat="release in artist.releases">
                     <div class="artist_release">
-                        <img src="images/harmlessness.jpg">
+                        <img src="data:image/JPEG;base64,{{ release.image }}">
                         <i>{{ release.name }}</i>
                         {{ release.year }}
                     </div>
