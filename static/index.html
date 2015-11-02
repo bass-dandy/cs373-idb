@@ -14,6 +14,7 @@
         <!-- Angular -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
         <script src="js/routing-main.js"></script>
 
         <!-- Other -->
@@ -22,6 +23,9 @@
         <link href="css/home.css" rel="stylesheet">
         <link href="css/about.css" rel="stylesheet">
         <link href="css/models.css" rel="stylesheet">
+        <link href="css/artist.css" rel="stylesheet">
+        <link href="css/label.css" rel="stylesheet">
+        <link href="css/release.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,7 +36,7 @@
     </head>
     <body ng-app="meccaApp" ng-controller="mainController">
 
-        <div ng-include="'navbar.html'"></div>
+        <div ng-include="'templates/navbar.html'"></div>
         <div ng-view></div>
 
         <!-- jQuery -->

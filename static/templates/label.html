@@ -1,0 +1,26 @@
+<div id="fixed-width-container" ng-controller="labelController">
+    <div class="section">
+        
+        <!-- Release overview -->
+        <div class="overview">
+            <img src="data:image/JPEG;base64,{{ label.image }}">
+            <div>
+                <strong class="subsection text-uppercase">Label</strong>
+                {{ label.name }}
+                <strong class="subsection text-uppercase">About</strong>
+                {{ label.desc }}
+            </div>
+        </div>
+
+        <!-- Track list -->
+        <div class="panel margin-top">
+            <table id="associated-acts" class="table table-striped">
+                <tr><th>Associated Acts</th></tr>
+
+                <tr ng-repeat="artist in label.artists">
+                    <td><a href="{{ artist.url }}">{{ artist.name }}</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

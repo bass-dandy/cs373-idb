@@ -1,18 +1,18 @@
-<div id="fixed-width-container">
+<div id="fixed-width-container" ng-controller="artistController">
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2"></div>
-        <div class="parallax-fg">The World is a Beautiful Place & I Am No Longer Afraid To Die</div>
+        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
+        <div class="parallax-fg">{{ artist.name }}</div>
     </div>
     <div class="section">
         
         <!-- Artist Info -->
         <div class="overview">
-            <img src="images/twiabp-prof.jpg">
+            <img ng-src="data:image/JPEG;base64,{{ artist.image }}">
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
-                <a href="tinyengines.html">Tiny Engines</a>
+                <a href="{{ artist.label.url }}">{{ artist.label.name }}</a>
                 <strong class="subsection text-uppercase">Genre</strong>
-                Emo
+                {{ artist.genre }}
             </div>
         </div>
 
@@ -28,11 +28,11 @@
 
             <!-- Selector content -->
             <div class="padded text-center">
-                <a href="harmlessness.html">
+                <a href="{{ release.url }}" ng-repeat="release in artist.releases">
                     <div class="artist_release">
                         <img src="images/harmlessness.jpg">
-                        <i>Harmlessness</i>
-                        2015
+                        <i>{{ release.name }}</i>
+                        {{ release.year }}
                     </div>
                 </a>
             </div>
@@ -40,35 +40,25 @@
     </div>
 
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2"></div>
+        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
         <div class="parallax-fg">Upcoming Concerts</div>
     </div>
     <div class="section">
         <div class="panel">
-            <div class="event">
+            <div class="event" ng-repeat="event in artist.events">
                 <div class="calendar">
-                    <div>Nov</div>
-                    5
+                    <div>{{ event.date.month }}</div>
+                    {{ event.date.day }}
                 </div>
                 <div class="event_info">
-                    <b>TWIABP, Foxing</b><br>
-                    The Basement, Columbus OH
-                </div>
-            </div>
-            <div class="event">
-                <div class="calendar">
-                    <div>Nov</div>
-                    27
-                </div>
-                <div class="event_info">
-                    <b>The World is a Beautiful Place & I Am No Longer Afraid To Die</b><br>
-                    Masquerade, Atlanta GA
+                    <b>{{ event.name }}</b><br>
+                    {{ event.location }}
                 </div>
             </div>
         </div>
     </div>
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2"></div>
+        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
         <div class="parallax-fg">Discussion</div>
     </div>
     <div class="section">
