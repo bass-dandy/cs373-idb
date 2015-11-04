@@ -9,7 +9,7 @@ def sanitizeJamBase(artistName):
 	return artistName.replace(" ", "+")
 
 
-if __name__ == __main__:
+if __name__ == '__main__':
 	artistFileName = 'artists.json'
 	songFileName = 'songs.json'
 	releaseFileName = 'releases.json'
@@ -60,14 +60,16 @@ if __name__ == __main__:
 			time.sleep(3)
 		time.sleep(10)
 
-		r = requests.get("http://api.jambase.com/artists?name="+sanitizeJamBase(line)+"&page=0&api_key=acb7m44vtfdvnbm2rntpu9ma")
+		#r = requests.get("http://api.jambase.com/artists?name="+sanitizeJamBase(line)+"&page=0&api_key=acb7m44vtfdvnbm2rntpu9ma")
 
-	with open(artistFileName, 'w') as artistFile:
-		json.dump(artistJSONList, artistFile)
+	#UNCOMMENT WHEN YOU WANT TO SAVE THE DATA YOU SCRAPE
+	# with open(artistFileName, 'w') as artistFile:
+	# 	json.dump(artistJSONList, artistFile)
+    #
+	# with open(songFileName, 'w') as songFile:
+	# 	json.dump(songsJSONList, songFile)
+    #
+	# with open(releaseFileName, 'w') as releaseFile:
+	# 	json.dump(releaseJSONList, releaseFile)
 
-	with open(songFileName, 'w') as songFile:
-		json.dump(songsJSONList, songFile)
-
-	with open(releaseFileName, 'w') as releaseFile:
-		json.dump(releaseJSONList, releaseFile)
 	#print(spotify.artist_albums(results['artists']['items'][0]['id'], album_type='album'))
