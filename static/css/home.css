@@ -30,33 +30,21 @@ body {
     color: white;
 }
 
-#video-bg {
+.splash-bg {
     position: relative;
     width: 100%;
     height: 100vh;
     z-index: -1000;
     overflow: hidden;
+    background-position: center center;
 }
 
-video {
-    position: relative;
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
+#bg-1 {
+    background-image: url("../images/splash.jpg");
 }
 
-@media screen and (min-aspect-ratio: 16/9) {
-    video {
-        width: 100vw;
-        height: auto;
-    }
-}
-
-@media screen and (max-aspect-ratio: 16/9) {
-    video {
-        width: auto;
-        height: 100vh;
-    }
+#bg-2 {
+    background-image: url("../images/splash2.jpeg");
 }
 
 #splash-shelf {
