@@ -18,13 +18,14 @@ class SongIDAPI(Resource):
 
 
 class SongNameAPI(Resource):
-    """Single song through name"""
+    """list of songs using a name"""
 
     def get(self, songName):
-        """Get song with name"""
+        """Get songs with name"""
         try:
-            song = Song.query.filter_by(name=songName).first()
+            actualSongName = songName.replace('+', ' ')
+            songs = Song.query.filter_by(name=actualSongName)
         except(DataError, NoResultFound):
-            abort(app.config['NOT_FOUND'], message=app.config['SONG_NOT_FOUND'].format(songName))
+            abort(app.config['NOT_FOUND'], message=app.config['SONG_NOT_FOUND'].format(actualSongName))
 
-        return SongSchema().dump(song).data
+        return SongSchema().dump(songs, many=True).data
