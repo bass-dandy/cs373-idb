@@ -1,8 +1,9 @@
 import csv
+import json
 import os
 from sqlalchemy.exc import SQLAlchemyError
 from flask_app import db
-from flask_app.main.models import Artist, Award, Concert, Label, Release, Song, Video
+from flask_app.main.models import Artist, Award, Concert, Label, Release, Song, Video, ArtistRelease
 
 
 def recreate_db():
@@ -120,6 +121,59 @@ def _seed_csv_videos():
         _map_dict_to_object(videos_dict, videos)
         db.session.add(videos)
 
+def _get_generator_json_objs(filename):
+    current_path = os.path.dirname(__file__)
+    json_path = os.path.join(current_path, filename)
+    with open(json_path, 'r') as json_file:
+        objs = json.load(json_file)
+        for obj in objs:
+            yield json.loads(obj)
+
+
+def _seed_json_artists():
+    json_filename = 'data_scraping/artists.json'
+    #i = 1
+    for artistJSON in _get_generator_json_objs(json_filename):
+        artist = Artist()
+        print(artist.id)
+        for key, value in artistJSON.items():
+            setattr(artist, key, value)
+        #setattr(artist, 'id', i)
+        #i += 1
+        db.session.add(artist)
+
+
+def _seed_json_releases():
+    json_filename = 'data_scraping/releases.json'
+    unusedFieldsFilter = {'artist_name'}
+    #i = 1
+    for releaseJSON in _get_generator_json_objs(json_filename):
+        release = Release()
+        #artist_ids = []
+        artist = Artist.query.filter_by(name=releaseJSON['artist_name']).first()
+        print(artist.id)
+        #setattr(release, 'id', i)
+        for key, value in releaseJSON.items():
+            if key not in unusedFieldsFilter:
+                setattr(release, key, value)
+
+        release.artists.append(artist)
+        db.session.add(release)
+
+def _test_linking_tables():
+
+    for i in range(1, 15):
+        query = ArtistRelease.query.get(i)
+        print(str(query.artist_id) + " " + str(query.release_id))
+
+
+
+
+def seed_database_prod():
+    _seed_json_artists()
+    _seed_json_releases()
+    db.session.commit()
+    #_test_linking_tables()
 
 def seed_database_dev():
     _seed_csv_videos()

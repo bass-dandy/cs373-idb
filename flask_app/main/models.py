@@ -7,18 +7,21 @@ class Artist(db.Model):
     A Artist is a single person or collection of people that attempt to create music
     """
     __tablename__ = 'artists'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, db.Sequence('artist_id_seq'), primary_key=True)
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
-    # photo = db.Column(db.BLOB)
+    large_image = db.Column(db.String)
+    medium_image = db.Column(db.String)
+    small_image = db.Column(db.String)
+    spotify_url = db.Column(db.String)
     uri = db.Column(db.String)
 
     primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
     primary_label = db.relationship('Label', backref='artists', foreign_keys='Artist.primary_label_id')
 
-    concerts = db.relationship('Concert', secondary='artist_concerts')
-    releases = db.relationship('Release', secondary='artist_releases')
-    awards = db.relationship('Award', secondary='artist_awards')
+    concerts = db.relationship('Concert', backref='artists', secondary='artist_concerts')
+    releases = db.relationship('Release', backref='artists', secondary='artist_releases')
+    awards = db.relationship('Award', backref= 'artists', secondary='artist_awards')
 
 
 class Label(db.Model):
@@ -64,7 +67,7 @@ class ArtistRelease(db.Model):
     Linking table for Artists and their Releases
     """
     __tablename__ = 'artist_releases'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, db.Sequence('artist_release_id_seq'), primary_key=True)
     artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
     release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
 
@@ -75,12 +78,17 @@ class Release(db.Model):
     A release is generally an album of songs put out by an artist or multiple artists
     """
     __tablename__ = 'releases'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, db.Sequence('release_id_seq'), primary_key=True)
     year = db.Column(db.String(128))
     name = db.Column(db.String(128))
     uri = db.Column(db.String)
+    large_image = db.Column(db.String)
+    medium_image = db.Column(db.String)
+    small_image = db.Column(db.String)
+    spotify_url = db.Column(db.String)
+    type = db.Column(db.String)
 
-    songs = db.relationship('Song', secondary='release_songs')
+    songs = db.relationship('Song', backref='releases', secondary='release_songs')
 
 
 class ReleaseSong(db.Model):

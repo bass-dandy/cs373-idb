@@ -11,6 +11,10 @@ def rebuild_database():
     db_utils.recreate_db()
     db_utils.seed_database_dev()
 
+@manager.command
+def rebuild_prod_database():
+    db_utils.recreate_db()
+    db_utils.seed_database_prod()
 
 if __name__ == '__main__':
     manager.run()
