@@ -5,8 +5,10 @@ from flask_app.main.models import Artist
 from flask_app import app
 from flask_app.main.resources.schemas.artist import ArtistSchema
 
+
 class ArtistAllAPI(Resource):
     """All artists in Artist table"""
+
     def get(self):
         """get all artists"""
         try:
