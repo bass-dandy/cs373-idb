@@ -9,6 +9,12 @@ class SongSchema(Schema):
     name = fields.String(required=True)
     lyrics = fields.String(allow_none=True)
     uri = ma.URLFor('.songidapi', id='<id>')
-    audioUrl = fields.String(attribute='audio_url')
+    preview_url = fields.String(attribute='preview_url')
+    disc_number = fields.Integer()
+    track_num = fields.Integer()
+    spotify_url = fields.String()
+    duration = fields.Integer()
+
+    releases = fields.List(fields.Nested('ReleaseSchema', only=['uri']))
 
     video = fields.List(fields.Nested('VideoSchema'))

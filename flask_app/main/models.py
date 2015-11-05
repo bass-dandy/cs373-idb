@@ -145,7 +145,11 @@ class Song(db.Model):
     lyrics = db.Column(db.String)
     name = db.Column(db.String(128))
     uri = db.Column(db.String)
-    audio_url = db.Column(db.String)
+    preview_url = db.Column(db.String)
+    disc_number = db.Column(db.Integer)
+    spotify_url = db.Column(db.String)
+    track_num = db.Column(db.Integer)
+    duration = db.Column(db.Integer)
 
     video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
     video = db.relationship('Video')

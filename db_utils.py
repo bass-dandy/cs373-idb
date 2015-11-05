@@ -151,7 +151,7 @@ def _seed_json_releases():
         release = Release()
         #artist_ids = []
         artist = Artist.query.filter_by(name=releaseJSON['artist_name']).first()
-        print(artist.id)
+        #print(artist.id)
         #setattr(release, 'id', i)
         for key, value in releaseJSON.items():
             if key not in unusedFieldsFilter:
@@ -159,6 +159,20 @@ def _seed_json_releases():
 
         release.artists.append(artist)
         db.session.add(release)
+
+def _seed_json_songs():
+    json_filename = 'data_scraping/songs.json'
+    unusedFieldsFilter = {'artist_name', 'release_name', 'other_artists'}
+    for songJSON in _get_generator_json_objs(json_filename):
+        song = Song()
+        #artist = Artist.query.filter_by(name=songJSON['artist_name']).first()
+        #Do basic querying for now. We know dataset doesn't contain conflicting names
+        release = Release.query.filter_by(name=songJSON['release_name']).first()
+        for key, value in songJSON.items():
+            if key not in unusedFieldsFilter:
+                setattr(song, key, value)
+        song.releases.append(release)
+        db.session.add(song)
 
 def _test_linking_tables():
 
@@ -172,6 +186,7 @@ def _test_linking_tables():
 def seed_database_prod():
     _seed_json_artists()
     _seed_json_releases()
+    _seed_json_songs()
     db.session.commit()
     #_test_linking_tables()
 
