@@ -26,11 +26,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
                 "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
                 "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
                 "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
-                "videos": [
-                    {
-                       "uri": "videos/3"
-                    }
-                ],
                 "label":
                 {
                     "uri":"labels/3"
@@ -87,11 +82,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
                     "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
                     "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
                     "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
-                    "videos": [
-                        {
-                           "uri": "videos/3"
-                        }
-                    ],
                     "label":
                     {
                         "uri":"labels/3"
@@ -133,11 +123,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
                     "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
                     "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
                     "spotify_url": "https://open.spotify.com/artist/7lQKE6HaKQcCsgLRMhsh5W",
-                    "videos": [
-                        {
-                           "uri": "videos/4"
-                        }
-                    ],
                     "label":
                     {
                         "uri":"labels/2"
@@ -190,11 +175,6 @@ Artists are all musicians stored in our database. That includes solo artists or 
                     "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
                     "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
                     "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
-                    "videos": [
-                        {
-                           "uri": "videos/3"
-                        }
-                    ],
                     "label":
                     {
                         "uri":"labels/3"
@@ -261,7 +241,6 @@ Songs are any pieces of music the artist has created.
                     uri: "/releases/1"
                 }
                 ],
-                video: [],
                 name: "Drift",
                 track_num: 1
             }
@@ -295,7 +274,6 @@ Songs are any pieces of music the artist has created.
                         uri: "/releases/1"
                     }
                     ],
-                    video: [],
                     name: "Drift",
                     track_num: 1
                 }
@@ -489,29 +467,5 @@ Any concert the Artist will take part in.
 + Response 200
 [Concert][]
 
-# Group Video
-
-Any video the Artist has taken part in.
-
-## Video [/videos/{videoId}]
-
-+ Model (application/json)
-            + Headers
-              Location: http://downing.club/videos/2
-
-    + Body
-
-            {
-                "id": 4,
-                "name": "Relapse",
-                "year": "2010"
-            }
-
-### Get a Video [GET]
-+ Parameters
-    + videoId (id) - ID of the Video
-
-+ Response 200
-[Video][]
 
 
