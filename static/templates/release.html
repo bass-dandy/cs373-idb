@@ -1,0 +1,42 @@
+<div id="fixed-width-container" ng-controller="releaseController">
+    <a href="{{ release.artist.url }}">
+        <div class="section-head parallax">
+            <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + release.artist.banner + ')'}"></div>
+            <div class="parallax-fg">{{ release.artist.name }}</div>
+        </div>
+    </a>
+    <div class="section">
+        
+        <!-- Release overview -->
+        <div class="overview">
+            <img src="data:image/JPEG;base64,{{ release.image }}">
+            <div>
+                <strong class="subsection text-uppercase">Title</strong>
+                {{ release.name }}
+                <strong class="subsection text-uppercase">Released</strong>
+                {{ release.year }}
+                <strong class="subsection text-uppercase">Label</strong>
+                <a href="{{ release.label.url }}">{{ release.label.name }}</a>
+                <strong class="subsection text-uppercase">Genre</strong>
+                {{ release.genre }}
+            </div>
+        </div>
+
+        <!-- Track list -->
+        <div class="panel margin-top">
+            <table id="track-list" class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th id="track-title">Track</th>
+                    <th class="track-length">Length</th>
+                </tr>
+                <tr ng-repeat="track in release.tracks">
+                    <td>{{ track.number }}</td>
+                    <td>{{ track.name }}</td>
+                    <td class="track-length">{{ track.length }}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
