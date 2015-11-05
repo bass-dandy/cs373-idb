@@ -39,5 +39,3 @@ from flask.ext.app.main.resources.release import ReleaseIDAPI, ReleaseNameAPI
 api.add_resource(ReleaseIDAPI, '/releases/<int:id>')
 api.add_resource(ReleaseNameAPI, '/releases/<string:releaseName>')
 
-from flask.ext.app.main.resources.video import VideoIDAPI
-api.add_resource(VideoIDAPI, '/videos/<id>')

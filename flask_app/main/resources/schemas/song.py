@@ -17,4 +17,4 @@ class SongSchema(Schema):
 
     releases = fields.List(fields.Nested('ReleaseSchema', only=['uri']))
 
-    video = fields.List(fields.Nested('VideoSchema'))
+    #video = fields.List(fields.Nested('VideoSchema'))

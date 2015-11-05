@@ -101,16 +101,16 @@ class ReleaseSong(db.Model):
     song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
 
 
-class Video(db.Model):
-    """
-    Model for Video
-    A video a video version of a song generally a music video by an artist(s)
-    """
-    __tablename__ = 'videos'
-    id = db.Column(db.Integer, primary_key=True)
-    year = db.Column(db.String(128))
-    name = db.Column(db.String(128))
-    uri = db.Column(db.String)
+# class Video(db.Model):
+#     """
+#     Model for Video
+#     A video a video version of a song generally a music video by an artist(s)
+#     """
+#     __tablename__ = 'videos'
+#     id = db.Column(db.Integer, primary_key=True)
+#     year = db.Column(db.String(128))
+#     name = db.Column(db.String(128))
+#     uri = db.Column(db.String)
 
 
 class ArtistAward(db.Model):
@@ -151,6 +151,6 @@ class Song(db.Model):
     track_num = db.Column(db.Integer)
     duration = db.Column(db.Integer)
 
-    video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
-    video = db.relationship('Video')
+    # video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
+    # video = db.relationship('Video')
 
