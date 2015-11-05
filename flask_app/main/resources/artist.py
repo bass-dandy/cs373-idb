@@ -17,3 +17,18 @@ class ArtistIDAPI(Resource):
             abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(id))
 
         return ArtistSchema().dump(artist).data
+
+
+class ArtistNameAPI(Resource):
+    """list of artists using a name"""
+
+    def get(self, artistName):
+        """Get artists with name"""
+        try:
+            print(artistName)
+            actualArtistName = artistName.replace('+', ' ')
+            artists = Artist.query.filter_by(name=actualArtistName)
+        except(DataError, NoResultFound):
+            abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(actualArtistName))
+
+        return ArtistSchema().dump(artists, many=True).data
