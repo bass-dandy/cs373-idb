@@ -13,63 +13,53 @@ Artists are all musicians stored in our database. That includes solo artists or 
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/artists/2
+              Location: http://downing.club/artists/1
 
     + Body
 
             {
-                "id": 2,
-                "name": "Eminem",
-                "bio": "Eminem bio",
-                "photo": Raw photo data,
+                "id": 1,
+                "uri": "/artists/1"
+                "name": "Chon",
+                "bio": "Chon bio",
+                "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
                 "videos": [
                     {
-                        "id": 2,
-                        "name": "Mockingbird",
-                        "year": "1998"
+                       "uri": "videos/3"
                     }
                 ],
-                "label": {
-                    "id": 2,
-                    "name": "Slim Shady Records",
-                    "bio": "Bio goes here"
+                "label":
+                {
+                    "uri":"labels/3"
                 },
                 "awards": [
                     {
-                        "id": 3,
-                        "name": "Album of the Year",
-                        "year": "2012"
+                        "uri": "awards/3"
                     },
                     {
-                        "id": 4,
-                        "name": "Billboard Top 40",
-                        "year": "2008"
+                        "uri": "awards/4"
                     }
                 ],
                 "concerts": [
                     {
-                        "id": 3,
-                        "name": "1989 Tour",
-                        "location": "Austin",
-                        "date": "2015-07-04 13:00:00-00"
+                        "uri":"concerts/3"
                     },
                     {
-                        "id": 4,
-                        "name": "Warp Tour",
-                        "location": "Alton",
-                        "date": "2015-31-04 16:00:00-00"
+                        "uri":"concerts/4"
                     }
                 ],
                 "releases": [
                     {
-                        "id": 3,
-                        "name": "Curtain Call",
-                        "year": "1989"
+                        "uri":"/releases/1"
                     },
                     {
-                        "id": 4,
-                        "name": "Relapse",
-                        "year": "2010"
+                        "uri":"/releases/2"
+                    },
+                    {
+                        "uri":"/releases/3"
                     }
                 ]
             }
@@ -87,133 +77,164 @@ Artists are all musicians stored in our database. That includes solo artists or 
 
     + Body
 
-            {
-                "count": 2,
-                "results": [
+            [
+                {
+                    "id": 1,
+                    "uri": "/artists/1"
+                    "name": "Chon",
+                    "bio": "Chon bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
+                    "videos": [
+                        {
+                           "uri": "videos/3"
+                        }
+                    ],
+                    "label":
                     {
-                        "id": 1,
-                        "name": "Taylor Swift",
-                        "bio": "Taylor Swift bio",
-                        "photo": Raw photo data,
-                        "videos": [
-                            {
-                                "id": 1,
-                                "name": "Too Cool For School",
-                                "year": "1989"
-                            }
-                        ],
-                        "label": {
-                            "id": 1,
-                            "name": "Big Machine Records",
-                            "bio": "Bio goes here"
-                        },
-                        "awards": [
-                            {
-                                "id": 1,
-                                "name": "Album of the Year",
-                                "year": "2015"
-                            },
-                            {
-                                "id": 2,
-                                "name": "Billboard Top 40",
-                                "year": "2006"
-                            }
-                        ],
-                        "concerts": [
-                            {
-                                "id": 1,
-                                "name": "1989 Tour",
-                                "location": "Austin",
-                                "date": "2015-07-04 13:00:00-00"
-                            },
-                            {
-                                "id": 2,
-                                "name": "Warp Tour",
-                                "location": "Alton",
-                                "date": "2015-31-04 16:00:00-00"
-                            }
-                        ],
-                        "releases": [
-                            {
-                                "id": 1,
-                                "name": "Too Cool For School",
-                                "year": "1989"
-                            },
-                            {
-                                "id": 2,
-                                "name": "Just Dance",
-                                "year": "2010"
-                            }
-                        ]
-
-
+                        "uri":"labels/3"
                     },
-                    {
-                        "id": 2,
-                        "name": "Eminem",
-                        "bio": "Eminem bio",
-                        "photo": Raw photo data,
-                        "videos": [
-                            {
-                                "id": 2,
-                                "name": "Mockingbird",
-                                "year": "1998"
-                            }
-                        ],
-                        "label": {
-                            "id": 2,
-                            "name": "Slim Shady Records",
-                            "bio": "Bio goes here"
+                    "awards": [
+                        {
+                            "uri": "awards/3"
                         },
-                        "awards": [
-                            {
-                                "id": 3,
-                                "name": "Album of the Year",
-                                "year": "2012"
-                            },
-                            {
-                                "id": 4,
-                                "name": "Billboard Top 40",
-                                "year": "2008"
-                            }
-                        ],
-                        "concerts": [
-                            {
-                                "id": 3,
-                                "name": "1989 Tour",
-                                "location": "Austin",
-                                "date": "2015-07-04 13:00:00-00"
-                            },
-                            {
-                                "id": 4,
-                                "name": "Warp Tour",
-                                "location": "Alton",
-                                "date": "2015-31-04 16:00:00-00"
-                            }
-                        ],
-                        "releases": [
-                            {
-                                "id": 3,
-                                "name": "Curtain Call",
-                                "year": "1989"
-                            },
-                            {
-                                "id": 4,
-                                "name": "Relapse",
-                                "year": "2010"
-                            }
-                        ]
-
-
-                    }
-                ]
-            }
+                        {
+                            "uri": "awards/4"
+                        }
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/3"
+                        },
+                        {
+                            "uri":"concerts/4"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/1"
+                        },
+                        {
+                            "uri":"/releases/2"
+                        },
+                        {
+                            "uri":"/releases/3"
+                        }
+                    ]
+                }
+                {
+                    "id": 2,
+                    "uri": "/artists/2"
+                    "name": "La Dispute",
+                    "bio": "La Dispute bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/7lQKE6HaKQcCsgLRMhsh5W",
+                    "videos": [
+                        {
+                           "uri": "videos/4"
+                        }
+                    ],
+                    "label":
+                    {
+                        "uri":"labels/2"
+                    },
+                    "awards": [
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/5"
+                        },
+                        {
+                            "uri":"concerts/6"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/4"
+                        },
+                        {
+                            "uri":"/releases/5"
+                        },
+                        {
+                            "uri":"/releases/6"
+                        }
+                    ]
+                }
+            ]
 
 ### List All Artists [GET]
 
 + Response 200
 
     [Artist Collection][]
+
+## Search Artist [/artists/{artistName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/artists/Chon
+
+    + Body
+    
+            [
+                {
+                    "id": 1,
+                    "uri": "/artists/1"
+                    "name": "Chon",
+                    "bio": "Chon bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
+                    "videos": [
+                        {
+                           "uri": "videos/3"
+                        }
+                    ],
+                    "label":
+                    {
+                        "uri":"labels/3"
+                    },
+                    "awards": [
+                        {
+                            "uri": "awards/3"
+                        },
+                        {
+                            "uri": "awards/4"
+                        }
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/3"
+                        },
+                        {
+                            "uri":"concerts/4"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/1"
+                        },
+                        {
+                            "uri":"/releases/2"
+                        },
+                        {
+                            "uri":"/releases/3"
+                        }
+                    ]
+                }
+            ]
+            
+### Search an Artist [GET]
++ Parameters
+    + artistName (string) - Name of the artist being searched for
+
++ Response 200
+    [Search Artist][]
 
 # Group Songs
 
@@ -223,29 +244,71 @@ Songs are any pieces of music the artist has created.
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/songs/2
+              Location: http://downing.club/songs/1
 
     + Body
 
             {
-                "id": 2,
-                "name": "Eminem",
-                "lyrics": "blah blah blah",
-                "uri": "/songs/2",
-                "audioUrl": "www.youtube.com/blahblahblah",
-                "video": {
-                    "id": 1,
-                    "name": "Fack Video",
-                    "year": "2003"
+                uri: "/songs/1",
+                lyrics: "Drift Lyrics",
+                preview_url: "https://p.scdn.co/mp3-preview/dbcb8c0026f2fb3a846921c0510e95208aaa6672",
+                disc_number: 1,
+                duration: 36266,
+                spotify_url: "https://open.spotify.com/track/7tLOWKtpmOizfNb1dRjvDC",
+                id: 1,
+                releases: [
+                {
+                    uri: "/releases/1"
                 }
+                ],
+                video: [],
+                name: "Drift",
+                track_num: 1
             }
 
 ### Get a Song [GET]
 + Parameters
     + songId (id) - ID of the Song
-
+    
 + Response 200
 [Song][]
+
+## Search Song [/songs/{songName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/songs/Drift
+
+    + Body
+
+            [
+                {
+                    uri: "/songs/1",
+                    lyrics: "Drift Lyrics",
+                    preview_url: "https://p.scdn.co/mp3-preview/dbcb8c0026f2fb3a846921c0510e95208aaa6672",
+                    disc_number: 1,
+                    duration: 36266,
+                    spotify_url: "https://open.spotify.com/track/7tLOWKtpmOizfNb1dRjvDC",
+                    id: 1,
+                    releases: [
+                    {
+                        uri: "/releases/1"
+                    }
+                    ],
+                    video: [],
+                    name: "Drift",
+                    track_num: 1
+                }
+            ]
+            
+### Search a Song [GET]
++ Parameters
+    + songName (String) - Name of the desired song
+    
++ Response 200
+[Search Song][]
+
+
 
 # Group Awards
 
@@ -305,14 +368,42 @@ Any release the Artist has released.
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/releases/2
+              Location: http://downing.club/releases/1
 
     + Body
 
             {
-                "id": 4,
-                "name": "Relapse",
-                "year": "2010"
+                medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                type: "album",
+                songs: [
+                {
+                    uri: "/songs/1"
+                },
+                {
+                    uri: "/songs/2"
+                },
+                {
+                    uri: "/songs/3"
+                },
+                {
+                    uri: "/songs/4"
+                },
+                {
+                    uri: "/songs/5"
+                },
+                ],
+                id: 1,
+                year: 2015,
+                uri: "/releases/1",
+                name: "Grow",
+                spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                artists: [
+                {
+                    uri: "/artists/1"
+                }
+                ]
             }
 
 ### Get a Release [GET]
@@ -321,6 +412,57 @@ Any release the Artist has released.
 
 + Response 200
 [Release][]
+
+## Search Release [/releases/{releaseName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/releases/Grow
+
+    + Body
+    
+            [
+                {
+                    medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    type: "album",
+                    songs: [
+                    {
+                        uri: "/songs/1"
+                    },
+                    {
+                        uri: "/songs/2"
+                    },
+                    {
+                        uri: "/songs/3"
+                    },
+                    {
+                        uri: "/songs/4"
+                    },
+                    {
+                        uri: "/songs/5"
+                    },
+                    ],
+                    id: 1,
+                    year: 2015,
+                    uri: "/releases/1",
+                    name: "Grow",
+                    spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                    artists: [
+                    {
+                        uri: "/artists/1"
+                    }
+                    ]
+                }
+            ]
+
+### Search a Release [GET]
++ Parameters
+    + releaseName (String) - Name of the Release
+
++ Response 200
+[Search Release][]
 
 # Group Concert
 
@@ -371,3 +513,5 @@ Any video the Artist has taken part in.
 
 + Response 200
 [Video][]
+
+
