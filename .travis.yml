@@ -18,6 +18,7 @@ before_script:
     - pip3 list
 
 script:
+    - nosetests tests/
     - date
     - ls -lah
 
