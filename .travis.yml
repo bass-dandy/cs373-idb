@@ -18,9 +18,7 @@ before_script:
     - pip3 list
 
 script:
-    - ls
-    - echo $PATH
-    - export CONFIG_PATH='${PATH}:/cs373-idb/config/py
+    - export CONFIG_PATH=config/py
     - nosetests tests/
     - date
     - ls -lah
