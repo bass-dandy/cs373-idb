@@ -3,7 +3,7 @@ import json
 import os
 from sqlalchemy.exc import SQLAlchemyError
 from flask_app import db
-from flask_app.main.models import Artist, Award, Concert, Label, Release, Song, Video, ArtistRelease
+from flask_app.main.models import Artist, Award, Concert, Label, Release, Song, ArtistRelease
 
 
 def recreate_db():
@@ -112,14 +112,14 @@ def _seed_csv_songs():
         db.session.add(songs)
 
 
-def _seed_csv_videos():
-    csv_filename = 'seed_data/videos.csv'
-    dicts = _map_csv_to_list_of_dicts(csv_filename)
-
-    for videos_dict in dicts:
-        videos = Video()
-        _map_dict_to_object(videos_dict, videos)
-        db.session.add(videos)
+# def _seed_csv_videos():
+#     csv_filename = 'seed_data/videos.csv'
+#     dicts = _map_csv_to_list_of_dicts(csv_filename)
+#
+#     for videos_dict in dicts:
+#         videos = Video()
+#         _map_dict_to_object(videos_dict, videos)
+#         db.session.add(videos)
 
 def _get_generator_json_objs(filename):
     current_path = os.path.dirname(__file__)
@@ -191,7 +191,7 @@ def seed_database_prod():
     #_test_linking_tables()
 
 def seed_database_dev():
-    _seed_csv_videos()
+    #_seed_csv_videos()
     _seed_csv_songs()
     _seed_csv_releases()
     _seed_csv_labels()
