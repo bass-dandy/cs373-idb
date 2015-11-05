@@ -18,7 +18,7 @@ before_script:
     - pip3 list
 
 script:
-    - export CONFIG_PATH=config/py
+    - export CONFIG_PATH=/home/travis/build/naughtyfiddle/cs373-idb/config.py
     - nosetests tests/
     - date
     - ls -lah
