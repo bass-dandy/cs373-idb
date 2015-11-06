@@ -135,7 +135,6 @@ def _seed_json_artists():
     #i = 1
     for artistJSON in _get_generator_json_objs(json_filename):
         artist = Artist()
-        print(artist.id)
         for key, value in artistJSON.items():
             setattr(artist, key, value)
         #setattr(artist, 'id', i)
@@ -174,6 +173,18 @@ def _seed_json_songs():
         song.releases.append(release)
         db.session.add(song)
 
+def _seed_json_labels():
+    json_filename = 'data_scraping/labels.json'
+    unusedFieldsFilter = {'artists'}
+    for labelJSON in _get_generator_json_objs(json_filename):
+        label = Label()
+        for artistName in labelJSON['artists']:
+            artist = Artist.query.filter_by(name=artistName).first()
+            label.artists.append(artist)
+        for key, value in labelJSON.items():
+            if key not in unusedFieldsFilter:
+                setattr(label, key, value)
+        db.session.add(label)
 def _test_linking_tables():
 
     for i in range(1, 15):
@@ -187,6 +198,7 @@ def seed_database_prod():
     _seed_json_artists()
     _seed_json_releases()
     _seed_json_songs()
+    _seed_json_labels()
     db.session.commit()
     #_test_linking_tables()
 
