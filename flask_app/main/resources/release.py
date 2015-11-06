@@ -5,6 +5,17 @@ from flask_app.main.models import Release
 from flask_app import app
 from flask_app.main.resources.schemas.release import ReleaseSchema
 
+class ReleaseAllAPI(Resource):
+    """All releases in Release table"""
+
+    def get(self):
+        """get all releases"""
+        try:
+            releases = Release.query.all()
+        except (DataError, NoResultFound):
+            abort(app.config['NOT_FOUND'], message=app.config['RELEASE_NOT_FOUND'].format(id))
+
+        return ReleaseSchema().dump(releases, many=True).data
 
 class ReleaseIDAPI(Resource):
     """Single release through id"""
