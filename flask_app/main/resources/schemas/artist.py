@@ -17,7 +17,7 @@ class ArtistSchema(Schema):
     spotify_url = fields.String()
     uri = ma.URLFor('.artistidapi', id='<id>')
 
-    primaryLabel = fields.Nested(LabelSchema, attribute='primary_label')
+    primaryLabel = fields.Nested(LabelSchema, attribute='primary_label', only=['uri'])
 
     awards = fields.List(fields.Nested(AwardSchema, only=['uri']))
     concerts = fields.List(fields.Nested(ConcertSchema, only=['uri']))

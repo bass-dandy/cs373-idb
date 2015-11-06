@@ -8,7 +8,7 @@ class LabelSchema(Schema):
     id = fields.Integer()
     name = fields.String(required=True)
     bio = fields.String(allow_none=True)
-    photo = fields.Raw()
+    photo = fields.String()
     uri = ma.URLFor('.labelidapi', id='<id>')
 
-    # artists = fields.Nested('ArtistSchema', only=['uri'])
+    artists = fields.List(fields.Nested('ArtistSchema', only=['uri']))
