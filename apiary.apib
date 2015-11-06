@@ -321,14 +321,21 @@ Any label the Artist has been part of.
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/labels/2
+              Location: http://downing.club/labels/1
 
     + Body
 
             {
-                "id": 2,
-                "name": "Slim Shady Records",
-                "bio": "Bio goes here"
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                photo: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
             }
 
 ### Get a Label [GET]
@@ -337,6 +344,36 @@ Any label the Artist has been part of.
 
 + Response 200
 [Label][]
+
+## Search Label [/labels/{labelName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/Rise+Records
+
+    + Body
+    
+            [
+            {
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                photo: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
+            }
+            ]
+            
+### Search for a Label [GET]
++Parameters
+    + labelName (String) - Name of the label
+    
++ Response 200
+[Search Label][]
 
 # Group Releases
 

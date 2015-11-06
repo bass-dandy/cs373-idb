@@ -32,8 +32,9 @@ api.add_resource(AwardIDAPI, '/awards/<id>')
 from flask.ext.app.main.resources.concert import ConcertIDAPI
 api.add_resource(ConcertIDAPI, '/concerts/<id>')
 
-from flask.ext.app.main.resources.label import LabelIDAPI
-api.add_resource(LabelIDAPI, '/labels/<id>')
+from flask.ext.app.main.resources.label import LabelIDAPI, LabelNameAPI
+api.add_resource(LabelIDAPI, '/labels/<int:id>')
+api.add_resource(LabelNameAPI, '/labels/<string:labelName>')
 
 from flask.ext.app.main.resources.release import ReleaseIDAPI, ReleaseNameAPI
 api.add_resource(ReleaseIDAPI, '/releases/<int:id>')

@@ -39,7 +39,7 @@ class ArtistNameAPI(Resource):
     def get(self, artistName):
         """Get artists with name"""
         try:
-            print(artistName)
+            #print(artistName)
             actualArtistName = artistName.replace('+', ' ')
             artists = Artist.query.filter_by(name=actualArtistName)
         except(DataError, NoResultFound):
