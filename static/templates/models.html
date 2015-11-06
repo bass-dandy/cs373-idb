@@ -1,12 +1,12 @@
 <div id="fixed-width-container" class="padded">
     <h1>Showing all {{ modelType }}</h1>
     <div>Sort: <a href="">A-Z</a> | <a href="">Z-A</a></div>
-    <a href="">
+    <a href="" ng-repeat="model in models">
         <div class="models-item">
             <div class="models-preview">
-                <div class="models-name">Artist name</div>
+                <div class="models-name">{{ model.name }}</div>
                 <div class="models-filter"></div>
-                <img class="models-image" src="../images/placeholder.png"/>
+                <img class="models-image" src="{{ model.small_image }}"/>
             </div>
         </div>
     </a>

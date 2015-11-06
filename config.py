@@ -1,5 +1,5 @@
 ### BASE URL ###
-BASE_URL = 'http://0.0.0.0:8000'
+BASE_URL = 'http://downing.club'
 
 ### HTML STATUS CODES ###
 OK = 200
