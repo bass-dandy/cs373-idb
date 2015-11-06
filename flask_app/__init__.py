@@ -13,8 +13,8 @@ ma = Marshmallow(app)
 api = Api(app)
 
 # routes go here
-from flask.ext.app.main.resources.hello_world import HelloWorldAPI
-api.add_resource(HelloWorldAPI, '/')
+#from flask.ext.app.main.resources.hello_world import HelloWorldAPI
+#api.add_resource(HelloWorldAPI, '/')
 
 from flask.ext.app.main.resources.artist import ArtistIDAPI, ArtistNameAPI, ArtistAllAPI
 api.add_resource(ArtistIDAPI, '/api/artists/<int:id>')
