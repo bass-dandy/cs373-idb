@@ -17,3 +17,18 @@ class LabelIDAPI(Resource):
             abort(app.config['NOT_FOUND'], message=app.config['LABEL_NOT_FOUND'].format(id))
 
         return LabelSchema().dump(label).data
+
+class LabelNameAPI(Resource):
+    """List of labels with similar"""
+
+    def get(self, labelName):
+        """get label by name"""
+        try:
+            actualLabelName = labelName.replace("+", " ")
+            #print(actualLabelName)
+            labels = Label.query.filter_by(name=actualLabelName)
+            #print(labels)
+        except(DataError, NoResultFound):
+            abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(actualArtistName))
+
+        return LabelSchema().dump(labels, many=True).data

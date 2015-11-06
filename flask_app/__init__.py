@@ -16,11 +16,15 @@ api = Api(app)
 from flask.ext.app.main.resources.hello_world import HelloWorldAPI
 api.add_resource(HelloWorldAPI, '/')
 
-from flask.ext.app.main.resources.artist import ArtistIDAPI
-api.add_resource(ArtistIDAPI, '/artists/<id>')
+from flask.ext.app.main.resources.artist import ArtistIDAPI, ArtistNameAPI, ArtistAllAPI
+api.add_resource(ArtistIDAPI, '/artists/<int:id>')
+api.add_resource(ArtistNameAPI, '/artists/<string:artistName>')
+api.add_resource(ArtistAllAPI, '/artists/')
 
-from flask.ext.app.main.resources.song import SongIDAPI
-api.add_resource(SongIDAPI, '/songs/<id>')
+from flask.ext.app.main.resources.song import SongIDAPI, SongNameAPI
+api.add_resource(SongIDAPI, '/songs/<int:id>')
+api.add_resource(SongNameAPI,'/songs/<string:songName>')
+
 
 from flask.ext.app.main.resources.award import AwardIDAPI
 api.add_resource(AwardIDAPI, '/awards/<id>')
@@ -28,11 +32,11 @@ api.add_resource(AwardIDAPI, '/awards/<id>')
 from flask.ext.app.main.resources.concert import ConcertIDAPI
 api.add_resource(ConcertIDAPI, '/concerts/<id>')
 
-from flask.ext.app.main.resources.label import LabelIDAPI
-api.add_resource(LabelIDAPI, '/labels/<id>')
+from flask.ext.app.main.resources.label import LabelIDAPI, LabelNameAPI
+api.add_resource(LabelIDAPI, '/labels/<int:id>')
+api.add_resource(LabelNameAPI, '/labels/<string:labelName>')
 
-from flask.ext.app.main.resources.release import ReleaseIDAPI
-api.add_resource(ReleaseIDAPI, '/releases/<id>')
+from flask.ext.app.main.resources.release import ReleaseIDAPI, ReleaseNameAPI
+api.add_resource(ReleaseIDAPI, '/releases/<int:id>')
+api.add_resource(ReleaseNameAPI, '/releases/<string:releaseName>')
 
-from flask.ext.app.main.resources.video import VideoIDAPI
-api.add_resource(VideoIDAPI, '/videos/<id>')
