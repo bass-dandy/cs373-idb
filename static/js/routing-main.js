@@ -2,16 +2,37 @@ var app = angular.module('meccaApp', ['ngRoute', 'ngAnimate']);
 
 app.controller('mainController', function($scope) {});
 
-app.controller('artistsController', function($scope) {
+app.controller('artistsController', function($scope, $http) {
     $scope.modelType = 'artists'; 
+    $http.get("http://downing.club:8000/artists")
+        .then(function(response) {
+            $scope.models = response.data;
+            console.log(response.data);
+        }, function() {
+            console.log("Failed to retrieve artists");
+        });
 });
 
-app.controller('labelsController', function($scope) {
+app.controller('labelsController', function($scope, $http) {
     $scope.modelType = 'labels'; 
+    $http.get("http://downing.club:8000/labels")
+        .then(function(response) {
+            $scope.models = response.data;
+            console.log(response.data);
+        }, function() {
+            console.log("Failed to retrieve labels");
+        });
 });
 
-app.controller('releasesController', function($scope) {
+app.controller('releasesController', function($scope, $http) {
     $scope.modelType = 'releases'; 
+    $http.get("http://downing.club:8000/releases")
+        .then(function(response) {
+            $scope.models = response.data;
+            console.log(response.data);
+        }, function() {
+            console.log("Failed to retrieve releases");
+        });
 });
 
 app.config(function($routeProvider, $locationProvider) {
