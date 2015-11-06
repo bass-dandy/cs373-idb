@@ -1,18 +1,18 @@
 <div id="fixed-width-container" ng-controller="artistController">
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
-        <div class="parallax-fg">{{ artist.name }}</div>
+        <img class="parallax-bg" data-speed="0.2" src="data:image/JPEG;base64,{{ ::artist.banner }}"/>
+        <div class="parallax-fg">{{ ::artist.name }}</div>
     </div>
     <div class="section">
         
         <!-- Artist Info -->
         <div class="overview">
-            <img ng-src="data:image/JPEG;base64,{{ artist.image }}">
+            <img ng-src="data:image/JPEG;base64,{{ ::artist.image }}">
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
-                <a href="{{ artist.label.url }}">{{ artist.label.name }}</a>
+                <a href="{{ ::artist.label.url }}">{{ ::artist.label.name }}</a>
                 <strong class="subsection text-uppercase">Genre</strong>
-                {{ artist.genre }}
+                {{ ::artist.genre }}
             </div>
         </div>
 
@@ -28,11 +28,11 @@
 
             <!-- Selector content -->
             <div class="padded text-center">
-                <a href="{{ release.url }}" ng-repeat="release in artist.releases">
+                <a href="{{ ::release.url }}" ng-repeat="release in artist.releases">
                     <div class="artist_release">
-                        <img src="data:image/JPEG;base64,{{ release.image }}">
-                        <i>{{ release.name }}</i>
-                        {{ release.year }}
+                        <img src="data:image/JPEG;base64,{{ ::release.image }}">
+                        <i>{{ ::release.name }}</i>
+                        {{ ::release.year }}
                     </div>
                 </a>
             </div>
@@ -40,25 +40,25 @@
     </div>
 
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
+        <img class="parallax-bg" data-speed="0.2" src="data:image/JPEG;base64,{{ ::artist.banner }}"/>
         <div class="parallax-fg">Upcoming Concerts</div>
     </div>
     <div class="section">
         <div class="panel">
             <div class="event" ng-repeat="event in artist.events">
                 <div class="calendar">
-                    <div>{{ event.date.month }}</div>
-                    {{ event.date.day }}
+                    <div>{{ ::event.date.month }}</div>
+                    {{ ::event.date.day }}
                 </div>
                 <div class="event_info">
-                    <b>{{ event.name }}</b><br>
-                    {{ event.location }}
+                    <b>{{ ::event.name }}</b><br>
+                    {{ ::event.location }}
                 </div>
             </div>
         </div>
     </div>
     <div class="section-head parallax">
-        <div class="parallax-bg" data-speed="0.2" ng-style="{'background-image':'url(data:image/JPEG;base64,' + artist.banner + ')'}"></div>
+        <img class="parallax-bg" data-speed="0.2" src="data:image/JPEG;base64,{{ ::artist.banner }}"/>
         <div class="parallax-fg">Discussion</div>
     </div>
     <div class="section">
