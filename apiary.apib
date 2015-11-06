@@ -345,7 +345,7 @@ Any label the Artist has been part of.
 + Response 200
 [Label][]
 
-## Search Label [/labels/{labelName}]
+## Search Label [/api/labels/{labelName}]
 
 + Model (application/json)
             + Headers
@@ -375,15 +375,46 @@ Any label the Artist has been part of.
 + Response 200
 [Search Label][]
 
+## Label Collection [/api/labels/]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/
+
+    + Body
+
+            [
+            {
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                photo: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
+            }
+            ]
+
+### Get all Labels [GET]
+
++ Response 200
+[Label Collection][]
+
+
+
+
 # Group Releases
 
 Any release the Artist has released.
 
-## Release [/releases/{releaseId}]
+## Release [/api/releases/{releaseId}]
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/releases/1
+              Location: http://downing.club/api/releases/1
 
     + Body
 
@@ -428,11 +459,11 @@ Any release the Artist has released.
 + Response 200
 [Release][]
 
-## Search Release [/releases/{releaseName}]
+## Search Release [/api/releases/{releaseName}]
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/releases/Grow
+              Location: http://downing.club/api/releases/Grow
 
     + Body
     
@@ -479,15 +510,66 @@ Any release the Artist has released.
 + Response 200
 [Search Release][]
 
+## Release Collection [/api/releases/]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/api/releases/
+
+    + Body
+
+            [
+                {
+                    medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    type: "album",
+                    songs: [
+                    {
+                        uri: "/songs/1"
+                    },
+                    {
+                        uri: "/songs/2"
+                    },
+                    {
+                        uri: "/songs/3"
+                    },
+                    {
+                        uri: "/songs/4"
+                    },
+                    {
+                        uri: "/songs/5"
+                    },
+                    ],
+                    id: 1,
+                    year: 2015,
+                    uri: "/releases/1",
+                    name: "Grow",
+                    spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                    artists: [
+                    {
+                        uri: "/artists/1"
+                    }
+                    ]
+                }
+            ]
+
+### Get all releases [GET]
+
++ Response 200
+[Release Collection][]
+
+
+
 # Group Concert
 
 Any concert the Artist will take part in.
 
-## Concert [/concerts/{concertId}]
+## Concert [/api/concerts/{concertId}]
 
 + Model (application/json)
             + Headers
-              Location: http://downing.club/concerts/2
+              Location: http://downing.club/api/concerts/2
 
     + Body
 
