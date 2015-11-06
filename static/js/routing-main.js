@@ -1,7 +1,17 @@
 var app = angular.module('meccaApp', ['ngRoute', 'ngAnimate']);
 
-app.controller('mainController', function($scope) {
-    
+app.controller('mainController', function($scope) {});
+
+app.controller('artistsController', function($scope) {
+    $scope.modelType = 'artists'; 
+});
+
+app.controller('labelsController', function($scope) {
+    $scope.modelType = 'labels'; 
+});
+
+app.controller('releasesController', function($scope) {
+    $scope.modelType = 'releases'; 
 });
 
 app.config(function($routeProvider, $locationProvider) {
@@ -17,9 +27,19 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'mainController'
         })
 
-        .when('/models', {
+        .when('/artists', {
             templateUrl : 'templates/models.html',
-            controller  : 'mainController'
+            controller  : 'artistsController'
+        })
+
+        .when('/labels', {
+            templateUrl : 'templates/models.html',
+            controller  : 'labelsController'
+        })
+
+        .when('/releases', {
+            templateUrl : 'templates/models.html',
+            controller  : 'releasesController'
         })
 
         .when('/label/:id', {
