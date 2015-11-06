@@ -39,4 +39,3 @@ api.add_resource(LabelNameAPI, '/labels/<string:labelName>')
 from flask.ext.app.main.resources.release import ReleaseIDAPI, ReleaseNameAPI
 api.add_resource(ReleaseIDAPI, '/releases/<int:id>')
 api.add_resource(ReleaseNameAPI, '/releases/<string:releaseName>')
-
