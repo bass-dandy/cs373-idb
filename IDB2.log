@@ -1,0 +1,1476 @@
+commit 2c3f69f57215c868a5a1a1a4b803176253cd2459
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:44:59 2015 -0600
+
+    Copied models.py into root directory
+
+commit 8232363336a2a94a91ae03c86a3d46c46c0b8c0a
+Merge: f6d8789 d5852bf
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Fri Nov 6 12:29:18 2015 -0600
+
+    Merge pull request #59 from naughtyfiddle/Tests
+    
+    Tests
+
+commit d5852bf6689f9e4e2aa53737195fbade4af5dca5
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:27:48 2015 -0600
+
+    Fixed issue with sql script
+
+commit 23841e312b64faa60922cf870512092894dc1929
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:25:08 2015 -0600
+
+    Fixed Apiary to reflect changes to API
+
+commit 931e095cd3151ee1ccd9ca33938e76c530a1b121
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:16:53 2015 -0600
+
+    Added API call to get all the releases
+
+commit aca6f38c05722f3051318f22dc3ee1ba4bae4c7d
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:14:55 2015 -0600
+
+    Appended /api/ path for all api calls
+
+commit b561ca0033bff7e0d1eae41112e1370f198edcce
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Fri Nov 6 12:10:30 2015 -0600
+
+    Test API call up and running
+
+commit 195c35f1bdb8c20e8808f08fd5bda897d2192660
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 21:28:17 2015 -0600
+
+    Working on Test button
+
+commit f6d8789f79399ec02c298d22eca672536b47ff18
+Merge: 7267692 bbb2f65
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Nov 5 20:35:41 2015 -0600
+
+    Merge pull request #58 from naughtyfiddle/DataScrape
+    
+    Data scrape
+
+commit 726769295b2ae365b30f3163bd4932cd5961d060
+Merge: d172d26 71dabf9
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 20:24:42 2015 -0600
+
+    Merge pull request #57 from naughtyfiddle/chris-aesthetics
+    
+    Chris aesthetics
+
+commit 71dabf986f34804eedae4806858b0459ee786951
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 20:21:19 2015 -0600
+
+    Make models page much prettier, separate model types into separate pages
+
+commit 7443e7bb638c64daa68783ab26501565bc043736
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 20:20:31 2015 -0600
+
+    Make splash prettier, make it load fasster
+
+commit d172d264d4aeb9ff6f09833d9a65088efef29100
+Merge: 93feb77 b17ec34
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 19:51:41 2015 -0600
+
+    Merge pull request #54 from naughtyfiddle/chris-jank
+    
+    Aggressively apply a number of optimization strategies to fix paralla…
+
+commit bbb2f6586f96a8da8bb9fca0e0f01c083f86024b
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 19:50:57 2015 -0600
+
+    Rise Records pic
+
+commit 28f284452ea15987156f1a90ad4159d6e0fe7657
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 19:46:34 2015 -0600
+
+    Add API call for label by Name
+
+commit 1e5fe99e46173134a3bb4b324ab74c643d7da1d8
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 19:27:42 2015 -0600
+
+    Added Scraped Labels to DB
+
+commit 2accea63f868c3b8cc3a61bc830ebd9d0d2caf2d
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 18:34:10 2015 -0600
+
+    Modifed Label Model and Schema and artist Schema to reflect changes in Label Schema
+
+commit 19c10a8645b6e1d3a7e0f11842d59b43d1311586
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:58:14 2015 -0600
+
+    Updated UML to reflect changes of removal of Videos #3
+
+commit 9200aaacf81cda8c1ff8f69711e8b318095da59a
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:47:12 2015 -0600
+
+    Removed Videos from Apiary Doc
+
+commit d2d964e03ad2c12d698ac9e9878ced0cb8287a15
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:42:41 2015 -0600
+
+    Still removing Vieos
+
+commit d90532ca8304332781bb3030842c4de8590f41f8
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:41:23 2015 -0600
+
+    REMOVED Videos from Model
+
+commit 7a7a4aefc9a8aaf792be56eaf7d9c7b6fc46250e
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:35:37 2015 -0600
+
+    Added API call to get all artists in db
+
+commit 3e610dcc9826267c9c13d35d2fab4a8228887a0c
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 17:34:57 2015 -0600
+
+    Updated apiary to reflect changes to reponses
+
+commit c3f3b59cba1793549658358d0601e82f43e8cdff
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 16:56:44 2015 -0600
+
+    Artist API Call that gets all artists #56
+
+commit 9a4d3d07183f2c0505fdf9fe3cbec53de39e31b6
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 16:24:03 2015 -0600
+
+    Getting releases by name API call added #56
+
+commit 18268e0faf07bd37ee622bf9e2cc770f2a49fe35
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 16:02:43 2015 -0600
+
+    Fixed song get name api call to return lists and to handel spaces #50
+
+commit 29d6685cedd35e37bb00d9154f2bb1ec10c57b7f
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 16:01:46 2015 -0600
+
+    Added name get API call for artists #55
+
+commit ff46f83ae8f78c707a8ee1c6dcf2f323a8e7edd5
+Merge: b68c21b d9b4cb6
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 15:43:02 2015 -0600
+
+    Merge branch 'NameApi' into DataScrape
+
+commit 95996d3db31c8ff1be372ee5115f9f5d972451a9
+Merge: b17ec34 7f3f88a
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 12:40:37 2015 -0600
+
+    Merge branch 'dev' into chris-jank
+    
+    Conflicts:
+    	static/images/splash.jpg
+
+commit 7f3f88ac6e0fcb71e1df783a153e82c4360315e3
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 12:39:45 2015 -0600
+
+    Replace video bg with parallax images
+
+commit b68c21bb3cce86e6c0afc1c84b101564389ae4b3
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 01:57:49 2015 -0600
+
+    I lied. Songs our now in db (very naive way of adding them just by doing to release name but okay for now) #3
+
+commit b17ec346abb7fda94569da58d32a919d20ef9166
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Nov 5 01:45:39 2015 -0600
+
+    Aggressively apply a number of optimization strategies to fix parallax jank. Fixes #52
+
+commit 3ecb063c3870f7505231270c131755dbf816aea5
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Nov 5 01:41:29 2015 -0600
+
+    Added Database populating for Artists and releases, needed to updated models for scraped data, and added command for building prod db #3
+
+commit 93feb77694a78c7dcba31b05be6f5bf3dfce5290
+Merge: 1e48d75 157eeb5
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:55:27 2015 -0600
+
+    Merge pull request #53 from naughtyfiddle/issue48
+    
+    added nosetests command to travis script
+
+commit 157eeb5dc7e13cabeb4577c99bbf85f5db447560
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:52:13 2015 -0600
+
+    Is postgres installed??
+
+commit c4e08ecbecdd04dab1979b04447fb0f9218e8dc2
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:51:42 2015 -0600
+
+    This should work but who knows
+
+commit 0e931e7e35c1d4f7208c5ad972752f882de120e7
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:45:28 2015 -0600
+
+    This should work but who knows
+
+commit 853447770936a0c66a6d1c1864c8e17bbbd95d3e
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:43:47 2015 -0600
+
+    adding CONFIG_PATH as an env var
+
+commit 9c96f42ed2d4293e51f3314daa93b2ac1d20dc02
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:41:22 2015 -0600
+
+    adding CONFIG_PATH as an env var
+
+commit 04b513083bbb7698686189ce9527ea897791f0b5
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:24:38 2015 -0600
+
+    added nosetests command to travis script
+
+commit 1e48d7538d553049110c62ce62f836214b62bb36
+Merge: df319fc 0d45bd2
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Thu Nov 5 00:09:43 2015 -0600
+
+    Merge pull request #51 from naughtyfiddle/chris-spa
+    
+    Chris spa
+
+commit 16f4df5fcc05028331e85f4c0946b19e929c0c40
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Wed Nov 4 01:25:04 2015 -0600
+
+    Added duration field in song data #3
+
+commit 4a3c17e1cb156e4b99c668f68ea12bb76850d63d
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Tue Nov 3 23:58:20 2015 -0600
+
+    Commented out unfinished JamBase (concert info) and file writing #3
+
+commit 5dc88d30402666ea4b1909ceda6acf72881550da
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Tue Nov 3 23:45:06 2015 -0600
+
+    Added current partial scraped data #3
+
+commit 0d45bd2f15604856dd9f4476b31e7cf7d6d089af
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Nov 2 16:13:07 2015 -0600
+
+    Finalize angular page population (for now)
+
+commit d9b4cb618ffda992c57f28ff94f16af937bdf16f
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Mon Nov 2 13:45:57 2015 -0600
+
+    Working on adding api endpoints for names #50
+
+commit 8aa22153a49d5a0640c883d152552926eacfcecb
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Nov 1 19:05:27 2015 -0600
+
+    Remove all redundant markup and temporary images, fill all pages using json objects, make page transitions pretty, fully implement SPA behavior
+
+commit 1027d8f9d67a5508e0fddeb30cb24eee5a8bdedb
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sat Oct 31 11:53:30 2015 -0500
+
+    Begin implementing SPA with angular, move navbar to its own file.
+
+commit df319fc4effedb805bee85f1d8dac0a91066746c
+Merge: 1f4e17f 1a00b86
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Fri Oct 30 12:50:20 2015 -0500
+
+    Merge pull request #47 from naughtyfiddle/chris-splash
+    
+    Chris splash
+
+commit 1a00b86528ad1244ebf502ca99f3ce58957954c9
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 30 12:37:37 2015 -0500
+
+    Make splash page prettier, move attribution links from about page to splash page
+
+commit b04e94b899487f70d537e03535801be6ebf93415
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 30 12:35:32 2015 -0500
+
+    Use data-speed attribute for all .parallax-bg elements
+
+commit a2a5fdd3c0150ba42dd2eec88c90b330b6309700
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 30 12:34:21 2015 -0500
+
+    Make parallax speed adjustable from within markup
+
+commit 1f4e17f926e662d004642d7f2449eb8cbde7779e
+Merge: f2b1c4e 6732a49
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Fri Oct 30 12:11:23 2015 -0500
+
+    Merge pull request #44 from naughtyfiddle/chris-responsive
+    
+    Chris responsive
+
+commit ebf09c2b3776992b19f8e03a16d1251474ed0a53
+Merge: f2b1c4e 6732a49
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 27 13:59:19 2015 -0500
+
+    Merge branch 'chris-responsive' into chris-splash
+
+commit 6732a49d834f40402d2dc1cf609566dba2069d5b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 26 14:11:01 2015 -0500
+
+    Implement parallax scrolling for section headings
+
+commit f2b1c4e4762c0984f33c9c6d7608283b89e4fda8
+Merge: 7674aec 32e9b05
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 26 12:02:43 2015 -0500
+
+    Merge pull request #43 from naughtyfiddle/issue29
+    
+    Issue29
+
+commit 32e9b057a96f7f85667c33a81f02e50d3d188bff
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sun Oct 25 22:49:24 2015 -0500
+
+    routes work 100%
+
+commit af5a09c8934dcf2643dddea12870aefa2157b2ec
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 19:06:10 2015 +0000
+
+    Improve logo animation, speed it up a bit
+
+commit e06a4455794681f053ed9eba6d7762c2609c8629
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 19:05:44 2015 +0000
+
+    Remove #main style
+
+commit 7acd977d272f9a0c96da6e11f106ef77e4db7a91
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 19:04:29 2015 +0000
+
+    Stop using #main container
+
+commit b771f3567d1f5374dbdc83ae31f90a6b692c0c55
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 12:09:38 2015 -0500
+
+    Use condensed font for section headings, looks better and lowers probability of overflow
+
+commit a327ddd682bd172c41ce8246be6b498d0d31c8b1
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 16:11:48 2015 +0000
+
+    Decrease navbar height, improve page shrink animation
+
+commit dc49ebb084cf5d17a8ee8ca7023a9d6fc8d89304
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 01:16:30 2015 +0000
+
+    Animate navbar text hiding
+
+commit 9260446f600fc942cbc3c4f73dbb768895394ecb
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 20:10:47 2015 -0500
+
+    typo fix
+
+commit 1cf1e3bef894bf86552804be2353feb996bf8438
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 20:08:37 2015 -0500
+
+    fixed apiary
+
+commit 3b6de849ddae1cff66908fe279fe711717226c02
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 19:43:06 2015 -0500
+
+    fixed models, seeding data, and added id routes for all of our models
+
+commit 99c08328d0352a4201e30f8bae65b2444698d14a
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 19:42:26 2015 -0500
+
+    added base url
+
+commit 8766839882bc7caca37b71cd56dbde6c161ece58
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 19:41:07 2015 -0500
+
+    fixed schemas
+
+commit 1a353c449f454a1155c2d6be567c255aec0d56f2
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 19:40:47 2015 -0500
+
+    tests that do stuff and pass!
+
+commit 3ac1c21c1d65cc668ab59208d07f0d64483c04a5
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 25 00:30:19 2015 +0000
+
+    Remove #main styling rules, move said rules to body. Fixes #39
+
+commit 7de2f3103bec816c241adb0195d30a2397ebfbc9
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 17:40:48 2015 -0500
+
+    successful db_rebuild
+
+commit b37eb7af3bc1ded6b64a9e2c122a75cb632c31c4
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 17:10:45 2015 -0500
+
+    everything is broken but it looks nice
+
+commit c48241217ce5a315eee95e38bef6476909789905
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:43:29 2015 -0500
+
+    fixing typos
+
+commit 7f5db61edd9437fadf3f917c0b6b3a5c8718b341
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:43:14 2015 -0500
+
+    constants file
+
+commit 6f9f374ee11ad0fb32bfd0db7c9de47fc7042db3
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:37:35 2015 -0500
+
+    added test info
+
+commit 8c585f7a3e847640b750c0f7757c636d049154df
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:29:36 2015 -0500
+
+    seed db_utils done
+
+commit fef9b65d8cc1bc49a74e7bfc44034852eb11fa72
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:26:16 2015 -0500
+
+    simple data feed
+
+commit b4b5e325f71587cddd7095646fba1ff10f65583a
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 16:01:54 2015 -0500
+
+    fixed the schemas to match the models
+
+commit ba3c456e47ad654c1d177dbe8c61e4f19fb94386
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 15:31:50 2015 -0500
+
+    Pythonic db
+
+commit 5536cf0ab553a7c5a3088c1ffc9a456bcfe75f06
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sat Oct 24 20:21:00 2015 +0000
+
+    Hide 'Music Mecca' text portion of logo on mobile
+
+commit 97ccd2afc339d31d82770880b21189114d067c6b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sat Oct 24 19:10:56 2015 +0000
+
+    Change main container format for mobile screens, make other page elements more responsive
+
+commit 6c5392fbdcf019fc90c4f590a7155c563a70b52d
+Merge: f9443eb 7674aec
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 13:14:51 2015 -0500
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/music-mecca into issue29
+
+commit f9443eb7ec425fcd7c2b5e881b637ab5f0320804
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Sat Oct 24 13:14:45 2015 -0500
+
+    deleted unused test file
+
+commit 6eba998ca066e79f3ab354fd474292271f111941
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 20:14:44 2015 +0000
+
+    Improve mobile appearance
+
+commit 7674aec79cffc231add93a0b41a2eb80940c5e9c
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 18:28:38 2015 +0000
+
+    Include table sort script
+
+commit 96bdb25370c8913922cc1cd572a31fda95e09d59
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 18:28:15 2015 +0000
+
+    Minor table styling
+
+commit 1a54bbdb62967cde864b4ec0a4c7434cc22e43f7
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 18:27:26 2015 +0000
+
+    ignore .swp files
+
+commit b244483e070115b7b0cabcfd5cc4724ba4f1d2bf
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 18:27:12 2015 +0000
+
+    Add final (temporary) static pages
+
+commit 6497d44661955bb3aa47d929c0ddaa1cc253b4f0
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 09:12:05 2015 -0500
+
+    Add tablesorter plugin
+
+commit 80288fd3f85e9c6b10506a2de40d6d05ea7d36b9
+Merge: 0edaec0 2714700
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 22 23:45:25 2015 -0500
+
+    fixed merged conflicts
+
+commit 0edaec097cdc184b046ae16fd6438b5e76aee258
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 22 23:31:08 2015 -0500
+
+    fixing models
+
+commit 27147005998202ccb290910baa80f861e8787a38
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 23:29:04 2015 -0500
+
+    Add label images
+
+commit 8d65a6bda7ef948e1af1a43271814e2f83357c5f
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 23:17:20 2015 -0500
+
+    Add artist profile pics
+
+commit c010b61887dafa7ac0a0c87ed1f414cbd3e33f83
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 22:51:43 2015 -0500
+
+    Add band photos
+
+commit 1e5e5f10b65f6bf3a8be450f9ef9494e21d16d4b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 22:43:15 2015 -0500
+
+    Add album images
+
+commit 8ed37b39f8f890790f7eaac17a5d40e6edc557de
+Merge: a4fbd71 1e829f4
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 02:40:50 2015 +0000
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/cs373-idb into dev
+
+commit a4fbd7108f019993152dfa9b4c1290ab571c8146
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 02:40:39 2015 +0000
+
+    Add temporary static pages
+
+commit 1e829f4dae1401cb65e88a7d0bc4c9a3b0008487
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Thu Oct 22 21:38:04 2015 -0500
+
+    Update Cesar's picture
+
+commit 652aa43d4a09d5a1244d08af2e02fb633e90e8c9
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Thu Oct 22 21:36:30 2015 -0500
+
+    Update with Cesar's about me
+
+commit 6d2546c04df2f8b40d01840a170ddbfd51985cb0
+Merge: 1d62616 81d6f91
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 21:27:17 2015 -0500
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/music-mecca into dev
+
+commit 1d6261688c1f4904ce6613bcb810f76161ae7c29
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 21:26:43 2015 -0500
+
+    Fixed up Apiray docuemnts
+
+commit 81d6f914be6ae5d4878532d627702fb89e0068c7
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 21:07:03 2015 -0500
+
+    Add Chris photo
+
+commit edd1d7f5cab78f9de1cd1055bc99634a840b5ac3
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 02:05:42 2015 +0000
+
+    Add Chris bio
+
+commit a7538f7616bd546d4e2063754b43b60c756f56f0
+Merge: db72cde c479b2c
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 01:58:22 2015 +0000
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/cs373-idb into dev
+
+commit db72cde702543996009161dbb852887d092f5602
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 01:58:16 2015 +0000
+
+    Add models page
+
+commit 634cf590919011c60191601fde2ee34da2f64c3b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 01:57:56 2015 +0000
+
+    Make navbar logo functional
+
+commit c479b2c9a1aa369d9647577b7edda0670e60052c
+Author: locomoco <metsang@utexas.edu>
+Date:   Thu Oct 22 20:50:09 2015 -0500
+
+    About mtsang
+
+commit 2935eb7998278a505d4c93f048ccdb1512044f97
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 20:49:02 2015 -0500
+
+    Add pydoc output file
+
+commit 110e993f5aebffae6a5236e8d4f0b2dd7446c9c4
+Author: locomoco <metsang@utexas.edu>
+Date:   Thu Oct 22 20:43:49 2015 -0500
+
+    About mtsang
+
+commit c6a75ae1fcadf54a699b5037d33472408c11786c
+Merge: feaee48 af22a0a
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Oct 22 20:32:17 2015 -0500
+
+    Merge pull request #34 from naughtyfiddle/ModelUpdate
+    
+    Model update
+
+commit feaee4829b21843a5f88f50c8b2018bd0c6709ee
+Merge: ed7b771 e832ac3
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Thu Oct 22 20:27:57 2015 -0500
+
+    Merge pull request #36 from naughtyfiddle/KevinAbout
+    
+    add Kevin's about me
+
+commit e832ac3d068241111fa025e9746ba6a11b30ab50
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Thu Oct 22 20:20:29 2015 -0500
+
+    add Kevin's about me
+
+commit ed7b771f9ff8ab4003503ac1755c2ee039773c19
+Merge: 21d7be6 2f05c2f
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Oct 22 20:16:29 2015 -0500
+
+    Merge pull request #35 from naughtyfiddle/KaelenAbout
+    
+    Added some about me stuff yo
+
+commit af22a0a862cf1a88ec40367ce9587135434ad040
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 20:15:45 2015 -0500
+
+    Made copy of modes/py into main directory #29
+
+commit 21d7be6edaf47dd0ca53c3ff7beb8ae511715746
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Fri Oct 23 01:00:13 2015 +0000
+
+    Add make directive for copying static files to nginx root directory
+
+commit 48b32458a0e388ad2b84028bc148427a42bc0ae3
+Merge: a688c4b dc32e33
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Oct 22 19:26:54 2015 -0500
+
+    Merge pull request #31 from naughtyfiddle/chris-validation
+    
+    Edit html to (basically) validate, consolidate extraneous css classes…
+
+commit a688c4bed32265faf84aed574a73bc2443afd580
+Merge: 46a19b7 65e28f9
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Oct 22 19:26:31 2015 -0500
+
+    Merge pull request #32 from naughtyfiddle/Apiary
+    
+    Apiary
+
+commit 46a19b70fd6f545c4094f5811b7dfdfff8c88fe7
+Merge: 838a677 961a8d6
+Author: Kaelen Haag <khaag@utexas.edu>
+Date:   Thu Oct 22 19:26:16 2015 -0500
+
+    Merge pull request #33 from naughtyfiddle/testcases
+    
+    Testcases
+
+commit 2f05c2ff8e9ac2bdf2324348656386cfc6033552
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 19:24:00 2015 -0500
+
+    Added some about me stuff yo
+
+commit 961a8d6a9fe71cd15ac2cfeaf9f4bb569a5ed5a7
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 19:08:49 2015 -0500
+
+    Finshed tests for award and release these are really bad #16
+
+commit 353f6ba93f375fb24d6a0b8a4fc7d1fb809139d9
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 18:49:06 2015 -0500
+
+    Added simple tests for labels and videos #16
+
+commit 9172225abc92c5c4024998a701f409c40ea0a504
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 18:11:37 2015 -0500
+
+    Documentation on Artists #26
+
+commit 0cdb838649973d5a5d13ebafa2ffdab27716fee5
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 18:07:46 2015 -0500
+
+    Added descriptions in models.py #26
+
+commit 201373b3e4404756063cfd6d3e9cb0cc73aab5fe
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 17:48:34 2015 -0500
+
+    Updated UML to reflect model #3
+
+commit 67fb01a884f6fa49ff2afcd44ebd9988f901f88b
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 17:41:16 2015 -0500
+
+    Fixed error in Artist model #26
+
+commit e717eca3b073ba600797b87ab323730944743ed7
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 17:39:52 2015 -0500
+
+    Added association tables for many to many relationships and modified the models a bit #26
+
+commit dc32e3330eecfbb8b0216be9f5f41053c1831b60
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 17:17:09 2015 -0500
+
+    Edit html to (basically) validate, consolidate extraneous css classes, add background image to all model pages
+
+commit 65e28f98d815c70c941b0dbcbb14e0242528a647
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 16:40:39 2015 -0500
+
+    Fixed some issues with Apiary documentation #20
+
+commit 7f4e87772fafb4693f99af14def72360437da576
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 16:22:15 2015 -0500
+
+    Added descriptions of APIs on Apiary #20
+
+commit 44ce70ca9ba8d3f023dfb5ffe412ca0a60806aa6
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 16:08:01 2015 -0500
+
+    Updated Apiary docs to have API calls by name #20
+
+commit 6f7a882c67679cab49d7332d58cbf365d7935f57
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 16:03:45 2015 -0500
+
+    Add tests for song #16
+
+commit 7e3d45585fff458357645331d7d3c8ba205ed0f9
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 11:36:57 2015 -0500
+
+    Some Test cases for Song Model #16
+
+commit 1245af1359a94b2e2784c2dc37a7425b854952e1
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Thu Oct 22 11:24:19 2015 -0500
+
+    Unit tests for Artist Model #16
+
+commit 838a6772e3e240c605c60bee8f5fcda667c4ebfc
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 22 11:10:53 2015 -0500
+
+    Consume Bootstrap via CDN instead of local files, clean up static files directory. NCR
+
+commit 7399a2aa940a453aa00ddc757cfac56223e1307e
+Merge: 6cc1a36 c87542f
+Author: Kevin Chi <haoc92@gmail.com>
+Date:   Wed Oct 21 22:33:50 2015 -0500
+
+    Merge pull request #30 from naughtyfiddle/chris-label-page
+    
+    Chris label page
+
+commit c87542f861a30be94e82fb20cdb8bfe3fcec8ac7
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 21 21:30:30 2015 -0500
+
+    Add basic label page
+
+commit a0f834290f8cafeecbd1df9ee72b854c68009806
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 21 21:30:07 2015 -0500
+
+    Add basic splash page
+
+commit cd403f157c143dd1407ccbf2337007ee00a599b1
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 21 20:52:36 2015 -0500
+
+    Make (most) table styling global
+    
+    Bootstrap does not like when I change tr:hover for some reason, possibly because I need to style nth-child as well. I'll look into this later.
+
+commit 6cc1a36c67a87fb8276743169b01814e30970da5
+Merge: 48e61e9 0c86354
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 21 17:49:52 2015 -0500
+
+    Merge pull request #28 from naughtyfiddle/chris-release-page
+    
+    Chris release page
+
+commit 8e7ecb775d9af8ae8337199b53a2240f3b91c052
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 21 17:46:23 2015 -0500
+
+    formatting
+
+commit 74309e8a6c275eb102f9a079e22334971c93859e
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 21 17:28:43 2015 -0500
+
+    Models example done
+
+commit 0f6d79fd9e793b7e596ffd22447a3fc702b4d347
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 21 17:11:30 2015 -0500
+
+    formatting issue
+
+commit f3ec9017b2ab770dacbd464526783327e6188bc0
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 21 17:06:05 2015 -0500
+
+    Added example model for apiary. Don't forget commas. Also took out models and tests.py, at the moment tests.py is empty.
+
+commit 0c86354cf368fa28e396c8f63157374552321908
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 21 03:20:11 2015 -0500
+
+    Slightly adjust event separators
+
+commit 1ea8768e12b1db06e1babdce13ace74975697bd0
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 21 03:14:46 2015 -0500
+
+    Drastically clean up css, add some convenience classes
+
+commit 48e61e9310bb74e26f5d93a9f5c6457842b0b9c7
+Merge: 3a3c7b7 69c624e
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Tue Oct 20 23:46:17 2015 -0500
+
+    Merge pull request #27 from naughtyfiddle/Apiary
+    
+    Apiary
+
+commit 69c624e608ab5c30cbc5a9450f9c7ef6979fa532
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Tue Oct 20 23:32:03 2015 -0500
+
+    Added API designs for Artist and Concerts #20
+
+commit 8ab540769f17b2c754b53db960c1e773f7962def
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Tue Oct 20 22:29:15 2015 -0500
+
+    Added some API designs for Song, Label, Release, and Award #20
+
+commit 3a3c7b7c209b5b15adf517036b0977dca8461ae2
+Merge: 57e7353 7ac7039
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Tue Oct 20 21:25:15 2015 -0500
+
+    Merge pull request #25 from naughtyfiddle/chris-artist-page
+    
+    Chris artist page
+
+commit 86a825dd8799f0a7e84abbf57ceed03827980114
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 20:58:23 2015 -0500
+
+    Create basic release page structure
+
+commit 7ac70395ae630d5125d0c2b3daf688f3fe8f0496
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 19:02:15 2015 -0500
+
+    Make selector links work pending angular routing
+
+commit fa34f5f56d91f18b444d2b7eae95f3bfe9614401
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 15:06:11 2015 -0500
+
+    Add calendar divs for events, give events basic structure
+
+commit f84a267d7bb3556a176c637bb43d364dd576a21f
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 13:53:45 2015 -0500
+
+    Make markup and CSS way prettier, tint section headings bluish
+
+commit fb3e312be88099d20b085003c6db7737b5502d5f
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 03:51:41 2015 -0500
+
+    Fix some dirty markup before bed :D
+
+commit 162ed280dab60407ab63b8c879fd3967b0d9a3e9
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Tue Oct 20 03:02:19 2015 -0500
+
+    Begin basic layout for artist page
+    
+    Still needs some work, but the basi structure is there for now.
+
+commit 3d12ff2c6f62f0edbf7843d70b1cf68119be022c
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 16:39:00 2015 -0500
+
+    Add markup file for artist page
+
+commit 57e7353459994215d681ac157b3315bb0a5ac82d
+Merge: b2d2679 5e8a11d
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 16:31:28 2015 -0500
+
+    Update README with new repo rules
+
+commit 5e8a11da60db11ba66b22bcb50e4c67713b3c61d
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 16:28:15 2015 -0500
+
+    Update repo rules
+
+commit b2d26798ce5e4804abbd1cd268ca71decb86e067
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 19 16:19:05 2015 -0500
+
+    Update README.md
+    
+    These are just cosmetic changes to the README
+
+commit aae828c8bdb609cc3375d40ecdf45ec8d29cb4c2
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 19 16:18:06 2015 -0500
+
+    Update README.md
+
+commit bfd147f552a965713bdc658a0ec31a1b65c90af9
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 19 16:17:34 2015 -0500
+
+    Update README.md
+
+commit cf66d1e7b542c179a3f0093ce852b04bec1d0ed1
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 19 16:16:24 2015 -0500
+
+    Update README.md
+
+commit 49759bd0acc1aee83e8142150f2980a803f63f2c
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 19 16:16:06 2015 -0500
+
+    Update README.md
+    
+    fixed work flow
+
+commit 8872d265eb8d8735ba7bb702a5318c9edeb7925c
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 15:46:54 2015 -0500
+
+    Prevent scrollbar from appearing next to navbar, change panel border radius
+
+commit 9d34478fcb706156a502c7ffc390230b00053ca6
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 02:55:41 2015 -0500
+
+    Make developer names look much prettier
+
+commit 4775a4cf9d19cad30afd61c77cec987283c3b634
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Mon Oct 19 02:22:35 2015 -0500
+
+    Split style.css into multiple files, rename some css classes for disambiguation
+
+commit 30d1ed4b5e8fad6564f45b70b34fd17cdbb53965
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Mon Oct 19 00:54:28 2015 -0500
+
+    Rough draft of the UML #3
+
+commit 127bd977d9345571a36521e4d6eaaa9bfd239ec4
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Sun Oct 18 19:15:43 2015 -0500
+
+    Linked get song by ID to routes #10
+
+commit 9367376f1c4fbc9d8e6737b3ffd315207d512f21
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Sun Oct 18 19:11:00 2015 -0500
+
+    Added get by id for song #10
+
+commit 54c21ca8f638553c2d139bafd92fa9f0ca0d9192
+Merge: b6583ab 1195c98
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Sun Oct 18 18:58:00 2015 -0500
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/music-mecca into dev
+
+commit b6583ab7f0b13edf65ae9c7f984dbd86471a22dd
+Author: KaelenHaag1 <khaag@utexas.edu>
+Date:   Sun Oct 18 18:57:31 2015 -0500
+
+    Added user facing flash errors for rest of models
+
+commit 1195c98c3816fd1ed012361f038d41dc4b538926
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 18 18:17:41 2015 -0500
+
+    Remove icon folder since they're defined in html, rename index to about
+
+commit 542a3e6c8fc87aea07332737552019051825fdc6
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 18 18:14:52 2015 -0500
+
+    Finish about page for now
+
+commit d8fbdca0794e50f9de619381ea179e0a7a2c6b1f
+Merge: 56a2fc5 fd2cb89
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sun Oct 18 04:25:47 2015 -0500
+
+    Merge branch 'master' into dev
+
+commit fd2cb89f1bd222ef57562664002ab2bad32cd53f
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Sat Oct 17 21:35:30 2015 -0500
+
+    Make frontend mockup for ABOUT page
+
+commit 56a2fc59fd40867194cad39235a0f180e9792369
+Merge: eb2d1f0 b3796fd
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Fri Oct 16 13:20:45 2015 -0500
+
+    merge to add apiary into dev
+
+commit eb2d1f07dcb28e3f7c76cfd0f35db65bc713c3dc
+Merge: 6efa70c 5675188
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Fri Oct 16 13:11:52 2015 -0500
+
+    Merge branch 'master' of https://github.com/naughtyfiddle/music-mecca into dev
+
+commit 56751885b116e8613a11e0f0d24129daa89c0019
+Author: Cesar Rios <rioscesar7@gmail.com>
+Date:   Fri Oct 16 13:06:49 2015 -0500
+
+    Transferring blueprint from apiary.io
+
+commit b3796fd20b12f662e40ff53a80b914f58acae336
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Fri Oct 16 12:37:09 2015 -0500
+
+    Update README.md
+    
+    typo
+
+commit 6de4b6e6333e868e9796c4c2b75b5329a0c2d44b
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Fri Oct 16 12:25:52 2015 -0500
+
+    Update README.md
+    
+    fix typo
+
+commit a04b89b9af6550bb7976eab7b825d10b95eca8da
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 23:35:29 2015 -0500
+
+    Cosmetic changes
+
+commit 62eaa4039d4bf0d2c38520a374c4f9b4da51025a
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 23:34:21 2015 -0500
+
+    Cosmetic changes
+
+commit f5a692d3a6cc76db8e12b2c8263153c0025b20e8
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 23:32:37 2015 -0500
+
+    Add Travis link, cosmetic changes
+
+commit 6efa70c8b928abd3bb681953f07f1323984b6bd9
+Merge: 20c2e64 5d83341
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 15 23:04:46 2015 -0500
+
+    Merge branch 'dev' of https://github.com/naughtyfiddle/music-mecca into dev
+
+commit 20c2e643cd2cd6c564561a193a3bd5cee8f9bfed
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 15 23:01:08 2015 -0500
+
+    changed default port because of personal complications
+
+commit 5d83341e0f9f5726f8b30825a8f32bae44c137eb
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 22:31:01 2015 -0500
+
+    Turn off email alerts, add Slack alerts
+
+commit 3b4d8e4b4e979f2c81d69dbf936532879748d9de
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 20:05:33 2015 -0500
+
+    Merge from origin instead of local
+
+commit 435aa1ec3639a7ef47fb0a9e6394faf87c913799
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 20:02:39 2015 -0500
+
+    Hack it
+
+commit 52a8d4afdade5dcd759cfee5ab6c5771e748cd6d
+Merge: c0a1346 1ef50ed
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 15 19:28:27 2015 -0500
+
+    Merge remote-tracking branch 'origin/dev' into dev
+
+commit c0a134675273196a31d8d72678f983c88afc0f64
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 15 19:28:01 2015 -0500
+
+    example hello world routing. artist should work but because there are no actual sql tables there's an 'internal server error'
+
+commit 1ef50ed4e715a745c0ce7680f7cd3b9ffe747055
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 19:08:00 2015 -0500
+
+    Checkout from origin
+
+commit 1835bcb9ecf32221e521fabc05ed7bfb5c304135
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 19:05:49 2015 -0500
+
+    Reorder git commands
+
+commit d34dee34359a6cba3b8d381beb1cd65a0634d8af
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 19:03:24 2015 -0500
+
+    Checkout dev to fix detached head (hopefully)
+
+commit 2febe875d0c7a02a9090bc718f3816b4d3e0cfa7
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 18:42:36 2015 -0500
+
+    Add debug output
+
+commit 97f28eb624f5ba8df2a0a8333f7ba3b0494e4f66
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 18:32:27 2015 -0500
+
+    Fetch all refs
+
+commit 144c36c508d0e0adb99ba5a8559f1604fea70b97
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Thu Oct 15 18:17:34 2015 -0500
+
+    fixed circular imports
+
+commit 1eee1537df31a1c9f5cb8516c269ed184dd6392c
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 18:13:24 2015 -0500
+
+    Fix detached head (hopefully)
+
+commit 3be513918ce04b67e58683a3acb2e699cda37081
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 18:05:07 2015 -0500
+
+    Add debug output
+
+commit c22962d0b60af4ee490935661719617c725e8d33
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 18:02:09 2015 -0500
+
+    Fetch before checking out beta
+
+commit 576d12a78992c32dd2a86a0c96d8fa0d068d66b5
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 17:51:21 2015 -0500
+
+    Checkout beta from origin
+
+commit 0cc603b754174a13b716c2132853dd4b09f4f923
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 17:38:55 2015 -0500
+
+    Create python build skeleton
+
+commit 6ac3e2f1aac637a8bbf0154a8db3d0af31a0f15b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Thu Oct 15 17:31:50 2015 -0500
+
+    Add travis script to merge dev with beta on successful build
+
+commit 3b123102083f7c96d96d86e2cdb9b5859c41ad81
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 22:01:42 2015 -0500
+
+    Update README.md
+
+commit 25fd9c0e8d8136712db67ef71450afa99d03d5d6
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 21:59:29 2015 -0500
+
+    update .gitignore __pycache__
+
+commit 0d474e1e5fe51fb6edb3312184a36f0f319680ce
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 21:44:07 2015 -0500
+
+    created all the marshmallow schemas with Kevin ;)
+
+commit 4c9bb6c410b41c70ddff70a840f24a7095741e96
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 21:19:25 2015 -0500
+
+    Working with KEVIN 'haoc' ;)
+
+commit 60366dc54c3e6cfdd64fd6f6aed07448041048ed
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 21:08:51 2015 -0500
+
+    db has been modeled out
+
+commit 1095e24fc555d607b13d2a4980488c1e39b8b167
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 16:57:52 2015 -0500
+
+    Update README.md
+    
+    Cosmetic changes
+
+commit 440c778b842a79c068db5f72379d9a1dfa7b8bfb
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 16:54:09 2015 -0500
+
+    Cosmetic changes
+
+commit af0b82354625a1e2bfeefde1f2ba553f4641fec6
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 16:46:14 2015 -0500
+
+    Add Rackspace info
+
+commit d7dfbdaaec174da4a914c6cd73cdb9c298fb5d70
+Merge: 397dc47 db0806b
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 16:43:30 2015 -0500
+
+    Merge branch 'master' into dev
+
+commit db0806bd0f9715db44ce285aacfa96bc019d31d7
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 12:28:27 2015 -0500
+
+    Update models.py
+
+commit dea82e926f5fd62e6ec3273c3f5dc9982337e353
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 12:26:47 2015 -0500
+
+    Update models.py
+
+commit 397dc47c46373714de5f1fdde33cf1cc1220252a
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 12:26:06 2015 -0500
+
+    Add repo rules
+
+commit 1fbfc8ec11aece90211602120e054f6229fa81b3
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 12:23:42 2015 -0500
+
+    Update models.py
+
+commit 77c72778c796e963424ac5c9d234a496303324e1
+Author: Christian Dinh <ctdinh93@gmail.com>
+Date:   Wed Oct 14 02:28:16 2015 -0500
+
+    Add Slack URL
+
+commit 8c8ba7a59bb842f7e6a1e5571a849a328418cd9c
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 01:33:21 2015 -0500
+
+    db skeleton set, artist schema example file, artistid get call example, artist test example file, config with defaults
+
+commit ac47f0de1f98a0e71929c86d40bb4284ed007c92
+Merge: 547bc87 0f20a38
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 01:04:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/rioscesar/music-mecca
+
+commit 547bc87572dcd2588f30a6c610ffa36634405068
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 01:04:23 2015 -0500
+
+    db skeleton set
+
+commit 0f20a386831855ac32accd1f4b605159a5cd2538
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Wed Oct 14 00:51:23 2015 -0500
+
+    Update README.md
+
+commit ab15a0eb8f3704c3b0ef7b2af4a5aced7cf87b8c
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 23:44:28 2015 -0500
+
+    just changing the look :(
+
+commit 2581c62ff0a01790b50195f2f2d47113d4415119
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 23:26:11 2015 -0500
+
+    .idea
+
+commit 09f251dc92595b1c7f9fcec9702aafdc8add27f3
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 23:25:13 2015 -0500
+
+    redo
+
+commit 8d397cd584753508c8004811875e23989b8b4ee1
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 23:15:01 2015 -0500
+
+    some reqs CESAR RIOS is using
+
+commit 518c5deb179c39a2313a8eae28f9d11b519cd39b
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:07:55 2015 -0500
+
+    I keep messing up
+
+commit 4624f3466755d9d8a84a97e7eb1e3e34ad0ddd5a
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:07:14 2015 -0500
+
+    remove unneeded files
+
+commit 87f9c2e391f61ca12d6585f90dd15f1658da704c
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:05:49 2015 -0500
+
+    removing unecessary files from repo
+
+commit 68c2cf602249d2193e4fe1b32c90ea846625b935
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:03:24 2015 -0500
+
+    fixing config
+
+commit dc1ffd195d678e36c970a966e14f9257517fbc12
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:02:48 2015 -0500
+
+    test push
+
+commit 4b373ce0b463479c53088d45a2c1e0bc3fed3db9
+Author: rioscesar <rios_cesar@utexas.edu>
+Date:   Tue Oct 13 00:00:14 2015 -0500
+
+    initial commit
+
+commit 223504825c54fcb5d4e90c9cf026fdd0615392ae
+Author: Cesar Rios <rios_cesar@utexas.edu>
+Date:   Mon Oct 12 23:02:54 2015 -0500
+
+    Initial commit
