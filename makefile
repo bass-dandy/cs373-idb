@@ -6,6 +6,10 @@ www:
 	mkdir -p /data/www
 	cp -r static/* /data/www
 
+uwsgi:
+	export CONFIG_PATH="~/cs373-idb/config.py"
+	~/.local/bin/uwsgi --ini uwsgi.ini
+
 clean:
 	rm -f  .coverage
 	rm -f  *.pyc
