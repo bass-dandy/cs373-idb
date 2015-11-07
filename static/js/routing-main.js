@@ -4,7 +4,7 @@ app.controller('mainController', function($scope) {});
 
 app.controller('artistsController', function($scope, $http) {
     $scope.modelType = 'artists'; 
-    $http.get("http://downing.club:8000/artists")
+    $http.get("http://downing.club/api/artists")
         .then(function(response) {
             $scope.models = response.data;
             console.log(response.data);
@@ -15,7 +15,7 @@ app.controller('artistsController', function($scope, $http) {
 
 app.controller('labelsController', function($scope, $http) {
     $scope.modelType = 'labels'; 
-    $http.get("http://downing.club:8000/labels")
+    $http.get("http://downing.club/api/labels")
         .then(function(response) {
             $scope.models = response.data;
             console.log(response.data);
@@ -26,7 +26,7 @@ app.controller('labelsController', function($scope, $http) {
 
 app.controller('releasesController', function($scope, $http) {
     $scope.modelType = 'releases'; 
-    $http.get("http://downing.club:8000/releases")
+    $http.get("http://downing.club/api/releases")
         .then(function(response) {
             $scope.models = response.data;
             console.log(response.data);
@@ -63,17 +63,17 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'releasesController'
         })
 
-        .when('/label/:id', {
+        .when('/labels/:id', {
             templateUrl : 'templates/label.html',
             controller  : 'mainController'
         })
 
-        .when('/artist/:id', {
+        .when('/artists/:id', {
             templateUrl : 'templates/artist.html',
             controller  : 'mainController'
         })
 
-        .when('/release/:id', {
+        .when('/releases/:id', {
             templateUrl : 'templates/release.html',
             controller  : 'mainController'
         });
@@ -82,10 +82,17 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 app.controller('artistController', function($scope, $http, $routeParams) {
-    $http.get("tmp/" + $routeParams.id + ".json")
+    $http.get("http://downing.club/api/artists/" + $routeParams.id)
         .then(function(response) {
             $scope.artist = response.data;
-            console.log(response.data);
+            var releases = [];
+            response.data.releases.forEach(function(entry) {
+                $http.get("http://downing.club" + entry.uri)
+                    .then(function(response2) {
+                        releases.push(response2.data);
+                    }, function() {});
+            });
+            $scope.artist.releases = releases;
         }, function() {
             console.log("Failed to retrieve artist data");
         });
