@@ -8,7 +8,7 @@ www:
 
 uwsgi:
 	export CONFIG_PATH="~/cs373-idb/config.py"
-	~/.local/bin/uwsgi --ini uwsgi.ini
+	nohup ~/.local/bin/uwsgi --ini uwsgi.ini &
 
 clean:
 	rm -f  .coverage
