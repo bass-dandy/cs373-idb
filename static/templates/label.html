@@ -3,24 +3,26 @@
         
         <!-- Release overview -->
         <div class="overview">
-            <img src="data:image/JPEG;base64,{{ label.image }}">
+            <img src="{{ label.photo }}">
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
                 {{ label.name }}
                 <strong class="subsection text-uppercase">About</strong>
-                {{ label.desc }}
+                {{ label.bio }}
             </div>
         </div>
-
-        <!-- Track list -->
-        <div class="panel margin-top">
-            <table id="associated-acts" class="table table-striped">
-                <tr><th>Associated Acts</th></tr>
-
-                <tr ng-repeat="artist in label.artists">
-                    <td><a href="{{ artist.url }}">{{ artist.name }}</a></td>
-                </tr>
-            </table>
+        <!--Associated acts -->
+        <div class="margin-top">Sort: <a href="">A-Z</a> | <a href="">Z-A</a></div>
+        <div class="panel text-justify">
+            <div class="models-item" ng-repeat="artist in label.artists | orderBy:'name'">
+                <a ng-href="http://downing.club/artists/{{ artist.id }}">
+                    <div class="models-preview">
+                        <div class="models-name">{{ ::artist.name }}</div>
+                        <div class="models-filter"></div>
+                        <img class="models-image" src="{{ ::artist.medium_image }}"/>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

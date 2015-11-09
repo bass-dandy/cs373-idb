@@ -1,38 +1,43 @@
-var app = angular.module('meccaApp', ['ngRoute', 'ngAnimate']);
+var app = angular
+    .module('meccaApp', ['ngRoute', 'ngAnimate'])
+    .factory("Sources", function($http) {
+        return {
+            fromUri: function(uri) {
+                return $http.get("http://downing.club" + uri);
+            }
+        }
+    });
 
-app.controller('mainController', function($scope) {});
+app.controller('mainController', function($scope) {
+    $scope.order = "name";
 
-app.controller('artistsController', function($scope, $http) {
+    $scope.setOrder = function(order) {
+        $scope.order = order;
+    }
+});
+
+app.controller('artistsController', function($scope, Sources) {
     $scope.modelType = 'artists'; 
-    $http.get("http://downing.club/api/artists")
+    Sources.fromUri("/api/artists")
         .then(function(response) {
             $scope.models = response.data;
-            console.log(response.data);
-        }, function() {
-            console.log("Failed to retrieve artists");
-        });
+        }, function() {});
 });
 
-app.controller('labelsController', function($scope, $http) {
+app.controller('labelsController', function($scope, Sources) {
     $scope.modelType = 'labels'; 
-    $http.get("http://downing.club/api/labels")
+    Sources.fromUri("/api/labels")
         .then(function(response) {
             $scope.models = response.data;
-            console.log(response.data);
-        }, function() {
-            console.log("Failed to retrieve labels");
-        });
+        }, function() {});
 });
 
-app.controller('releasesController', function($scope, $http) {
+app.controller('releasesController', function($scope, Sources) {
     $scope.modelType = 'releases'; 
-    $http.get("http://downing.club/api/releases")
+    Sources.fromUri("/api/releases")
         .then(function(response) {
             $scope.models = response.data;
-            console.log(response.data);
-        }, function() {
-            console.log("Failed to retrieve releases");
-        });
+        }, function() {});
 });
 
 app.config(function($routeProvider, $locationProvider) {
@@ -81,39 +86,51 @@ app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-app.controller('artistController', function($scope, $http, $routeParams) {
-    $http.get("http://downing.club/api/artists/" + $routeParams.id)
+app.controller('artistController', function($scope, $routeParams, Sources) {
+    Sources.fromUri("/api/artists/" + $routeParams.id)
         .then(function(response) {
             $scope.artist = response.data;
             var releases = [];
             response.data.releases.forEach(function(entry) {
-                $http.get("http://downing.club" + entry.uri)
+                Sources.fromUri(entry.uri)
                     .then(function(response2) {
                         releases.push(response2.data);
                     }, function() {});
             });
             $scope.artist.releases = releases;
-        }, function() {
-            console.log("Failed to retrieve artist data");
-        });
+            Sources.fromUri(response.data.primaryLabel.uri)
+                    .then(function(response2) {
+                        $scope.artist.label = response2.data;
+                    }, function() {});
+        }, function() {});
 });
 
-app.controller('labelController', function($scope, $http, $routeParams) {
-    $http.get("tmp/" + $routeParams.id + ".json")
+app.controller('labelController', function($scope, $routeParams, Sources) {
+    Sources.fromUri("/api/labels/" + $routeParams.id)
         .then(function(response) {
             $scope.label = response.data;
-            console.log(response.data);
-        }, function() {
-            console.log("Failed to retrieve label data");
-        });
+            var artists = [];
+            response.data.artists.forEach(function(entry) {
+                Sources.fromUri(entry.uri)
+                    .then(function(response2) {
+                        artists.push(response2.data);
+                    }, function() {});
+            });
+            $scope.label.artists = artists;
+        }, function() {});
 });
 
-app.controller('releaseController', function($scope, $http, $routeParams) {
-    $http.get("tmp/" + $routeParams.id + ".json")
+app.controller('releaseController', function($scope, $routeParams, Sources) {
+    Sources.fromUri("/api/releases/" + $routeParams.id)
         .then(function(response) {
             $scope.release = response.data;
-            console.log(response.data);
-        }, function() {
-            console.log("Failed to retrieve release data");
-        });
+            var songs = [];
+            response.data.songs.forEach(function(entry) {
+                Sources.fromUri(entry.uri)
+                    .then(function(response2) {
+                        songs.push(response2.data);
+                    }, function() {});
+            });
+            $scope.release.songs = songs;
+        }, function() {});
 });

@@ -10,6 +10,10 @@
     font-size: 20px;
 }
 
+.models-item > a, .models-item:hover > a {
+    color: white;
+}
+
 .models-image {
     position: absolute;
     min-width: 100%;
