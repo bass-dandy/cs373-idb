@@ -16,7 +16,7 @@ class LabelAllAPI(Resource):
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['LABEL_NOT_FOUND'].format(id))
 
-        return LabelSchema().dump(Label, many=True).data
+        return LabelSchema(many=True).dump(labels).data
 
 class LabelIDAPI(Resource):
     """Single label through id"""
@@ -41,6 +41,6 @@ class LabelNameAPI(Resource):
             labels = Label.query.filter_by(name=actualLabelName)
             #print(labels)
         except(DataError, NoResultFound):
-            abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(actualArtistName))
+            abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(actualLabelName))
 
         return LabelSchema().dump(labels, many=True).data
