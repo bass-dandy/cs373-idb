@@ -16,6 +16,13 @@ app.controller('mainController', function($scope) {
     }
 });
 
+app.controller('aboutController', function($scope, Sources) {
+    Sources.fromUri("/api/runtests")
+        .then(function(response) {
+            $scope.test = response.data;
+        }, function() {});
+});
+
 app.controller('artistsController', function($scope, Sources) {
     $scope.modelType = 'artists'; 
     Sources.fromUri("/api/artists")

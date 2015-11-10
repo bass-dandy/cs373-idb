@@ -109,5 +109,20 @@
         <a href="http://developer.jambase.com/docs">http://developer.jambase.com/docs</a><br>
         Describe how it was scraped here.
     </div>
-    <a href="">Run tests</a>
+
+    <button type="button" class="btn btn-info btn-lg margin-top" data-toggle="modal" data-target="#test-modal">Run Tests</button>
+    
+    <div id="test-modal" class="modal fade" role="dialog" ng-controller="aboutController">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Test Results</h4>
+                </div>
+                <div class="modal-body">
+                    {{ test }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
