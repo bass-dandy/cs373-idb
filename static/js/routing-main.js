@@ -17,10 +17,12 @@ app.controller('mainController', function($scope) {
 });
 
 app.controller('aboutController', function($scope, Sources) {
-    Sources.fromUri("/api/runtests")
-        .then(function(response) {
-            $scope.test = response.data;
-        }, function() {});
+    $scope.runTests = function() {
+        Sources.fromUri("/api/runtests")
+            .then(function(response) {
+                $scope.test = response.data;
+            }, function() {});
+    }
 });
 
 app.controller('artistsController', function($scope, Sources) {
@@ -57,7 +59,7 @@ app.config(function($routeProvider, $locationProvider) {
 
         .when('/about', {
             templateUrl : 'templates/about.html',
-            controller  : 'mainController'
+            controller  : 'aboutController'
         })
 
         .when('/artists', {

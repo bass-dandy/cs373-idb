@@ -19,7 +19,7 @@ clean:
 test: Tests.tmp
 
 Tests.tmp: tests.py
-	#python3 tests.py > Tests.tmp 2>&1
-	coverage3 run --branch tests.py >  Tests.tmp 2>&1
-	coverage3 report -m              >> Tests.tmp
+	python3 tests.py > Tests.tmp 2>&1
+	#coverage3 run --branch tests.py >  Tests.tmp 2>&1
+	#coverage3 report -m              >> Tests.tmp
 	cat Tests.tmp

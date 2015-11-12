@@ -2,6 +2,10 @@
     padding: 50px 5% 10px 5%;
 }
 
+#test-modal .modal-body {
+    white-space: pre-line; 
+}
+
 .about_section {
     width: 100%;
     height: 60px;
