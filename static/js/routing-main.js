@@ -106,9 +106,16 @@ app.config(function($routeProvider, $locationProvider) {
 });
 
 app.controller('artistController', function($scope, $routeParams, Sources) {
+    // For selecting a random album cover
+    $scope.random = function(length) {
+        return Math.floor(Math.random() * length);
+    };
+    // Get artist data
     Sources.fromUri("/api/artists/" + $routeParams.id)
         .then(function(response) {
             $scope.artist = response.data;
+
+            // Get release data
             var releases = [];
             response.data.releases.forEach(function(entry) {
                 Sources.fromUri(entry.uri)
@@ -117,6 +124,8 @@ app.controller('artistController', function($scope, $routeParams, Sources) {
                     }, function() {});
             });
             $scope.artist.releases = releases;
+
+            // Get label data
             Sources.fromUri(response.data.primaryLabel.uri)
                     .then(function(response2) {
                         $scope.artist.label = response2.data;
@@ -128,6 +137,8 @@ app.controller('labelController', function($scope, $routeParams, Sources) {
     Sources.fromUri("/api/labels/" + $routeParams.id)
         .then(function(response) {
             $scope.label = response.data;
+
+            // Get artist data
             var artists = [];
             response.data.artists.forEach(function(entry) {
                 Sources.fromUri(entry.uri)
@@ -143,6 +154,8 @@ app.controller('releaseController', function($scope, $routeParams, Sources) {
     Sources.fromUri("/api/releases/" + $routeParams.id)
         .then(function(response) {
             $scope.release = response.data;
+
+            // Get song data
             var songs = [];
             response.data.songs.forEach(function(entry) {
                 Sources.fromUri(entry.uri)
@@ -151,6 +164,8 @@ app.controller('releaseController', function($scope, $routeParams, Sources) {
                     }, function() {});
             });
             $scope.release.songs = songs;
+
+            // Get artist data
             Sources.fromUri(response.data.artists[0].uri)
                 .then(function(response2) {
                     $scope.release.artist = response2.data;

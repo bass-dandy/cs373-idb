@@ -1,6 +1,6 @@
 <div id="fixed-width-container" ng-controller="artistController">
     <div class="section-head parallax">
-        <img class="parallax-bg" data-speed="0.2" src="{{ ::artist.large_image }}"/>
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
         <div class="parallax-fg">{{ ::artist.name }}</div>
     </div>
     <div class="section">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="section-head parallax">
-        <img class="parallax-bg" data-speed="0.2" src="{{ ::artist.large_image }}"/>
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
         <div class="parallax-fg">Upcoming Concerts</div>
     </div>
     <div class="section">
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="section-head parallax">
-        <img class="parallax-bg" data-speed="0.2" src="{{ ::artist.large_image }}"/>
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
         <div class="parallax-fg">Discussion</div>
     </div>
     <div class="section">
