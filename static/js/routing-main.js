@@ -6,6 +6,16 @@ var app = angular
                 return $http.get("http://downing.club" + uri);
             }
         }
+    })
+    .filter('millisToMinutes', function() {
+        return function(input) {
+            var minutes = Math.floor(input / 1000 / 60);
+            var seconds = Math.floor(input / 1000 % 60);
+            if(seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            return minutes + ':' + seconds;
+        };
     });
 
 app.controller('mainController', function($scope) {
