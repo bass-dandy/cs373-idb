@@ -3,10 +3,10 @@
         
         <!-- Release overview -->
         <div class="overview">
-            <img src="{{ release.medium_image }}">
+            <img src="{{ ::release.medium_image }}">
             <div>
                 <strong class="subsection text-uppercase">Artist</strong>
-                <a ng-href="">{{ ::release.artist.name }}</a>
+                <a ng-href="http://downing.club/artists/{{ ::release.artist.id }}">{{ ::release.artist.name }}</a>
                 <strong class="subsection text-uppercase">Title</strong>
                 {{ ::release.name }}
                 <strong class="subsection text-uppercase">Released</strong>

@@ -151,5 +151,9 @@ app.controller('releaseController', function($scope, $routeParams, Sources) {
                     }, function() {});
             });
             $scope.release.songs = songs;
+            Sources.fromUri(response.data.artists[0].uri)
+                .then(function(response2) {
+                    $scope.release.artist = response2.data;
+                }, function() {});
         }, function() {});
 });
