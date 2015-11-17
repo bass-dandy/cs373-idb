@@ -10,14 +10,14 @@
     position: fixed;
     top: 0px;
     background-color: #1E293E;
-    overflow: hidden;
     z-index: 1000;
+    overflow: hidden;
 }
 
 .navbutton {
-    display: inline-block;
+    float: left;
     height: 100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     background-color: #2B3A58;
     color: white;
 }
@@ -56,6 +56,37 @@
         font-size: 1em;
         transition: 0.3s;
     }
+}
+
+.navlink {
+    float: left;
+    padding: 0px 10px 0px 10px;
+    font-size: 0.75em;
+    color: white;
+}
+
+.navlink-first {
+    padding-left: 20px;
+}
+
+.navlink-last {
+    padding-right: 20px;
+}
+
+.navlink:hover {
+    color: #c7c7c7;
+}
+
+#search-bar {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float:right;
+    height: 80%;
+    line-height: 80%;
+    padding: 0px 5px 0px 5px;
+    background-color: white;
+    border: none;
 }
 
 #search {
