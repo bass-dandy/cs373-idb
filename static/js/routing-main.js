@@ -26,13 +26,34 @@ app.controller('mainController', function($scope) {
     }
 });
 
-app.controller('aboutController', function($scope, Sources) {
+app.controller('aboutController', function($scope, $http, Sources) {
+    // Register function for running unit tests
     $scope.runTests = function() {
         Sources.fromUri("/api/runtests")
             .then(function(response) {
                 $scope.test = response.data;
             }, function() {});
     }
+    // Get Github commit stats
+    $scope.commits = 0;
+    $http.get("https://api.github.com/repos/naughtyfiddle/cs373-idb/stats/contributors")
+        .then(function(response) {
+            response.data.forEach(function(entry) {
+                $scope[entry.author.login] = {};
+                $scope[entry.author.login].commits = entry.total;
+                $scope.commits += entry.total;
+                $scope[entry.author.login].issues = 0;
+            });
+        }, function() {});
+    // Get Github issue stats
+    $scope.issues = 0;
+    $http.get("https://api.github.com/repos/naughtyfiddle/cs373-idb/issues?state=all&per_page=100")
+        .then(function(response) {
+            response.data.forEach(function(entry) {
+                $scope[entry.user.login].issues++;
+                $scope.issues++;
+            });
+        }, function() {});
 });
 
 app.controller('artistsController', function($scope, Sources) {
