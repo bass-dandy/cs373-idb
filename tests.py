@@ -37,7 +37,7 @@ class MyTests(TestCase):
 
     def test_label_id(self):
         label = Label.query.get(1)
-        self.assertEqual("Rise Records", label.name)
+        self.assertEqual(1, label.id)
 
     def test_label_name(self):
         label = Label.query.filter_by(name="Rise Records").first()
