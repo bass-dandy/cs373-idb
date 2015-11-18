@@ -9,10 +9,24 @@
         </div>
     </a>
     <!-- Navigation -->
-    <a href="/artists"><div class="navlink navlink-first">Artists</div></a>
-    <a href="/labels"><div class="navlink">Labels</div></a>
-    <a href="/releases"><div class="navlink">Releases</div></a>
-    <a href="/about"><div class="navlink navlink-last">About</div></a>
+    <a href="/artists"><div class="navlink navlink-first hide-at-500">Artists</div></a>
+    <a href="/labels"><div class="navlink hide-at-600">Labels</div></a>
+    <a href="/releases"><div class="navlink hide-at-700">Releases</div></a>
+    <a href="/about"><div class="navlink navlink-last hide-at-700">About</div></a>
+    <!-- responsive dropdown menu -->
+    <div class="dropdown">
+        <a href="" id="more" class="dropdown-toggle show-at-700" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <div class="navlink navlink-last">
+                More<span class="caret"></span>
+            </div>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="more">
+            <li class="show-at-500"><a href="/artists">Artists</a></li>
+            <li class="show-at-600"><a href="/labels">Labels</a></li>
+            <li class="show-at-700"><a href="/releases">Releases</a></li>
+            <li class="show-at-700"><a href="/about">About</a></li>
+        </ul>
+    </div>
     <!-- Search Icon -->
     <div id="search" class="navbutton">
         <svg viewBox="0 0 62.993 62.993">

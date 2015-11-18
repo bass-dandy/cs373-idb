@@ -11,7 +11,6 @@
     top: 0px;
     background-color: #1E293E;
     z-index: 1000;
-    overflow: hidden;
 }
 
 .navbutton {
@@ -100,4 +99,43 @@
 
 #search {
     float: right;
+}
+
+.show-at-700 {
+    display: none;
+}
+
+.show-at-600 {
+    display: none;
+}
+
+.show-at-500 {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .hide-at-700 {
+        display: none;
+    }
+    .show-at-700 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hide-at-600 {
+        display: none;
+    }
+    .show-at-600 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hide-at-500 {
+        display: none;
+    }
+    .show-at-500 {
+        display: block;
+    }
 }
