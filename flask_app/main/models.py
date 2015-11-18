@@ -34,7 +34,7 @@ class Label(db.Model):
     name = db.Column(db.String(128))
     bio = db.Column(db.String)
     uri = db.Column(db.String)
-    photo = db.Column(db.String)
+    small_image = db.Column(db.String)
 
     #artists = db.relationship("Artist", backref="labels")
     #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
