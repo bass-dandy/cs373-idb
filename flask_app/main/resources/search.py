@@ -30,15 +30,18 @@ class SearchAPI(Resource):
         labels = {}
 
         try:
-            artists = ArtistSchema(many=True).dump(Artist.query.filter(text('name ~ :reg')).params(reg=terms).all()).data
+            artists = ArtistSchema(many=True).dump(
+                Artist.query.filter(text('name ~* :reg')).params(reg=terms).all()).data
         except:
             pass
         try:
-            releases = ReleaseSchema(many=True).dump(Release.query.filter(text('name ~ :reg')).params(reg=terms).all()).data
+            releases = ReleaseSchema(many=True).dump(
+                Release.query.filter(text('name ~* :reg')).params(reg=terms).all()).data
         except:
             pass
         try:
-            labels = LabelSchema(many=True).dump(Label.query.filter(text('name ~ :reg')).params(reg=terms).all()).data
+            labels = LabelSchema(many=True).dump(
+                Label.query.filter(text('name ~* :reg')).params(reg=terms).all()).data
         except:
             pass
 
