@@ -1,21 +1,27 @@
 <div id="fixed-width-container" class="padded">
-    <h1>Showing all {{ modelType }}</h1>
-    <div class="margin-top">Sort: <a href="" ng-click="setOrder('name')">A-Z</a> | <a href="" ng-click="setOrder('-name')">Z-A</a></div>
-    <div class="panel text-center">
-        <div>
-            <div class="models-item ng-animate-disabled" ng-repeat="model in models | orderBy:order | startFrom:currentPage*pageSize | limitTo:pageSize">
-                <a ng-href="http://downing.club/{{ modelType }}/{{ model.id }}">
-                    <div class="models-preview">
-                        <div class="models-name">{{ ::model.name }}</div>
-                        <div class="models-filter"></div>
-                        <img class="models-image" src="{{ ::model.medium_image }}"/>
-                    </div>
-                </a>
+    <div class="text-center">
+        <div id="models-container">
+            <!-- Page title -->
+            <h1>Showing all {{ modelType }}</h1>
+            <!-- Order by links -->
+            <div class="margin-top">Sort: <a href="" ng-click="setOrder('name')">A-Z</a> | <a href="" ng-click="setOrder('-name')">Z-A</a></div>
+            <!-- Contains previews -->
+            <div class="panel padded">
+                <!-- Model preview -->
+                <div class="models-item ng-animate-disabled" ng-repeat="model in models | orderBy:order | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <a ng-href="http://downing.club/{{ modelType }}/{{ model.id }}">
+                        <div class="models-preview">
+                            <div class="models-name">{{ ::model.name }}</div>
+                            <div class="models-filter"></div>
+                            <img class="models-image" src="{{ ::model.medium_image }}"/>
+                        </div>
+                    </a>
+                </div>
             </div>
+            <!-- prev/next links -->
+            <button class="models-pager" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Prev</button>
+            <span> {{ currentPage+1 }}/{{ numberOfPages() }} </span>
+            <button class="models-pager" ng-disabled="currentPage >= models.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
         </div>
     </div>
-    <!-- prev/next links -->
-    <button class="models-pager" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Prev</button>
-    <span> {{ currentPage+1 }}/{{ numberOfPages() }} </span>
-    <button class="models-pager" ng-disabled="currentPage >= models.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
 </div>

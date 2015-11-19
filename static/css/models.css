@@ -1,3 +1,8 @@
+#models-container {
+    display: inline-block;
+    text-align: left;
+}
+
 .models-item {
     position: relative;
     display: inline-block;
