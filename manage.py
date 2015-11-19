@@ -18,5 +18,3 @@ def rebuild_prod_database():
 
 if __name__ == '__main__':
     manager.run()
-
-manager.run()

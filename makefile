@@ -7,7 +7,7 @@ www:
 	cp -r static/* /data/www
 
 uwsgi:
-	export CONFIG_PATH="~/cs373-idb/config.py"
+	export CONFIG_PATH="/home/mm/cs373-idb/config.py"
 	nohup ~/.local/bin/uwsgi --ini uwsgi.ini &
 
 clean:
