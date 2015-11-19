@@ -34,14 +34,7 @@
     z-index: -1000;
     overflow: hidden;
     background-position: center center;
-}
-
-#bg-1 {
     background-image: url("../images/splash.jpg");
-}
-
-#bg-2 {
-    background-image: url("../images/splash2.jpeg");
 }
 
 #splash-footer {
