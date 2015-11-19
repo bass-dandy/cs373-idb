@@ -1,5 +1,5 @@
 ### BASE URL ###
-BASE_URL = 'http://downing.club'
+BASE_URL = '/api'
 
 ### HTML STATUS CODES ###
 OK = 200

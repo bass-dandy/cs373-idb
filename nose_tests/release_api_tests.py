@@ -1,5 +1,5 @@
-from tests.constants import CURTAIN_CALL
-from tests.nd_test_case import NDTestCase
+from nose_tests.constants import CURTAIN_CALL
+from nose_tests.nd_test_case import NDTestCase
 from flask_app import app
 
 

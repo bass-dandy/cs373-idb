@@ -1,5 +1,5 @@
-from tests.constants import BEST_IN_THE_WORLD
-from tests.nd_test_case import NDTestCase
+from nose_tests.constants import BEST_IN_THE_WORLD
+from nose_tests.nd_test_case import NDTestCase
 from flask_app import app
 
 

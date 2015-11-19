@@ -2,7 +2,7 @@ import json
 import unittest
 from abc import ABCMeta, abstractmethod
 from werkzeug.datastructures import Headers
-from tests.setup_tests import SetupTests
+from nose_tests.setup_tests import SetupTests
 
 
 class NDTestCase(unittest.TestCase, metaclass=ABCMeta):

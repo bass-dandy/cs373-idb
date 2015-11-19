@@ -1,15 +1,15 @@
-from tests.constants import EMINEM
-from tests.nd_test_case import NDTestCase
+from nose_tests.constants import FACK
+from nose_tests.nd_test_case import NDTestCase
 from flask_app import app
 
 
-class ArtistAPITest(NDTestCase):
+class SongAPITest(NDTestCase):
 
     def setUp(self):
-        super(ArtistAPITest, self).setUp()
+        super(SongAPITest, self).setUp()
 
     def test_get(self):
-        get_uri = '{}/artists/{}'.format(app.config['BASE_URL'], EMINEM)
+        get_uri = '{}/songs/{}'.format(app.config['BASE_URL'], FACK)
         response = self.json_get(get_uri)
 
         reponse_dict = self.dict_from_response(response)
