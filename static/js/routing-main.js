@@ -85,6 +85,9 @@ app.controller('labelsController', function($scope, Sources) {
                 return Math.ceil($scope.models.length/$scope.pageSize);                
             };
             $scope.models = response.data;
+            $scope.models.forEach(function(entry) {
+                entry.medium_image = entry.small_image;
+            });
         }, function() {});
 });
 
