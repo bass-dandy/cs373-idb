@@ -9,7 +9,7 @@ class ArtistAPITest(NDTestCase):
         super(ArtistAPITest, self).setUp()
 
     def test_get(self):
-        get_uri = '{}/artists/{}?q=test'.format(app.config['BASE_URL'], EMINEM)
+        get_uri = '{}/artists/{}'.format(app.config['BASE_URL'], EMINEM)
         response = self.json_get(get_uri)
 
         reponse_dict = self.dict_from_response(response)
