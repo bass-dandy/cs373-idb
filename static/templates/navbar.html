@@ -28,14 +28,16 @@
         </div>
     </div>
     <!-- Search Icon -->
-    <div id="search" class="navbutton">
-        <svg viewBox="0 0 62.993 62.993">
-            <use xlink:href="#svg_search"></use>
-        </svg>
-    </div>
+    <a ng-href="/search/{{ query }}">
+        <div id="search" class="navbutton">
+            <svg viewBox="0 0 62.993 62.993">
+                <use xlink:href="#svg_search"></use>
+            </svg>
+        </div>
+    </a>
     <!-- Search bar -->
     <div id="search-bar">
-        <input type="search" placeholder="Search"></input>
+        <input type="search" placeholder="Search" ng-model="query"></input>
     </div>
 </div>
 

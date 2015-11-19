@@ -26,6 +26,7 @@ var app = angular
 
 app.controller('mainController', function($scope) {
     $scope.order = "name";
+    $scope.query="";
 
     $scope.setOrder = function(order) {
         $scope.order = order;
@@ -104,6 +105,13 @@ app.controller('releasesController', function($scope, Sources) {
         }, function() {});
 });
 
+app.controller('searchController', function($scope, $routeParams, Sources) {
+    Sources.fromUri("/api/?q=" + $routeParams.id)
+        .then(function(response) {
+            $scope.results = response.data;
+        }, function() {});
+});
+
 app.config(function($routeProvider, $locationProvider, $animateProvider) {
     $routeProvider
 
@@ -145,6 +153,11 @@ app.config(function($routeProvider, $locationProvider, $animateProvider) {
         .when('/releases/:id', {
             templateUrl : 'templates/release.html',
             controller  : 'mainController'
+        })
+
+        .when('/search/:id', {
+            templateUrl : 'templates/search.html',
+            controller  : 'searchController'
         });
 
     $locationProvider.html5Mode(true);

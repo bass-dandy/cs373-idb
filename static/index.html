@@ -38,10 +38,10 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body ng-app="meccaApp">
+    <body ng-app="meccaApp" ng-controller="mainController">
 
         <div ng-include="'templates/navbar.html'"></div>
-        <div ng-view ng-controller="mainController"></div>
+        <div ng-view></div>
 
         <!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
