@@ -1,5 +1,5 @@
-from tests.constants import ACL
-from tests.nd_test_case import NDTestCase
+from nose_tests.constants import ACL
+from nose_tests.nd_test_case import NDTestCase
 from flask_app import app
 
 

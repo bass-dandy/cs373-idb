@@ -20,7 +20,7 @@ before_script:
 script:
     - psql -d postgres -f init_db.sql
     - export CONFIG_PATH=/home/travis/build/naughtyfiddle/cs373-idb/config.py
-    - nosetests tests/
+    - nosetests nose_tests/
     - date
     - ls -lah
 

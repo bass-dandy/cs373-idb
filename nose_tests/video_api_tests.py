@@ -1,15 +1,15 @@
-from tests.constants import FACK
-from tests.nd_test_case import NDTestCase
+from nose_tests.constants import FACK_VIDEO
+from nose_tests.nd_test_case import NDTestCase
 from flask_app import app
 
 
-class SongAPITest(NDTestCase):
+class VideoAPITest(NDTestCase):
 
     def setUp(self):
-        super(SongAPITest, self).setUp()
+        super(VideoAPITest, self).setUp()
 
     def test_get(self):
-        get_uri = '{}/songs/{}'.format(app.config['BASE_URL'], FACK)
+        get_uri = '{}/videos/{}'.format(app.config['BASE_URL'], FACK_VIDEO)
         response = self.json_get(get_uri)
 
         reponse_dict = self.dict_from_response(response)
