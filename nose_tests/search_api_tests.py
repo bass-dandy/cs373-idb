@@ -36,4 +36,11 @@ class SearchAPITest(NDTestCase):
 
         self.assertEqual(reponse_dict, reponse_dict_cmp)
 
+    def test_case_insensitive(self):
+        response = self.json_get('{}/?q=Em'.format(app.config['BASE_URL']))
+
+        reponse_dict = self.dict_from_response(response)
+
+        self.assertIn('id', reponse_dict['artists'][0])
+
 
