@@ -25,7 +25,7 @@ class MyTests(TestCase):
 
     def test_release_id(self):
         release = Release.query.get(1)
-        self.assertEqual("Grow", release.name)
+        self.assertEqual(1, release.id)
 
     def test_release_name(self):
         release = Release.query.filter_by(name="Happiness").first()
