@@ -16,6 +16,12 @@ var app = angular
             }
             return minutes + ':' + seconds;
         };
+    })
+    .filter('startFrom', function() {
+        return function(input, start) {
+            start = +start;
+            return input.slice(start);
+        };
     });
 
 app.controller('mainController', function($scope) {
@@ -60,6 +66,11 @@ app.controller('artistsController', function($scope, Sources) {
     $scope.modelType = 'artists'; 
     Sources.fromUri("/api/artists")
         .then(function(response) {
+            $scope.currentPage = 0;
+            $scope.pageSize = 12;
+            $scope.numberOfPages=function(){
+                return Math.ceil($scope.models.length/$scope.pageSize);                
+            };
             $scope.models = response.data;
         }, function() {});
 });
@@ -68,6 +79,11 @@ app.controller('labelsController', function($scope, Sources) {
     $scope.modelType = 'labels'; 
     Sources.fromUri("/api/labels")
         .then(function(response) {
+            $scope.currentPage = 0;
+            $scope.pageSize = 12;
+            $scope.numberOfPages=function(){
+                return Math.ceil($scope.models.length/$scope.pageSize);                
+            };
             $scope.models = response.data;
         }, function() {});
 });
@@ -76,11 +92,16 @@ app.controller('releasesController', function($scope, Sources) {
     $scope.modelType = 'releases'; 
     Sources.fromUri("/api/releases")
         .then(function(response) {
+            $scope.currentPage = 0;
+            $scope.pageSize = 12;
+            $scope.numberOfPages = function() {
+                return Math.ceil($scope.models.length/$scope.pageSize);                
+            };
             $scope.models = response.data;
         }, function() {});
 });
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider, $animateProvider) {
     $routeProvider
 
         .when('/', {
@@ -124,6 +145,7 @@ app.config(function($routeProvider, $locationProvider) {
         });
 
     $locationProvider.html5Mode(true);
+    $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
 });
 
 app.controller('artistController', function($scope, $routeParams, Sources) {
