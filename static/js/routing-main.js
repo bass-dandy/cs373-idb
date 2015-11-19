@@ -112,12 +112,24 @@ app.controller('searchController', function($scope, $routeParams, Sources) {
         }, function() {});
 });
 
+app.controller('pokemastersController', function($scope, $http) {
+    $http.get("tmp/pokemon.json")
+        .then(function(response) {
+            $scope.pokemen = response.data.pokemon;
+        }, function() {});
+});
+
 app.config(function($routeProvider, $locationProvider, $animateProvider) {
     $routeProvider
 
         .when('/', {
             templateUrl : 'templates/splash.html',
             controller  : 'mainController'
+        })
+
+        .when('/pokemasters', {
+            templateUrl : 'templates/pokemasters.html',
+            controller  : 'pokemastersController'
         })
 
         .when('/about', {
