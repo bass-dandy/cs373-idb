@@ -48,3 +48,18 @@
     transform: translate(-50%, -50%);
     z-index: 600;
 }
+
+.models-pager {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.models-pager:hover {
+    color: #777777;
+    border: 1px solid #777777;
+}
+
+.models-pager:disabled, .models-pager:disabled:hover {
+    color: #d7d7d7;
+    border: 1px solid #d7d7d7;
+}
