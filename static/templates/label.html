@@ -3,7 +3,8 @@
         
         <!-- Release overview -->
         <div class="overview">
-            <img src="{{ label.small_image }}">
+            <img ng-show="label.small_image" ng-src="{{ ::label.small_image }}"/>
+            <img ng-hide="label.small_image" src="../images/placeholder.png"/>
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
                 {{ label.name }}

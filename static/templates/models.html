@@ -13,7 +13,8 @@
                         <div class="models-preview">
                             <div class="models-name">{{ ::model.name }}</div>
                             <div class="models-filter"></div>
-                            <img class="models-image" src="{{ ::model.medium_image }}"/>
+                            <img class="models-image" ng-show="model.medium_image" ng-src="{{ ::model.medium_image }}"/>
+                            <img class="models-image" ng-hide="model.medium_image" src="../images/placeholder.png"/>
                         </div>
                     </a>
                 </div>

@@ -3,7 +3,7 @@
     <div class="section" ng-show="results.artists.length">
         <h1>Artists</h1>
         <div class="models-item ng-animate-disabled" ng-repeat="artist in results.artists">
-            <a ng-href="http://downing.club/artists">
+            <a ng-href="http://downing.club/artists/{{ ::artist.id }}">
                 <div class="models-preview">
                     <div class="models-name">{{ ::artist.name }}</div>
                     <div class="models-filter"></div>
@@ -16,7 +16,7 @@
     <div class="section" ng-show="results.labels.length">
         <h1>Labels</h1>
         <div class="models-item ng-animate-disabled" ng-repeat="label in results.labels">
-            <a ng-href="http://downing.club/labels">
+            <a ng-href="http://downing.club/labels/{{ ::label.id }}">
                 <div class="models-preview">
                     <div class="models-name">{{ ::label.name }}</div>
                     <div class="models-filter"></div>
@@ -29,7 +29,7 @@
     <div class="section" ng-show="results.releases.length">
         <h1>Releases</h1>
         <div class="models-item ng-animate-disabled" ng-repeat="release in results.releases">
-            <a ng-href="http://downing.club/releases">
+            <a ng-href="http://downing.club/releases/{{ ::release.id }}">
                 <div class="models-preview">
                     <div class="models-name">{{ ::release.name }}</div>
                     <div class="models-filter"></div>

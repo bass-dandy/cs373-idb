@@ -3,7 +3,8 @@
         
         <!-- Release overview -->
         <div class="overview">
-            <img src="{{ ::release.medium_image }}">
+            <img ng-show="release.medium_image" ng-src="{{ ::release.medium_image }}"/>
+            <img ng-hide="release.medium_image" src="../images/placeholder.png"/>
             <div>
                 <strong class="subsection text-uppercase">Artist</strong>
                 <a ng-href="http://downing.club/artists/{{ ::release.artist.id }}">{{ ::release.artist.name }}</a>

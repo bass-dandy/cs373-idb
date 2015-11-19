@@ -7,7 +7,8 @@
         
         <!-- Artist Info -->
         <div class="overview">
-            <img ng-src="{{ ::artist.medium_image }}">
+            <img ng-show="artist.medium_image" ng-src="{{ ::artist.medium_image }}"/>
+            <img ng-hide="artist.medium_image" src="../images/placeholder.png"/>
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
                 <a href="http://downing.club/labels/{{ ::artist.label.id }}">{{ ::artist.label.name }}</a>
