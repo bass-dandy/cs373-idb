@@ -12,7 +12,7 @@ class MyTests(TestCase):
 
     def test_artist_id(self):
         artist = Artist.query.get(1)
-        self.assertEqual("Chon", artist.name)
+        self.assertEqual(1, artist.id)
         #print("Artist Test 1\nExpected: Chon\nActual: "+artist['name'])
 
     def test_artist_name(self):
@@ -20,7 +20,7 @@ class MyTests(TestCase):
         self.assertEqual("Chon", artist.name)
 
     def test_artist_not_in_db(self):
-        artist = Artist.query.filter_by(name="Justin Bieber").first()
+        artist = Artist.query.filter_by(name="Taylor Swift").first()
         self.assertIsNone(artist)
 
     def test_release_id(self):
