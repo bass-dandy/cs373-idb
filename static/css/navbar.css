@@ -10,14 +10,13 @@
     position: fixed;
     top: 0px;
     background-color: #1E293E;
-    overflow: hidden;
     z-index: 1000;
 }
 
 .navbutton {
-    display: inline-block;
+    float: left;
     height: 100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     background-color: #2B3A58;
     color: white;
 }
@@ -58,6 +57,99 @@
     }
 }
 
+.navlink {
+    float: left;
+    padding: 0px 10px 0px 10px;
+    font-size: 0.75em;
+    color: white;
+}
+
+.navlink-first {
+    padding-left: 20px;
+}
+
+.navlink-last {
+    padding-right: 20px;
+}
+
+.navlink:hover {
+    color: #c7c7c7;
+}
+
+#search-bar {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    overflow: hidden;
+}
+
+#search-bar input {
+    width: 100%;
+    height: 100%;
+    font-size: 0.75em;
+    line-height: normal;
+    max-width: 400px;
+    float: right;
+    padding: 0px 5px 0px 5px;
+    background-color: white;
+    border: none;
+    position: relative;
+}
+
 #search {
     float: right;
+}
+
+.show-at-700 {
+    display: none;
+}
+
+.show-at-600 {
+    display: none;
+}
+
+.show-at-500 {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .hide-at-700 {
+        display: none;
+    }
+    .show-at-700 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hide-at-600 {
+        display: none;
+    }
+    .show-at-600 {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hide-at-500 {
+        display: none;
+    }
+    .show-at-500 {
+        display: block;
+    }
+}
+
+#more, #more:active, #more:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#more:hover {
+    text-decoration: none;
+    color: #c7c7c7;
+}
+
+.dropdown {
+    display: inline-block;
 }
