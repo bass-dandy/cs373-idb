@@ -144,7 +144,7 @@ class Song(db.Model):
     __tablename__ = 'songs'
     id = db.Column(db.Integer, primary_key=True)
     lyrics = db.Column(db.String)
-    name = db.Column(db.String(128))
+    name = db.Column(db.String(150))
     uri = db.Column(db.String)
     preview_url = db.Column(db.String)
     disc_number = db.Column(db.Integer)
