@@ -2,7 +2,7 @@ from flask.ext.restful import reqparse
 from flask_restful import Resource, abort
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import DataError
-from sqlalchemy import asc, desc
+from sqlalchemy import asc, desc, func
 from flask_app.main.models import Artist
 from flask_app import app
 from flask_app.main.resources.schemas.artist import ArtistSchema
@@ -53,11 +53,11 @@ class ArtistAllAPI(Resource):
                 sort = asc if args['order'] == 'asc' else desc
             if 'page' in args and 'pagesize' in args and args['page'] is not None and args['pagesize'] is not None:
                 try:
-                    artists = Artist.query.order_by(sort(Artist.name.lower())).paginate(args['page'], args['pagesize']).items
+                    artists = Artist.query.order_by(sort(func.lower(Artist.name))).paginate(args['page'], args['pagesize']).items
                 except Exception:
                     return {}
             else:
-                artists = Artist.query.order_by(sort(Artist.name.lower())).all()
+                artists = Artist.query.order_by(sort(func.lower(Artist.name))).all()
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(id))
 
