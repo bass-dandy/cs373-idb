@@ -1,3 +1,6 @@
+### BASE URL ###
+BASE_URL = '/api'
+
 ### HTML STATUS CODES ###
 OK = 200
 UNPROCESSABLE_ENTITY = 422

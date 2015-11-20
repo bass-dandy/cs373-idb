@@ -1,0 +1,29 @@
+<div id="fixed-width-container" ng-controller="labelController">
+    <div class="section">
+        
+        <!-- Release overview -->
+        <div class="overview">
+            <img ng-show="label.small_image" ng-src="{{ ::label.small_image }}"/>
+            <img ng-hide="label.small_image" src="../images/placeholder.png"/>
+            <div>
+                <strong class="subsection text-uppercase">Label</strong>
+                {{ label.name }}
+                <strong class="subsection text-uppercase">About</strong>
+                {{ label.bio }}
+            </div>
+        </div>
+        <!--Associated acts -->
+        <div class="margin-top">Sort: <a href="">A-Z</a> | <a href="">Z-A</a></div>
+        <div class="panel text-justify">
+            <div class="models-item" ng-repeat="artist in label.artists | orderBy:'name'">
+                <a ng-href="http://downing.club/artists/{{ artist.id }}">
+                    <div class="models-preview">
+                        <div class="models-name">{{ ::artist.name }}</div>
+                        <div class="models-filter"></div>
+                        <img class="models-image" src="{{ ::artist.medium_image }}"/>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

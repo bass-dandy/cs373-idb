@@ -18,6 +18,9 @@ before_script:
     - pip3 list
 
 script:
+    - psql -d postgres -f init_db.sql
+    - export CONFIG_PATH=/home/travis/build/naughtyfiddle/cs373-idb/config.py
+    - nosetests nose_tests/
     - date
     - ls -lah
 
@@ -26,7 +29,7 @@ after_success: |
         exit 0;
     fi
 
-    # Merge dev to beta
+    # Merge dev to master
     if [ -n "$GITHUB_KEY" ]; then
 
         export GIT_COMMITTER_EMAIL=travis
@@ -34,7 +37,7 @@ after_success: |
 
         git clone https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git merge
         cd merge
-        git checkout beta || exit
+        git checkout master || exit
         git merge origin/dev || exit
         git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
     fi

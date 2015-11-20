@@ -1,3 +1,70 @@
-a tr:hover {
-    background-color: #e7e7e7;
+#models-container {
+    display: inline-block;
+    text-align: left;
+}
+
+.models-item {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.models-item > a, .models-item:hover > a {
+    color: white;
+}
+
+.models-image {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.models-preview:hover .models-image {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.models-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    transition: 0.3s;
+}
+
+.models-preview:hover .models-filter {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.models-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 600;
+}
+
+.models-pager {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.models-pager:hover {
+    color: #777777;
+    border: 1px solid #777777;
+}
+
+.models-pager:disabled, .models-pager:disabled:hover {
+    color: #d7d7d7;
+    border: 1px solid #d7d7d7;
 }

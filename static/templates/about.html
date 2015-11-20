@@ -1,0 +1,128 @@
+<div id="about-container">
+    <!-- Developer cards -->
+    <div class="about_section text-uppercase"><strong>Meet the Mutants</strong></div>
+
+    <div class="about_card panel">
+        <img src="https://avatars3.githubusercontent.com/u/6219058?v=3&s=460"/>
+        <div>Kevin Chi</div>
+        <strong class="text-uppercase subsection">Bio</strong>
+        <p class="text-justify">Wants to get a job in web developing and enjoys all types of music.</p>
+        <strong class="text-uppercase subsection">Major Responsibilites</strong>
+        Frontend
+        <strong class="text-uppercase subsection">No. Commits</strong>
+        {{ ::haoc.commits }}
+        <strong class="text-uppercase subsection">No. Issues</strong>
+        {{ haoc.issues }}
+        <strong class="text-uppercase subsection">No. unit tests</strong>
+        0
+    </div>
+    <div class="about_card panel">
+        <img src="images/chris.jpg"/>
+        <div>Christian Dinh</div>
+        <strong class="text-uppercase subsection">Bio</strong>
+        UT senior looking for a job in full-stack development. Mostly listens to obscure garbage.
+        <strong class="text-uppercase subsection">Major Responsibilites</strong>
+        Frontend
+        <strong class="text-uppercase subsection">No. Commits</strong>
+        {{ ::naughtyfiddle.commits }}
+        <strong class="text-uppercase subsection">No. Issues</strong>
+        {{ naughtyfiddle.issues }}
+        <strong class="text-uppercase subsection">No. unit tests</strong>
+        0
+    </div>
+    <div class="about_card panel">
+        <img src="images/kaelen_photo.jpg"/>
+        <div>Kaelen Haag</div>
+        <strong class="text-uppercase subsection">Bio</strong>
+        Graduates this December. Loves all types of music except for Modern Country
+        <strong class="text-uppercase subsection">Major Responsibilites</strong>
+        API and Backend
+        <strong class="text-uppercase subsection">No. Commits</strong>
+        {{ ::KaelenHaag1.commits }}
+        <strong class="text-uppercase subsection">No. Issues</strong>
+        {{ KaelenHaag1.issues }}
+        <strong class="text-uppercase subsection">No. unit tests</strong>
+        13
+    </div>
+    <div class="about_card panel">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAKlAAAAJDNmZGRhYTI3LTE5ZWMtNDhhMS1iMzY2LWZkZDZiMTY3OWQ2MA.jpg"/>
+        <div>Cesar Rios</div>
+        <strong class="text-uppercase subsection">Bio</strong>
+        Music is my favorite sports and I love coding!
+        <strong class="text-uppercase subsection">Major Responsibilites</strong>
+        Backend and API
+        <strong class="text-uppercase subsection">No. Commits</strong>
+        {{ ::rioscesar.commits }}
+        <strong class="text-uppercase subsection">No. Issues</strong>
+        {{ rioscesar.issues }}
+        <strong class="text-uppercase subsection">No. unit tests</strong>
+        9
+    </div>
+    <div class="about_card panel">
+        <img src="images/mtsang.png"/>
+        <div>Michael Tsang</div>
+        <strong class="text-uppercase subsection">Bio</strong>
+        Wants to contribute to the aerospace industry. Likes to play video games on his spare time.
+        <strong class="text-uppercase subsection">Major Responsibilites</strong>
+        Documentation, reporting, frontend and backend
+        <strong class="text-uppercase subsection">No. Commits</strong>
+        {{ ::met2224.commits }}
+        <strong class="text-uppercase subsection">No. Issues</strong>
+        {{ met2224.issues }}
+        <strong class="text-uppercase subsection">No. unit tests</strong>
+        0
+    </div>
+
+    <div class="about_section text-uppercase"><strong>project stats</strong></div>
+
+    <div class="about_panel panel">
+        <strong class="text-uppercase subsection">Apiary API</strong>
+        <a href="https://jsapi.apiary.io/previews/musicmecca/reference">https://jsapi.apiary.io/previews/musicmecca/reference</a>
+        <strong class="text-uppercase subsection">Github Repo</strong>
+        <a href="https://github.com/naughtyfiddle/music-mecca">https://github.com/naughtyfiddle/music-mecca</a>
+        <strong class="text-uppercase subsection">Github Issue Tracker</strong>
+        <a href="https://github.com/naughtyfiddle/music-mecca/issues">https://github.com/naughtyfiddle/music-mecca/issues</a>
+        <strong class="text-uppercase subsection">Github Wiki</strong>
+        <a href="https://github.com/naughtyfiddle/music-mecca/wiki">https://github.com/naughtyfiddle/music-mecca/wiki</a>
+    </div>
+    <div class="about_panel panel">
+        <strong class="text-uppercase subsection">Total Commits</strong>
+        {{ commits }}
+        <strong class="text-uppercase subsection">Total Issues</strong>
+        {{ issues }}
+        <strong class="text-uppercase subsection">Total Unit Tests</strong>
+        22
+    </div>
+
+    <div class="about_section text-uppercase"><strong>Data Sources</strong></div>
+
+    <div class="about_panel panel">
+        <strong class="text-uppercase subsection">Last.fm</strong>
+        <a href="http://www.last.fm/api">http://www.last.fm/api</a><br>
+        Describe how it was scraped here.
+    
+        <strong class="text-uppercase subsection">Discogs</strong>
+        <a href="https://www.discogs.com/developers/">https://www.discogs.com/developers/</a><br>
+        Describe how it was scraped here.
+        
+        <strong class="text-uppercase subsection">Jambase</strong>
+        <a href="http://developer.jambase.com/docs">http://developer.jambase.com/docs</a><br>
+        Describe how it was scraped here.
+    </div>
+
+    <button type="button" class="btn btn-info btn-lg margin-top" ng-click="runTests()" data-toggle="modal" data-target="#test-modal">Run Tests</button>
+    
+    <div id="test-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Test Results</h4>
+                </div>
+                <div class="modal-body">
+                    {{ test }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,227 +5,586 @@ HOST: http://downing.club/
 
 Music Mecca is a source for information about musicians and bands, as well as the music they release.
 
-## Artist ID [/artist/{artist_id}]
+# Group Artists
+
+Artists are all musicians stored in our database. That includes solo artists or bands.
+
+## Artist [/artists/{artistId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/artists/1
+
+    + Body
+
+            {
+                "id": 1,
+                "uri": "/artists/1"
+                "name": "Chon",
+                "bio": "Chon bio",
+                "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
+                "label":
+                {
+                    "uri":"labels/3"
+                },
+                "awards": [
+                    {
+                        "uri": "awards/3"
+                    },
+                    {
+                        "uri": "awards/4"
+                    }
+                ],
+                "concerts": [
+                    {
+                        "uri":"concerts/3"
+                    },
+                    {
+                        "uri":"concerts/4"
+                    }
+                ],
+                "releases": [
+                    {
+                        "uri":"/releases/1"
+                    },
+                    {
+                        "uri":"/releases/2"
+                    },
+                    {
+                        "uri":"/releases/3"
+                    }
+                ]
+            }
+
+### Get an Artist [GET]
++ Parameters
+    + artistId (id) - ID of the Artist
+
++ Response 200
+[Artist][]
+
+## Artist Collection [/artists]
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "uri": "/artists/1"
+                    "name": "Chon",
+                    "bio": "Chon bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
+                    "label":
+                    {
+                        "uri":"labels/3"
+                    },
+                    "awards": [
+                        {
+                            "uri": "awards/3"
+                        },
+                        {
+                            "uri": "awards/4"
+                        }
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/3"
+                        },
+                        {
+                            "uri":"concerts/4"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/1"
+                        },
+                        {
+                            "uri":"/releases/2"
+                        },
+                        {
+                            "uri":"/releases/3"
+                        }
+                    ]
+                }
+                {
+                    "id": 2,
+                    "uri": "/artists/2"
+                    "name": "La Dispute",
+                    "bio": "La Dispute bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/7lQKE6HaKQcCsgLRMhsh5W",
+                    "label":
+                    {
+                        "uri":"labels/2"
+                    },
+                    "awards": [
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/5"
+                        },
+                        {
+                            "uri":"concerts/6"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/4"
+                        },
+                        {
+                            "uri":"/releases/5"
+                        },
+                        {
+                            "uri":"/releases/6"
+                        }
+                    ]
+                }
+            ]
+
+### List All Artists [GET]
+
++ Response 200
+
+    [Artist Collection][]
+
+## Search Artist [/artists/{artistName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/artists/Chon
+
+    + Body
+    
+            [
+                {
+                    "id": 1,
+                    "uri": "/artists/1"
+                    "name": "Chon",
+                    "bio": "Chon bio",
+                    "large_image": "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    "medium_image": "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    "small_image": "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    "spotify_url": "https://open.spotify.com/artist/2JFljHPanIjYy2QqfNYvC0",
+                    "label":
+                    {
+                        "uri":"labels/3"
+                    },
+                    "awards": [
+                        {
+                            "uri": "awards/3"
+                        },
+                        {
+                            "uri": "awards/4"
+                        }
+                    ],
+                    "concerts": [
+                        {
+                            "uri":"concerts/3"
+                        },
+                        {
+                            "uri":"concerts/4"
+                        }
+                    ],
+                    "releases": [
+                        {
+                            "uri":"/releases/1"
+                        },
+                        {
+                            "uri":"/releases/2"
+                        },
+                        {
+                            "uri":"/releases/3"
+                        }
+                    ]
+                }
+            ]
+            
+### Search an Artist [GET]
++ Parameters
+    + artistName (string) - Name of the artist being searched for
+
++ Response 200
+    [Search Artist][]
+
+# Group Songs
+
+Songs are any pieces of music the artist has created.
+
+## Song [/songs/{songId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/songs/1
+
+    + Body
+
+            {
+                uri: "/songs/1",
+                lyrics: "Drift Lyrics",
+                preview_url: "https://p.scdn.co/mp3-preview/dbcb8c0026f2fb3a846921c0510e95208aaa6672",
+                disc_number: 1,
+                duration: 36266,
+                spotify_url: "https://open.spotify.com/track/7tLOWKtpmOizfNb1dRjvDC",
+                id: 1,
+                releases: [
+                {
+                    uri: "/releases/1"
+                }
+                ],
+                name: "Drift",
+                track_num: 1
+            }
+
+### Get a Song [GET]
++ Parameters
+    + songId (id) - ID of the Song
+    
++ Response 200
+[Song][]
+
+## Search Song [/songs/{songName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/songs/Drift
+
+    + Body
+
+            [
+                {
+                    uri: "/songs/1",
+                    lyrics: "Drift Lyrics",
+                    preview_url: "https://p.scdn.co/mp3-preview/dbcb8c0026f2fb3a846921c0510e95208aaa6672",
+                    disc_number: 1,
+                    duration: 36266,
+                    spotify_url: "https://open.spotify.com/track/7tLOWKtpmOizfNb1dRjvDC",
+                    id: 1,
+                    releases: [
+                    {
+                        uri: "/releases/1"
+                    }
+                    ],
+                    name: "Drift",
+                    track_num: 1
+                }
+            ]
+            
+### Search a Song [GET]
++ Parameters
+    + songName (String) - Name of the desired song
+    
++ Response 200
+[Search Song][]
+
+
+
+# Group Awards
+
+Any award the Artist has acquired.
+
+## Award [/awards/{awardId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/awards/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Billboard Top 40",
+                "year": "2008"
+            }
+
+### Get an Award [GET]
++ Parameters
+    + awardId (id) - ID of the Award
+
++ Response 200
+[Award][]
+
+# Group Labels
+
+Any label the Artist has been part of.
+
+## Label [/labels/{labelId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/1
+
+    + Body
+
+            {
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                small_image: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
+            }
+
+### Get a Label [GET]
++ Parameters
+    + labelId (id) - ID of the Label
+
++ Response 200
+[Label][]
+
+## Search Label [/api/labels/{labelName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/Rise+Records
+
+    + Body
+    
+            [
+            {
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                small_image: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
+            }
+            ]
+            
+### Search for a Label [GET]
++Parameters
+    + labelName (String) - Name of the label
+    
++ Response 200
+[Search Label][]
+
+## Label Collection [/api/labels/]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/labels/
+
+    + Body
+
+            [
+            {
+                bio: "Rise Records Bio",
+                id: 1,
+                artists: [
+                {
+                    uri: "/artists/3"
+                }
+                ],
+                uri: "/labels/1",
+                name: "Rise Records",
+                small_image: "https://en.wikipedia.org/wiki/Rise_Records#/media/File:Rise_Records_Press_Logo.jpg"
+            }
+            ]
+
+### Get all Labels [GET]
+
++ Response 200
+[Label Collection][]
+
+
+
+
+# Group Releases
+
+Any release the Artist has released.
+
+## Release [/api/releases/{releaseId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/api/releases/1
+
+    + Body
+
+            {
+                medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                type: "album",
+                songs: [
+                {
+                    uri: "/songs/1"
+                },
+                {
+                    uri: "/songs/2"
+                },
+                {
+                    uri: "/songs/3"
+                },
+                {
+                    uri: "/songs/4"
+                },
+                {
+                    uri: "/songs/5"
+                },
+                ],
+                id: 1,
+                year: 2015,
+                uri: "/releases/1",
+                name: "Grow",
+                spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                artists: [
+                {
+                    uri: "/artists/1"
+                }
+                ]
+            }
+
+### Get a Release [GET]
++ Parameters
+    + releaseId (id) - ID of the Release
+
++ Response 200
+[Release][]
+
+## Search Release [/api/releases/{releaseName}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/api/releases/Grow
+
+    + Body
+    
+            [
+                {
+                    medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    type: "album",
+                    songs: [
+                    {
+                        uri: "/songs/1"
+                    },
+                    {
+                        uri: "/songs/2"
+                    },
+                    {
+                        uri: "/songs/3"
+                    },
+                    {
+                        uri: "/songs/4"
+                    },
+                    {
+                        uri: "/songs/5"
+                    },
+                    ],
+                    id: 1,
+                    year: 2015,
+                    uri: "/releases/1",
+                    name: "Grow",
+                    spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                    artists: [
+                    {
+                        uri: "/artists/1"
+                    }
+                    ]
+                }
+            ]
+
+### Search a Release [GET]
++ Parameters
+    + releaseName (String) - Name of the Release
+
++ Response 200
+[Search Release][]
+
+## Release Collection [/api/releases/]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/api/releases/
+
+    + Body
+
+            [
+                {
+                    medium_image: "https://i.scdn.co/image/84fa3ab218c3ab1a6dd5b1333fdb507472d9b132",
+                    large_image: "https://i.scdn.co/image/bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+                    small_image: "https://i.scdn.co/image/c62b0a6c13233672632b95da7a80200a56d7d189",
+                    type: "album",
+                    songs: [
+                    {
+                        uri: "/songs/1"
+                    },
+                    {
+                        uri: "/songs/2"
+                    },
+                    {
+                        uri: "/songs/3"
+                    },
+                    {
+                        uri: "/songs/4"
+                    },
+                    {
+                        uri: "/songs/5"
+                    },
+                    ],
+                    id: 1,
+                    year: 2015,
+                    uri: "/releases/1",
+                    name: "Grow",
+                    spotify_url: "https://open.spotify.com/album/3pYRPmrFNBhewVtiN6DBh7",
+                    artists: [
+                    {
+                        uri: "/artists/1"
+                    }
+                    ]
+                }
+            ]
+
+### Get all releases [GET]
+
++ Response 200
+[Release Collection][]
+
+
+
+# Group Concert
+
+Any concert the Artist will take part in.
+
+## Concert [/api/concerts/{concertId}]
+
++ Model (application/json)
+            + Headers
+              Location: http://downing.club/api/concerts/2
+
+    + Body
+
+            {
+                "id": 4,
+                "name": "Relapse",
+                "year": "2010"
+            }
+
+### Get a Concert [GET]
++ Parameters
+    + concertId (id) - ID of the Concert
+
++ Response 200
+[Concert][]
 
-    Get the artist by id
 
-    + artist_id (number) - ID of the artist in the form of an integer
-
-### View Artist Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001
-            "name": "Taylor Swift"
-            "bio": "Taylor Swift bio"
-            "photo": Raw photo data
-            "videos": [00001]
-            "label": 00001
-            "awards": [00001]
-            "concerts": [00001]
-            "releases": [00001]
-            "songs": [00001]
-        }
-
-## Artist Name [/artist/{artist_name}]
-
-    Get the artist by name
-
-    + artist_name (string) - name of the artist in the form of a string (spaces must be replaced by underscores)
-
-### View Artist Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001
-            "name": "Taylor Swift"
-            "bio": "Taylor Swift bio"
-            "photo": Raw photo data
-            "videos": [00001]
-            "label": 00001
-            "awards": [00001]
-            "concerts": [00001]
-            "releases": [00001]
-            "songs": [00001]
-        }
-
-## Song ID [/song/{song_id}]
-
-    Get the song by id
-
-    + song_id (number) - ID of the song in the form of an integer
-
-### View Song Info by ID [GET]
-
-+ Response 200 (application/json)
-
-
-        {
-            "id": 0001
-            "name": "Bad Blood"
-            "lyrics": "Lyrics go here"
-            "artist": [00001, 00002]
-            "release": [00001, 000004]
-        }
-
-## Song Name [/song/{song_name}]
-
-    Get the song by name
-
-    + song_name (string) - name of the song in the form of a string (spaces must be underscores)
-
-### View Song Info by Name [GET]
-
-+ Response 200 (application/json)
-
-
-        {
-            "id": 0001,
-            "name": "Bad Blood",
-            "lyrics": "Lyrics go here",
-            "artist": [00001, 00002],
-            "release": [00001, 000004]
-        }
-
-## Award ID [/award/{award_id}]
-
-    Get the award by ID
-
-    + award_id (number) - ID of the award in the form of an integer
-
-### View Award Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
-
-## Award Name [/award/{award_name}]
-
-    Get the award by name
-
-    + award_name (string) - name of the award in the form of a string (spaces must be underscores)
-
-### View Award Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Album of the Year",
-            "year": "2015",
-            "artist" : [00001]
-        }
-
-## Label ID [/label/{label_id}]
-
-    Get the label by ID
-
-    + label_id (number) - ID of the label in the form of an integer
-
-### View Label Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
-
-## Label Name [/label/{label_name}]
-
-    Get the label by name
-
-    + label_name (string) - name of the label in the form of a string (spaces must be underscores)
-
-### View Label Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "Big Machine Records",
-            "bio": "Bio goes here",
-            "photo": raw photo data,
-            "artist": [00001, 00003, 00005]
-        }
-
-## Release ID [/release/{release_id}]
-
-    Get the release by ID
-    Think of a release as an album
-
-    + release_id (number) - ID of the release in the form of an integer
-
-### View Release Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Release Name [/release/{release_name}]
-
-    Get the release by name
-    Think of a release as an album
-
-    + release_name (string) - Name of the release in the form of a string (spaces must be underscores)
-
-### View Release Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989",
-            "artist": [00001]
-        }
-
-## Concert ID [/concert/{concert_id}]
-
-    Get concert by ID
-
-    + concert_id (number) - ID of the concert in the form of an integer
-
-### View Concert Info by ID [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
-
-## Concert Name [/concert/{concert_name}]
-
-    Get the concert by name.
-
-    + concert_name (string) - name of the concert in the form of a string (spaces must be underscores)
-
-### View Concert Info by Name [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "id": 00001,
-            "name": "1989 Tour",
-            "location": "Austin",
-            "date": "2015-07-04 13:00:00-00",
-            "artist": [00001]
-        }
 

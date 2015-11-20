@@ -1,0 +1,32 @@
+<div id="fixed-width-container" ng-controller="releaseController">
+    <div class="section">
+        
+        <!-- Release overview -->
+        <div class="overview">
+            <img ng-show="release.medium_image" ng-src="{{ ::release.medium_image }}"/>
+            <img ng-hide="release.medium_image" src="../images/placeholder.png"/>
+            <div>
+                <strong class="subsection text-uppercase">Artist</strong>
+                <a ng-href="http://downing.club/artists/{{ ::release.artist.id }}">{{ ::release.artist.name }}</a>
+                <strong class="subsection text-uppercase">Title</strong>
+                {{ ::release.name }}
+                <strong class="subsection text-uppercase">Released</strong>
+                {{ ::release.year }}
+            </div>
+        </div>
+
+        <!-- Track list -->
+        <table id="track-list" class="margin-top">
+            <tr>
+                <th>#</th>
+                <th id="track-title">Track</th>
+                <th class="track-length">Length</th>
+            </tr>
+            <tr ng-repeat="song in release.songs | orderBy:'song.track_num'">
+                <td>{{ ::song.track_num }}</td>
+                <td>{{ ::song.name }}</td>
+                <td class="track-length">{{ ::song.duration | millisToMinutes }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

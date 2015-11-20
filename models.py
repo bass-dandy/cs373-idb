@@ -1,184 +1,157 @@
-#from flask_app import db
-
-from sqlalchemy import Table, Column, Integer, ForeignKey, BLOB, String, Date
-from sqlalchemy.orm import relationship, backref
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
-
-"""
-Many-to-Many relationship between artists and videos
-"""
-artists_video_association_table = Table('artistsVideo', Base.metadata,
-                                       Column('artist_id', Integer, ForeignKey('artists.id')),
-                                       Column('video_id', Integer, ForeignKey('videos.id')))
-"""
-Many-to-Many relationship between artists and concerts
-"""
-artists_concerts_association_table = Table('artistsConcerts', Base.metadata,
-                                             Column('artist_id', Integer, ForeignKey('artists.id')),
-                                             Column('concert_id', Integer, ForeignKey('concerts.id')))
-"""
-Many-to-Many relationship between artists and releases
-"""
-artists_releases_association_table = Table('artistsReleases', Base.metadata,
-                                             Column('artist_id', Integer, ForeignKey('artists.id')),
-                                             Column('release_id', Integer, ForeignKey('releases.id')))
-"""
-Many-to-Many relationship between artists and songs
-"""
-artists_songs_association_table = Table('artistsSongs', Base.metadata,
-                                           Column('artist_id', Integer, ForeignKey('artists.id')),
-                                           Column('song_id', Integer, ForeignKey('songs.id')))
-"""
-Many-to-Many relationship between releases and songs
-"""
-releases_songs_association_table = Table('releasesSongs', Base.metadata,
-                                            Column('release_id', Integer, ForeignKey('releases.id')),
-                                            Column('song_id', Integer, ForeignKey('songs.id')))
+from flask_app import db
 
 
-class Artist(Base):
+class Artist(db.Model):
     """
     Model of Artists
     A Artist is a single person or collection of people that attempt to create music
     """
     __tablename__ = 'artists'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128))
-    bio = Column(String)
-    photo = Column(BLOB)
+    id = db.Column(db.Integer, db.Sequence('artist_id_seq'), primary_key=True)
+    name = db.Column(db.String(128))
+    bio = db.Column(db.String)
+    large_image = db.Column(db.String)
+    medium_image = db.Column(db.String)
+    small_image = db.Column(db.String)
+    spotify_url = db.Column(db.String)
+    uri = db.Column(db.String)
 
-    label_id = Column(Integer, ForeignKey('labels.id'))
+    primary_label_id = db.Column(db.Integer, db.ForeignKey('labels.id', use_alter=True, name='fk_primary_label_id'))
+    primary_label = db.relationship('Label', backref='artists', foreign_keys='Artist.primary_label_id')
 
-    videos = relationship("Video", secondary=artists_video_association_table, backref="artists")
-    concerts = relationship("Concert", secondary=artists_concerts_association_table, backref="artists")
-    releases = relationship("Song", secondary=artists_releases_association_table, backref="artists")
-    songs = relationship("Song", secondary=artists_songs_association_table, backref="artists")
-    awards = relationship("Award", backref="artists")
-
-
-
-    #video_id = Column(Integer, ForeignKey('videos.id'))
-    #videos = relationship('Video')
-    #label_id = Column(Integer, ForeignKey('labels.id'))
-    #label = relationship('Label')
-    #tvpresence_id = Column(Integer, ForeignKey('tvpresences.id'))
-    #tvpresence = relationship('TVPresence')
-    #awards_id = Column(Integer, ForeignKey('awards.id'))
-    #awards = relationship('Award')
-    #concerts_id = Column(Integer, ForeignKey('concerts.id'))
-    #concerts = relationship('Concert')
-    #release_id = Column(Integer, ForeignKey('releases.id'))
-    #releases = relationship('Release')
+    concerts = db.relationship('Concert', backref='artists', secondary='artist_concerts')
+    releases = db.relationship('Release', backref='artists', secondary='artist_releases')
+    awards = db.relationship('Award', backref= 'artists', secondary='artist_awards')
 
 
-class Label(Base):
+class Label(db.Model):
     """
     Model for Label
     A label is a company that funds an artist to make music
     """
     __tablename__ = 'labels'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128))
-    bio = Column(String)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128))
+    bio = db.Column(db.String)
+    uri = db.Column(db.String)
+    photo = db.Column(db.String)
 
-    artists = relationship("Artist", backref="labels")
-
-    #artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
+    #artists = db.relationship("Artist", backref="labels")
+    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
 
 
-class Concert(Base):
+class ArtistConcert(db.Model):
+    """
+    Linking table for Artists and their Concerts
+    """
+    __tablename__ = 'artist_concerts'
+    id = db.Column(db.Integer, primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    concert_id = db.Column(db.Integer, db.ForeignKey('concerts.id'))
+
+
+class Concert(db.Model):
     """
     Model for Concert
     A Concert is an event where artists perform songs at certain location on a date. Usually apart of a tour
     """
     __tablename__ = 'concerts'
-    id = Column(Integer, primary_key=True)
-    location = Column(String(128))
-    name = Column(String(128))
-    date = Column(Date)
-
-    #artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(128))
+    name = db.Column(db.String(128))
+    date = db.Column(db.Date)
+    uri = db.Column(db.String)
 
 
-#class TVPresence(Base):
-#    """ Main table for artist tv presence info
-#    """
-#    __tablename__ = 'tvpresence'
-#    id = Column(Integer, primary_key=True)
-#    year = Column(String(128))
-#    name = Column(String(128))
-#    genre = Column(String(128))
-#    bio = Column(String)
-
-#    artist_id = Column(Integer, ForeignKey('artists.id'))
-#    artist = relationship('Artist')
+class ArtistRelease(db.Model):
+    """
+    Linking table for Artists and their Releases
+    """
+    __tablename__ = 'artist_releases'
+    id = db.Column(db.Integer, db.Sequence('artist_release_id_seq'), primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
 
 
-class Release(Base):
+class Release(db.Model):
     """
     Model for Release
     A release is generally an album of songs put out by an artist or multiple artists
     """
     __tablename__ = 'releases'
-    id = Column(Integer, primary_key=True)
-    year = Column(String(128))
-    name = Column(String(128))
+    id = db.Column(db.Integer, db.Sequence('release_id_seq'), primary_key=True)
+    year = db.Column(db.String(128))
+    name = db.Column(db.String(128))
+    uri = db.Column(db.String)
+    large_image = db.Column(db.String)
+    medium_image = db.Column(db.String)
+    small_image = db.Column(db.String)
+    spotify_url = db.Column(db.String)
+    type = db.Column(db.String)
 
-    songs = relationship('Song', secondary=releases_songs_association_table, backref='releases')
-
-    #artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
+    songs = db.relationship('Song', backref='releases', secondary='release_songs')
 
 
-class Video(Base):
+class ReleaseSong(db.Model):
     """
-    Model for Video
-    A video a video version of a song generally a music video by an artist(s)
+    Linking table for Releases and their songs
     """
-    __tablename__ = 'videos'
-    id = Column(Integer, primary_key=True)
-    year = Column(String(128))
-    name = Column(String(128))
-    song_id = Column(Integer, ForeignKey("songs.id"))
+    __tablename__ = 'release_songs'
+    id = db.Column(db.Integer, primary_key=True)
+    release_id = db.Column(db.Integer, db.ForeignKey('releases.id'))
+    song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
 
 
-    #artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
+# class Video(db.Model):
+#     """
+#     Model for Video
+#     A video a video version of a song generally a music video by an artist(s)
+#     """
+#     __tablename__ = 'videos'
+#     id = db.Column(db.Integer, primary_key=True)
+#     year = db.Column(db.String(128))
+#     name = db.Column(db.String(128))
+#     uri = db.Column(db.String)
 
-    
-class Award(Base):
+
+class ArtistAward(db.Model):
+    """
+    Linking table for Artists and their Awards
+    """
+    __tablename__ = 'artist_awards'
+    id = db.Column(db.Integer, primary_key=True)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    award_id = db.Column(db.Integer, db.ForeignKey('awards.id'))
+
+
+class Award(db.Model):
     """
     Model for Award
     An Award is reconginition of an artist doing something good.
     """
     __tablename__ = 'awards'
-    id = Column(Integer, primary_key=True)
-    year = Column(String(128))
-    name = Column(String(128))
-
-    artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
+    id = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.String(128))
+    name = db.Column(db.String(128))
+    uri = db.Column(db.String)
 
 
-class Song(Base):
+class Song(db.Model):
     """
     Model for Song
     A Song is a piece of work put out by an artist that can be listened to.
     """
     __tablename__ = 'songs'
-    id = Column(Integer, primary_key=True)
-    lyrics = Column(String)
-    name = Column(String(128))
-    audio_url = Column(String)
-    videos = relationship("Video", backref="songs")
+    id = db.Column(db.Integer, primary_key=True)
+    lyrics = db.Column(db.String)
+    name = db.Column(db.String(128))
+    uri = db.Column(db.String)
+    preview_url = db.Column(db.String)
+    disc_number = db.Column(db.Integer)
+    spotify_url = db.Column(db.String)
+    track_num = db.Column(db.Integer)
+    duration = db.Column(db.Integer)
 
-    #artist_id = Column(Integer, ForeignKey('artists.id'))
-    #artist = relationship('Artist')
-    #release_id = Column(Integer, ForeignKey('releases.id'))
-    #release = relationship('Release')
-
+    # video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
+    # video = db.relationship('Video')
 

@@ -1,0 +1,70 @@
+<div id="fixed-width-container" ng-controller="artistController">
+    <div class="section-head parallax">
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
+        <div class="parallax-fg">{{ ::artist.name }}</div>
+    </div>
+    <div class="section">
+        
+        <!-- Artist Info -->
+        <div class="overview">
+            <img ng-show="artist.medium_image" ng-src="{{ ::artist.medium_image }}"/>
+            <img ng-hide="artist.medium_image" src="../images/placeholder.png"/>
+            <div>
+                <strong class="subsection text-uppercase">Label</strong>
+                <a href="http://downing.club/labels/{{ ::artist.label.id }}">{{ ::artist.label.name }}</a>
+                <strong class="subsection text-uppercase">Genre</strong>
+                {{ ::artist.genre }}
+            </div>
+        </div>
+
+        <!-- Bio, releases, etc -->
+        <div class="panel margin-top">
+
+            <!-- Selector links -->
+            <div id="artist_selector">
+                <a href="#about">About</a>
+                <a class="selected" href="#releases">Releases</a>
+            </div>
+
+            <!-- Selector content -->
+            <div class="padded text-center">
+                <a ng-href="http://downing.club/releases/{{ release.id }}" ng-repeat="release in artist.releases">
+                    <div class="artist_release">
+                        <img src="{{ ::release.large_image }}">
+                        <i>{{ ::release.name }}</i>
+                        {{ ::release.year }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-head parallax">
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
+        <div class="parallax-fg">Upcoming Concerts</div>
+    </div>
+    <div class="section">
+        <div class="panel">
+            <div class="event" ng-repeat="event in artist.events">
+                <div class="calendar">
+                    <div>{{ ::event.date.month }}</div>
+                    {{ ::event.date.day }}
+                </div>
+                <div class="event_info">
+                    <b>{{ ::event.name }}</b><br>
+                    {{ ::event.location }}
+                </div>
+            </div>
+            <div class="padded text-center" ng-hide="artist.events.length">We're not aware of any upcoming events.</div>
+        </div>
+    </div>
+    <div class="section-head parallax">
+        <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[random(artist.releases.length)].large_image }}"/>
+        <div class="parallax-fg">Discussion</div>
+    </div>
+    <div class="section">
+        <div class="panel padded text-center">
+            Discussion coming soon!
+        </div>
+    </div>
+</div>
