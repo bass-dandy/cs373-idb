@@ -1,6 +1,7 @@
 from flask_restful import Resource, abort
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import DataError
+from sqlalchemy import asc
 from flask_app.main.models import Release
 from flask_app import app
 from flask_app.main.resources.schemas.release import ReleaseSchema
@@ -11,7 +12,7 @@ class ReleaseAllAPI(Resource):
     def get(self):
         """get all releases"""
         try:
-            releases = Release.query.all()
+            releases = Release.query.order_by(asc(Release.name)).all()
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['RELEASE_NOT_FOUND'].format(id))
 
@@ -36,7 +37,7 @@ class ReleaseNameAPI(Resource):
         """Get releases with name"""
         try:
             actualReleaseName = releaseName.replace('+', ' ')
-            releases = Release.query.filter_by(name=actualReleaseName)
+            releases = Release.query.filter_by(name=actualReleaseName).order_by(asc(Release.name))
         except(DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['RELEASE_NOT_FOUND'].format(actualReleaseName))
 
