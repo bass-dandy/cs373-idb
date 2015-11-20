@@ -1,6 +1,7 @@
 from flask_restful import Resource, abort
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import DataError
+from sqlalchemy import asc
 from flask_app.main.models import Label
 from flask_app import app
 from flask_app.main.resources.schemas.artist import LabelSchema
@@ -12,7 +13,7 @@ class LabelAllAPI(Resource):
     def get(self):
         """get all labels"""
         try:
-            labels = Label.query.all()
+            labels = Label.query.order_by(asc(Label.name)).all()
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['LABEL_NOT_FOUND'].format(id))
 
@@ -38,7 +39,7 @@ class LabelNameAPI(Resource):
         try:
             actualLabelName = labelName.replace("+", " ")
             #print(actualLabelName)
-            labels = Label.query.filter_by(name=actualLabelName)
+            labels = Label.query.filter_by(name=actualLabelName).order_by(asc(Label.name))
             #print(labels)
         except(DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['ARTIST_NOT_FOUND'].format(actualLabelName))
