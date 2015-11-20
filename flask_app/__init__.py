@@ -20,11 +20,11 @@ api.add_resource(SearchAPI, '/')
 from flask.ext.app.main.resources.artist import ArtistIDAPI, ArtistNameAPI, ArtistAllAPI
 api.add_resource(ArtistIDAPI, '/artists/<int:id>')
 api.add_resource(ArtistNameAPI, '/artists/<string:artistName>')
-api.add_resource(ArtistAllAPI, '/artists/')
+api.add_resource(ArtistAllAPI, '/artists', '/artists/')
 
 from flask.ext.app.main.resources.song import SongIDAPI, SongNameAPI
 api.add_resource(SongIDAPI, '/songs/<int:id>')
-api.add_resource(SongNameAPI,'/songs/<string:songName>')
+api.add_resource(SongNameAPI, '/songs/<string:songName>')
 
 
 from flask.ext.app.main.resources.award import AwardIDAPI
@@ -36,12 +36,12 @@ api.add_resource(ConcertIDAPI, '/concerts/<id>')
 from flask.ext.app.main.resources.label import LabelIDAPI, LabelNameAPI, LabelAllAPI
 api.add_resource(LabelIDAPI, '/labels/<int:id>')
 api.add_resource(LabelNameAPI, '/labels/<string:labelName>')
-api.add_resource(LabelAllAPI, '/labels/')
+api.add_resource(LabelAllAPI, '/labels', '/labels/')
 
 from flask.ext.app.main.resources.release import ReleaseIDAPI, ReleaseNameAPI, ReleaseAllAPI
 api.add_resource(ReleaseIDAPI, '/releases/<int:id>')
 api.add_resource(ReleaseNameAPI, '/releases/<string:releaseName>')
-api.add_resource(ReleaseAllAPI, '/releases/')
+api.add_resource(ReleaseAllAPI, '/releases', '/releases/')
 
 from flask.ext.app.main.resources.tests import TestAPI
 api.add_resource(TestAPI, '/runtests/')
