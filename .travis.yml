@@ -35,9 +35,9 @@ after_success: |
         export GIT_COMMITTER_EMAIL=travis
         export GIT_COMMITTER_NAME=travis
 
-        git clone https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git merge
-        cd merge
-        git checkout master || exit
-        git merge origin/dev || exit
-        git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
+    #    git clone https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git merge
+    #    cd merge
+    #    git checkout master || exit
+    #    git merge origin/dev || exit
+    #    git push https://mecca-ci:$GITHUB_KEY@github.com/naughtyfiddle/music-mecca.git
     fi
