@@ -1,0 +1,106 @@
+@font-face {
+    font-family: minecraftia;
+    src: url("../tmp/minecraftia.ttf");
+}
+
+#pokemasters-container {
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-image: url('../tmp/pokemasters.png');
+    font-family: minecraftia;
+    overflow: hidden;
+}
+
+#dex {
+    position: relative;
+    width: 800px;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+#dex > img {
+    width: 100%;
+    height: auto;
+}
+
+#dexScreen {
+    position: absolute;
+    top: 25.5%;
+    left: 3.7%;
+    width: 41.4%;
+    height: 56.1%;
+    overflow: auto;
+    border: 2px solid black;
+    z-index: 900;
+}
+
+#dexInfo {
+    position: absolute;
+    top: 26.5%;
+    right: 4.5%;
+    width: 37.6%;
+    height: 62.2%;
+    background-color: #bae8ab;
+    border-radius: 2%;
+    border: 2px solid black;
+    color: #76936c;
+    overflow: auto;
+    z-index: 900;
+}
+
+#dexInfoTitle {
+    width: 100%;
+    background-color: #b5daa9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#dexInfoUpper {
+    padding: 2%;
+}
+
+#dexInfoUpper > img {
+    width: 50%;
+    height: auto;
+}
+
+#dexInfoUpper > div {
+    width: 50%;
+    float: right;
+}
+
+#dexInfoUpper > div > div {
+    padding: 2%;
+}
+
+.dexEntry, .dexStat {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    background-color: #bae8ab;
+    color: #76936c;
+    text-decoration: none;
+}
+
+.dexEntry:nth-child(even), .dexStat:nth-child(even) {
+    background-color: #b5daa9;
+}
+
+.dexEntry:active, .dexEntry:visited {
+    color: #76936c;
+    text-decoration: none;
+}
+
+.dexEntry:hover {
+    background-color: #76936c;
+    color: #bae8ab;
+    text-decoration: none;
+}

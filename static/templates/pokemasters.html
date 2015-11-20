@@ -1,1 +1,28 @@
-<div class="dexEntry" ng-repeat="pokemon in pokemen">{{ pokemon.POKEMON_NAME }}</div>
+<div id="pokemasters-container">
+    <div id="dex">
+        <img src="../tmp/pokedex.png"/>
+        <div id="dexScreen" ng-init="pokemonIdx=0">
+            <a href="" class="dexEntry" ng-repeat="pokemon in pokemen" ng-click="setIdx(pokemon.POKEMON_ID - 1)">
+                #{{ pokemon.POKEMON_ID }}: {{ pokemon.POKEMON_NAME }}
+            </a>
+        </div>
+        <div id="dexInfo">
+            <div id="dexInfoTitle">{{ pokemen[pokemonIdx].POKEMON_NAME }}</div>
+            <div id="dexInfoUpper">
+                <img ng-src="http://pokemasters.me/static/res/SPRITES/{{ pokemen[pokemonIdx].POKEMON_IMG }}"/>
+                <div>
+                    <div>HT: {{ pokemen[pokemonIdx].POKEMON_HEIGHT }}</div>
+                    <div>WT: {{ pokemen[pokemonIdx].POKEMON_WEIGHT }}</div>
+                </div>
+            </div>
+            <div id="dexInfoContent">
+                <div class="dexStat">ATK: {{ pokemen[pokemonIdx].POKEMON_ATK }}</div>
+                <div class="dexStat">DEF: {{ pokemen[pokemonIdx].POKEMON_DEF }}</div>
+                <div class="dexStat">SPATK: {{ pokemen[pokemonIdx].POKEMON_SPATK }}</div>
+                <div class="dexStat">SPDEF: {{ pokemen[pokemonIdx].POKEMON_SPDEF }}</div>
+                <div class="dexStat">SPD: {{ pokemen[pokemonIdx].POKEMON_SPD }}</div>
+                <div class="dexStat">HP: {{ pokemen[pokemonIdx].POKEMON_HP }}</div>
+            </div>
+        </div>
+    </div>
+</div>

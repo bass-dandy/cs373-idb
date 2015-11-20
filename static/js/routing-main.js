@@ -113,6 +113,9 @@ app.controller('searchController', function($scope, $routeParams, Sources) {
 });
 
 app.controller('pokemastersController', function($scope, $http) {
+    $scope.setIdx = function(idx) {
+        $scope.pokemonIdx = idx;
+    }
     $http.get("tmp/pokemon.json")
         .then(function(response) {
             $scope.pokemen = response.data.pokemon;
