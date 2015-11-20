@@ -53,11 +53,11 @@ class LabelAllAPI(Resource):
                 sort = asc if args['order'] == 'asc' else desc
             if 'page' in args and 'pagesize' in args and args['page'] is not None and args['pagesize'] is not None:
                 try:
-                    label = Label.query.order_by(sort(Label.name)).paginate(args['page'], args['pagesize']).items
+                    label = Label.query.order_by(sort(Label.name.lower())).paginate(args['page'], args['pagesize']).items
                 except Exception:
                     return {}
             else:
-                label = Label.query.order_by(sort(Label.name)).all()
+                label = Label.query.order_by(sort(Label.name.lower())).all()
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['RELEASE_NOT_FOUND'].format(id))
 

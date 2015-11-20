@@ -51,11 +51,11 @@ class ReleaseAllAPI(Resource):
                 sort = asc if args['order'] == 'asc' else desc
             if 'page' in args and 'pagesize' in args and args['page'] is not None and args['pagesize'] is not None:
                 try:
-                    releases = Release.query.order_by(sort(Release.name)).paginate(args['page'], args['pagesize']).items
+                    releases = Release.query.order_by(sort(Release.name.lower())).paginate(args['page'], args['pagesize']).items
                 except Exception:
                     return {}
             else:
-                releases = Release.query.order_by(sort(Release.name)).all()
+                releases = Release.query.order_by(sort(Release.name.lower())).all()
         except (DataError, NoResultFound):
             abort(app.config['NOT_FOUND'], message=app.config['RELEASE_NOT_FOUND'].format(id))
 
