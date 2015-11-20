@@ -9,7 +9,7 @@ Music Mecca is a source for information about musicians and bands, as well as th
 
 Artists are all musicians stored in our database. That includes solo artists or bands.
 
-## Artist [/artists/{artistId}]
+## Artist [/api/artists/{artistId}]
 
 + Model (application/json)
             + Headers
@@ -66,7 +66,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
 + Response 200
 [Artist][]
 
-## Artist Collection [/artists]
+## Artist Collection [/api/artists]
 
 + Model (application/json)
 
@@ -157,7 +157,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
 
     [Artist Collection][]
 
-## Search Artist [/artists/{artistName}]
+## Search Artist [/api/artists/{artistName}]
 
 + Model (application/json)
             + Headers
@@ -220,7 +220,7 @@ Artists are all musicians stored in our database. That includes solo artists or 
 
 Songs are any pieces of music the artist has created.
 
-## Song [/songs/{songId}]
+## Song [/api/songs/{songId}]
 
 + Model (application/json)
             + Headers
@@ -252,7 +252,7 @@ Songs are any pieces of music the artist has created.
 + Response 200
 [Song][]
 
-## Search Song [/songs/{songName}]
+## Search Song [/api/songs/{songName}]
 
 + Model (application/json)
             + Headers
@@ -292,7 +292,7 @@ Songs are any pieces of music the artist has created.
 
 Any award the Artist has acquired.
 
-## Award [/awards/{awardId}]
+## Award [/api/awards/{awardId}]
 
 + Model (application/json)
             + Headers
@@ -317,7 +317,7 @@ Any award the Artist has acquired.
 
 Any label the Artist has been part of.
 
-## Label [/labels/{labelId}]
+## Label [/api/labels/{labelId}]
 
 + Model (application/json)
             + Headers
