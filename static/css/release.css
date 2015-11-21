@@ -14,6 +14,10 @@
     background-color: #e7e7e7;
 }
 
+#track-list tr:hover .track-num {
+    display: none;
+}
+
 #track-list td, #track-list th {
     padding: 5px;
 }

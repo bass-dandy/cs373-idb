@@ -225,6 +225,7 @@ app.controller('labelController', function($scope, $routeParams, Sources) {
 });
 
 app.controller('releaseController', function($scope, $routeParams, Sources) {
+    // Fetch data
     Sources.fromUri("/api/releases/" + $routeParams.id)
         .then(function(response) {
             $scope.release = response.data;
@@ -245,4 +246,27 @@ app.controller('releaseController', function($scope, $routeParams, Sources) {
                     $scope.release.artist = response2.data;
                 }, function() {});
         }, function() {});
+
+    // Set up audio playback
+    $scope.audio = new Audio();
+
+    // Playback controls
+    $scope.togglePlayback = function(url) {
+        if($scope.audio.src != url) {
+            $scope.audio.src = url;
+            $scope.audio.play();
+        } else if($scope.audio.paused) {
+            $scope.audio.play();
+        } else {
+            $scope.audio.pause();
+        }
+    };
+    // For hiding/showing playback buttons
+    $scope.showPause = function(src) {
+        return $scope.audio.src == src && !$scope.audio.paused && !$scope.audio.ended;
+    };
+    // Stop audio when leaving the page
+    $scope.$on('$destroy', function() {
+        $scope.audio.pause();
+    });
 });
