@@ -1,4 +1,4 @@
-<div id="navbar">
+<div id="navbar" ng-controller="navbarController">
     <!-- Logo -->
     <a href="/">
         <div class="navbutton">
@@ -37,9 +37,31 @@
     </a>
     <!-- Search bar -->
     <div id="search-bar">
-        <form ng-submit="search(query)">
-            <input type="search" placeholder="Search" ng-model="query"></input>
-        </form>
+        <div>
+            <form id="search-form" ng-submit="search(query)">
+                <input type="search" placeholder="Search" ng-model="query" ng-focus="focus = true" ng-blur="blur()"></input>
+            </form>
+            <div id="search-dropdown" class="ng-animate-disabled" ng-show="focus && (prefetch.artists.length || prefetch.releases.length || prefetch.labels.length)">
+                <!-- Artists -->
+                <div class="search-dropdown-section" ng-show="prefetch.artists.length">Artists</div>
+                <a ng-href="http://downing.club/artists/{{ artist.id }}" class="search-dropdown-entry" ng-repeat="artist in prefetch.artists">
+                    <img ng-src="{{ artist.small_image }}"/>
+                    {{ artist.name }}
+                </a>
+                <!-- Labels -->
+                <div class="search-dropdown-section" ng-show="prefetch.labels.length">Labels</div>
+                <a ng-href="http://downing.club/labels/{{ label.id }}" class="search-dropdown-entry" ng-repeat="label in prefetch.labels">
+                    <img ng-src="{{ label.small_image }}"/>
+                    {{ label.name }}
+                </a>
+                <!-- Releases -->
+                <div class="search-dropdown-section" ng-show="prefetch.releases.length">Releases</div>
+                <a ng-href="http://downing.club/releases/{{ release.id }}" class="search-dropdown-entry" ng-repeat="release in prefetch.releases">
+                    <img ng-src="{{ release.small_image }}"/>
+                    {{ release.name }}
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 

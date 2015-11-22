@@ -24,11 +24,41 @@ var app = angular
         };
     });
 
-app.controller('mainController', function($scope, $location) {
-    $scope.query="";
+app.controller('mainController', function() {});
+
+app.controller('navbarController', function($scope, $location, Sources) {
+    $scope.query = "";
+    $scope.prefetch = {
+        artists:  [],
+        labels:   [],
+        releases: []
+    };
+
     $scope.search = function(q) {
         $location.path('/search/' + q);
     }
+
+    $scope.blur = function() {
+        setTimeout(function() {
+            $scope.focus = false;
+            $scope.$apply();
+        }, 100);
+    };
+
+    $scope.$watch('query', function() {
+        if($scope.query.length > 3) {
+            Sources.fromUri("/api/?q=" + $scope.query)
+                .then(function(res) {
+                    $scope.prefetch = res.data;
+                }, function() {});
+        } else {
+            $scope.prefetch = {
+                artists:  [],
+                labels:   [],
+                releases: []
+            };
+        }
+    });
 });
 
 app.controller('aboutController', function($scope, $http, Sources) {
