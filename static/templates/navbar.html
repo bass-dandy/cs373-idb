@@ -37,7 +37,9 @@
     </a>
     <!-- Search bar -->
     <div id="search-bar">
-        <input type="search" placeholder="Search" ng-model="query"></input>
+        <form ng-submit="search(query)">
+            <input type="search" placeholder="Search" ng-model="query"></input>
+        </form>
     </div>
 </div>
 
