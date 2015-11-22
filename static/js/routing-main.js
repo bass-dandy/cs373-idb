@@ -24,12 +24,10 @@ var app = angular
         };
     });
 
-app.controller('mainController', function($scope) {
-    $scope.order = "name";
+app.controller('mainController', function($scope, $location) {
     $scope.query="";
-
-    $scope.setOrder = function(order) {
-        $scope.order = order;
+    $scope.search = function(q) {
+        $location.path('/search/' + q);
     }
 });
 
@@ -63,46 +61,53 @@ app.controller('aboutController', function($scope, $http, Sources) {
         }, function() {});
 });
 
-app.controller('artistsController', function($scope, Sources) {
-    $scope.modelType = 'artists'; 
-    Sources.fromUri("/api/artists")
-        .then(function(response) {
-            $scope.currentPage = 0;
-            $scope.pageSize = 12;
-            $scope.numberOfPages=function(){
-                return Math.ceil($scope.models.length/$scope.pageSize);                
-            };
-            $scope.models = response.data;
-        }, function() {});
-});
+app.controller('modelsController', function($scope, $http) {
+    $scope.order = "asc";
+    $scope.currentPage = 1;
+    $scope.models = [];
+    $scope.prev   = [];
+    $scope.next   = [];
 
-app.controller('labelsController', function($scope, Sources) {
-    $scope.modelType = 'labels'; 
-    Sources.fromUri("/api/labels")
-        .then(function(response) {
-            $scope.currentPage = 0;
-            $scope.pageSize = 12;
-            $scope.numberOfPages=function(){
-                return Math.ceil($scope.models.length/$scope.pageSize);                
-            };
-            $scope.models = response.data;
-            $scope.models.forEach(function(entry) {
-                entry.medium_image = entry.small_image;
+    var getModels = function() {
+        $http.get("http://downing.club/api/" + $scope.modelType + "?pagesize=12&page=" + $scope.currentPage + "&order=" + $scope.order)
+            .then(function(res) {
+                if($scope.modelType == 'labels') {
+                    res.data.forEach(function(entry) {
+                        entry.medium_image = entry.small_image;
+                    });
+                }
+                $scope.models = res.data;
             });
-        }, function() {});
+    };
+    getModels();
+    
+    $scope.setOrder = function(order) {
+        if(order != $scope.order) {
+            $scope.order = order;
+            $scope.currentPage = 1;
+            getModels();
+        }
+    }
+    $scope.goToPrev = function() {
+        $scope.currentPage--;
+        getModels();
+    };
+    $scope.goToNext = function() {
+        $scope.currentPage++;
+        getModels();
+    };
 });
 
-app.controller('releasesController', function($scope, Sources) {
+app.controller('artistsController', function($scope) {
+    $scope.modelType = 'artists'; 
+});
+
+app.controller('labelsController', function($scope) {
+    $scope.modelType = 'labels'; 
+});
+
+app.controller('releasesController', function($scope) {
     $scope.modelType = 'releases'; 
-    Sources.fromUri("/api/releases")
-        .then(function(response) {
-            $scope.currentPage = 0;
-            $scope.pageSize = 12;
-            $scope.numberOfPages = function() {
-                return Math.ceil($scope.models.length/$scope.pageSize);                
-            };
-            $scope.models = response.data;
-        }, function() {});
 });
 
 app.controller('searchController', function($scope, $routeParams, Sources) {
@@ -117,8 +122,8 @@ app.controller('pokemastersController', function($scope, $http) {
         $scope.pokemonIdx = idx;
     }
     $http.get("tmp/pokemon.json")
-        .then(function(response) {
-            $scope.pokemen = response.data.pokemon;
+        .then(function(res) {
+            $scope.pokemen = res.data.pokemon;
         }, function() {});
 });
 
