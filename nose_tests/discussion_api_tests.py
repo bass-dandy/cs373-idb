@@ -67,4 +67,13 @@ class DiscussionAPITest(NDTestCase):
         response_dict = self.dict_from_response(response)
         self.assertEqual(len(response_dict[0]['reply']), 2)
 
+        uri = '{}/artists/{}'.format(app.config['BASE_URL'], EMINEM)
+        response = self.json_get(uri)
+
+        self.assertEqual(response.status_code, app.config['OK'])
+        response_dict = self.dict_from_response(response)
+        self.assertEqual(len(response_dict['discussion'][0]['reply']), 2)
+
+
+
 
