@@ -61,9 +61,26 @@
     </div>
     <div class="section">
         <div class="panel padded text-center">
-            <div id="discussion-input">
-                <textarea ng-model="submission"></textarea>
+
+            <!-- Main comment submission form -->
+            <div class="discussion-form">
+                <textarea placeholder="Write a comment..." ng-model="submission"></textarea>
                 <button class="mecca-button" ng-click="postComment()">Post Comment</button>
+            </div>
+            <div class="thread" ng-repeat="comment in artist.discussion | orderBy:'-id'">
+
+                <!-- Main comment -->
+                <div class="comment">
+                    <div ng-bind-html="parseHashtags(comment.discussion)"></div>
+                    <a class="reply-link" href="" ng-click="focus = true" ng-show="!focus">reply</a>
+                </div>
+
+                <!-- Reply submission form -->
+                <div class="discussion-form" ng-show="focus">
+                    <textarea placeholder="Write a reply..." ng-model="submission_reply" ng-blur="focus = false"></textarea>
+                    <button class="mecca-button" ng-click="postReply(submission_reply, comment.id)">Post Reply</button>
+                </div>
+                <div class="reply" ng-repeat="reply in comment.reply" ng-bind-html="parseHashtags(reply.reply)"></div>
             </div>
         </div>
     </div>

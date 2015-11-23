@@ -77,12 +77,38 @@
     color: white;
 }
 
-#discussion-input {
+.discussion-form {
     width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.discussion-form > textarea, .thread > textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.thread {
     text-align: right;
 }
 
-#discussion-input > textarea {
+.comment, .reply {
     width: 100%;
-    height: 100px;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #e7e7e7;
+    text-align: left;
+    line-height: normal;
+    white-space: pre-line;
+}
+
+.reply-link {
+    float: right;
+    margin-top: 5px;
+}
+
+.reply {
+    display: inline-block;
+    width: 90%;
+    border-left: 1px solid #e7e7e7;
 }

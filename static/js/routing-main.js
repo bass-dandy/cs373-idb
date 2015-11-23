@@ -1,5 +1,5 @@
 var app = angular
-    .module('meccaApp', ['ngRoute', 'ngAnimate'])
+    .module('meccaApp', ['ngRoute', 'ngAnimate', 'ngSanitize'])
     .factory("Sources", function($http) {
         return {
             fromUri: function(uri) {
@@ -214,9 +214,17 @@ app.config(function($routeProvider, $locationProvider, $animateProvider) {
     $animateProvider.classNameFilter(/^(?:(?!ng-animate-disabled).)*$/);
 });
 
-app.controller('artistController', function($scope, $routeParams, Sources) {
+app.controller('artistController', function($scope, $routeParams, $http, Sources) {
     // For selecting a random album cover
     $scope.artIdx = 0;
+
+    // For making hashtags linkable
+    $scope.parseHashtags = function(input) {
+        return input.replace(/(^|\W)(#[a-z\d][\w-]*)/ig, function(match) {
+            match = match.trim().substr(1);
+            return "<a href='https://twitter.com/hashtag/" + match + "'>#" + match + "</a> ";
+        });
+    };
 
     // Get artist data
     Sources.fromUri("/api/artists/" + $routeParams.id)
@@ -239,7 +247,47 @@ app.controller('artistController', function($scope, $routeParams, Sources) {
                     .then(function(response2) {
                         $scope.artist.label = response2.data;
                     }, function() {});
+
+            // Parse discussion
+            $scope.artist.discussion.forEach(function(entry) {
+                entry.discussion = parseHashtags(entry.discussion);
+            });
         }, function() {});
+
+    // For posting comments and replies
+    var req = {
+        method: 'POST',
+        url: '',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: ''
+    };
+
+    $scope.postComment = function() {
+        req.url = "http://downing.club/api/artists/" + $scope.artist.id + "/discussions";
+        req.data = { 'discussion': $scope.submission };
+        $http(req).then(function(res) { 
+            Sources.fromUri("/api/artists/" + $scope.artist.id)
+                .then(function(response) {
+                    $scope.artist.discussion = response.data.discussion;
+                    $scope.submission = "";
+                }, function() {});
+        }, function() {});
+    };
+
+    $scope.postReply = function(body, id) {
+        if(body.length > 0) {
+            req.url = "http://downing.club/api/discussions/" + id;
+            req.data = { 'reply': body };
+            $http(req).then(function(res) { 
+                Sources.fromUri("/api/artists/" + $scope.artist.id)
+                    .then(function(response) {
+                        $scope.artist.discussion = response.data.discussion;
+                    }, function() {});
+            }, function() {});
+        }
+    };
 });
 
 app.controller('labelController', function($scope, $routeParams, Sources) {
