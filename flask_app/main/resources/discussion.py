@@ -2,7 +2,7 @@ from flask import request, jsonify
 from flask_restful import Resource, abort
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import DataError
-from flask_app.main.models import Discussion, Artist, Reply
+from flask_app.main.models import Artist, Reply
 from flask_app import app, db
 from flask_app.main.resources.schemas.discussion import DiscussionSchema, ReplySchema
 
