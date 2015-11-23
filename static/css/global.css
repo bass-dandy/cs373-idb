@@ -109,6 +109,22 @@ body {
     }
 }
 
+/* Buttons */
+.mecca-button {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.mecca-button:hover {
+    color: #777777;
+    border: 1px solid #777777;
+}
+
+.mecca-button:disabled, .mecca-button:disabled:hover {
+    color: #d7d7d7;
+    border: 1px solid #d7d7d7;
+}
+
 /* For convenience */
 .margin-top {
     margin-top: 10px;

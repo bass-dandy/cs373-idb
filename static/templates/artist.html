@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Events -->
     <div class="section-head parallax">
         <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[artIdx].large_image }}"/>
         <div class="parallax-fg">Upcoming Concerts</div>
@@ -54,13 +54,17 @@
             <div class="padded text-center" ng-hide="artist.events.length">We're not aware of any upcoming events.</div>
         </div>
     </div>
+    <!-- Discussion -->
     <div class="section-head parallax">
         <img class="parallax-bg" data-speed="0.2" ng-src="{{ artist.releases[artIdx].large_image }}"/>
         <div class="parallax-fg">Discussion</div>
     </div>
     <div class="section">
         <div class="panel padded text-center">
-            Discussion coming soon!
+            <div id="discussion-input">
+                <textarea ng-model="submission"></textarea>
+                <button class="mecca-button" ng-click="postComment()">Post Comment</button>
+            </div>
         </div>
     </div>
 </div>

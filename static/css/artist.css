@@ -76,3 +76,13 @@
     font-size: 0.5em;
     color: white;
 }
+
+#discussion-input {
+    width: 100%;
+    text-align: right;
+}
+
+#discussion-input > textarea {
+    width: 100%;
+    height: 100px;
+}
