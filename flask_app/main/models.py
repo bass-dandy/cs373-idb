@@ -33,7 +33,6 @@ class Discussion(db.Model):
     __tablename__ = 'discussions'
     id = db.Column(db.Integer, primary_key=True)
     discussion = db.Column(db.String)
-    uri = db.Column(db.String)
 
     artists_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
     reply = db.relationship('Reply', uselist=False, backref='Discussion')
