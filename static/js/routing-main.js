@@ -216,13 +216,13 @@ app.config(function($routeProvider, $locationProvider, $animateProvider) {
 
 app.controller('artistController', function($scope, $routeParams, Sources) {
     // For selecting a random album cover
-    $scope.random = function(length) {
-        return Math.floor(Math.random() * length);
-    };
+    $scope.artIdx = 0;
+
     // Get artist data
     Sources.fromUri("/api/artists/" + $routeParams.id)
         .then(function(response) {
             $scope.artist = response.data;
+            $scope.artIdx = Math.floor(Math.random() * response.data.releases.length);
 
             // Get release data
             var releases = [];
