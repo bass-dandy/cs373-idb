@@ -31,3 +31,14 @@ class NDTestCase(unittest.TestCase, metaclass=ABCMeta):
 
     def json_get(self, uri):
         return self.app.get(uri, headers=self.build_headers())
+
+    def json_post(self, uri, post_data, data_json=False):
+        if data_json:
+            post_data = json.dumps(post_data)
+
+        return self.app.post(uri, data=post_data,
+                             headers=self.build_headers(data_json=data_json))
+
+    def json_delete(self, uri):
+        return self.app.delete(uri, headers=self.build_headers())
+

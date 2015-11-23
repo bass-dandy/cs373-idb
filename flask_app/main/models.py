@@ -21,7 +21,32 @@ class Artist(db.Model):
 
     concerts = db.relationship('Concert', backref='artists', secondary='artist_concerts')
     releases = db.relationship('Release', backref='artists', secondary='artist_releases')
-    awards = db.relationship('Award', backref= 'artists', secondary='artist_awards')
+    awards = db.relationship('Award', backref='artists', secondary='artist_awards')
+
+    discussion = db.relationship('Discussion')
+
+
+class Discussion(db.Model):
+    """
+    Model for discussions
+    """
+    __tablename__ = 'discussions'
+    id = db.Column(db.Integer, primary_key=True)
+    discussion = db.Column(db.String)
+
+    artists_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
+    reply = db.relationship('Reply', backref='Discussion')
+
+
+class Reply(db.Model):
+    """
+    Model to support replies
+    """
+    __tablename__ = 'replies'
+    id = db.Column(db.Integer, primary_key=True)
+    reply = db.Column(db.String)
+    discussion_id = db.Column(db.Integer, db.ForeignKey('discussions.id'))
+
 
 
 class Label(db.Model):
@@ -35,9 +60,6 @@ class Label(db.Model):
     bio = db.Column(db.String)
     uri = db.Column(db.String)
     small_image = db.Column(db.String)
-
-    #artists = db.relationship("Artist", backref="labels")
-    #artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
 
 
 class ArtistConcert(db.Model):
@@ -102,18 +124,6 @@ class ReleaseSong(db.Model):
     song_id = db.Column(db.Integer, db.ForeignKey('songs.id'))
 
 
-# class Video(db.Model):
-#     """
-#     Model for Video
-#     A video a video version of a song generally a music video by an artist(s)
-#     """
-#     __tablename__ = 'videos'
-#     id = db.Column(db.Integer, primary_key=True)
-#     year = db.Column(db.String(128))
-#     name = db.Column(db.String(128))
-#     uri = db.Column(db.String)
-
-
 class ArtistAward(db.Model):
     """
     Linking table for Artists and their Awards
@@ -151,7 +161,4 @@ class Song(db.Model):
     spotify_url = db.Column(db.String)
     track_num = db.Column(db.Integer)
     duration = db.Column(db.Integer)
-
-    # video_id = db.Column(db.Integer, db.ForeignKey('videos.id'))
-    # video = db.relationship('Video')
 
