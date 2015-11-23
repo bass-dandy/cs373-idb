@@ -1,5 +1,6 @@
 from marshmallow import fields, Schema
-from flask.ext.app import ma
+from flask_app import ma
+from .discussion import DiscussionSchema
 from .label import LabelSchema
 from .award import AwardSchema
 from .concert import ConcertSchema
@@ -22,4 +23,6 @@ class ArtistSchema(Schema):
     awards = fields.List(fields.Nested(AwardSchema, only=['uri']))
     concerts = fields.List(fields.Nested(ConcertSchema, only=['uri']))
     releases = fields.List(fields.Nested(ReleaseSchema, only=['uri']))
+
+    discussion = fields.List(fields.Nested(DiscussionSchema))
 
