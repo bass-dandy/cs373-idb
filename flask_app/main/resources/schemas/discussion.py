@@ -36,7 +36,7 @@ class DiscussionSchema(Schema):
     discussion = fields.String()
     artistsId = fields.Integer(attribute='artists_id')
 
-    reply = fields.Nested('ReplySchema', allow_none=True)
+    reply = fields.List(fields.Nested('ReplySchema', allow_none=True))
 
     @post_load
     def use_discussion_object(self, item):

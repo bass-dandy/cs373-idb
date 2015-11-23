@@ -49,7 +49,15 @@ class DiscussionAPITest(NDTestCase):
 
         uri = '{}/discussions/{}'.format(app.config['BASE_URL'], id)
         response = self.json_get(uri)
+
+        payload = {
+            'reply': 'AHHHHHHHH!'
+        }
+        response = self.json_post(uri, payload, data_json=True)
+        self.assertEqual(response.status_code, app.config['OK'])
         response_dict = self.dict_from_response(response)
+
+        self.assertEqual(response_dict['reply'], 'AHHHHHHHH!')
 
         uri = '{}/artists/{}/discussions'.format(app.config['BASE_URL'], EMINEM)
         response = self.json_get(uri)
@@ -57,5 +65,6 @@ class DiscussionAPITest(NDTestCase):
         self.assertEqual(response.status_code, app.config['OK'])
 
         response_dict = self.dict_from_response(response)
+        self.assertEqual(len(response_dict[0]['reply']), 2)
 
 

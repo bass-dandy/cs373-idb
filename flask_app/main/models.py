@@ -35,7 +35,7 @@ class Discussion(db.Model):
     discussion = db.Column(db.String)
 
     artists_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
-    reply = db.relationship('Reply', uselist=False, backref='Discussion')
+    reply = db.relationship('Reply', backref='Discussion')
 
 
 class Reply(db.Model):
