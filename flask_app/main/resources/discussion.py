@@ -16,7 +16,7 @@ class ArtistDiscussionAPI(Resource):
         try:
             discussion = Artist.query.get(artist_id).discussion
             if discussion:
-                return DiscussionSchema().dump(discussion).data
+                return DiscussionSchema(many=True).dump(discussion).data
             else:
                 abort(app.config['NOT_FOUND'], message=app.config['DISCUSSION_NOT_FOUND'].format(id))
         except (DataError, NoResultFound):

@@ -20,3 +20,11 @@ class DiscussionAPITest(NDTestCase):
         response = self.json_post(uri, payload, data_json=True)
         self.assertEqual(response.status_code, app.config['OK'])
         reponse_dict = self.dict_from_response(response)
+
+        self.assertEqual(reponse_dict['discussion'], 'Bust that crazy shit!')
+
+        uri = '{}/artists/{}/discussions'.format(app.config['BASE_URL'], EMINEM)
+        response = self.json_get(uri)
+
+        self.assertEqual(response.status_code, app.config['OK'])
+        reponse_dict = self.dict_from_response(response)
