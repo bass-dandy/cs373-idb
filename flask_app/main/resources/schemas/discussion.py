@@ -12,7 +12,7 @@ def copy_dict_values_to_object_attrs(keys, source, dest):
 class ReplySchema(Schema):
     id = fields.Integer()
     reply = fields.String()
-    discussionId = fields.Integer(attribute='discussions_id')
+    discussionId = fields.Integer(attribute='discussion_id')
 
     @post_load
     def use_reply_object(self, item):
@@ -24,7 +24,7 @@ class ReplySchema(Schema):
         else:
             reply = Reply()
 
-        copy_keys = ['reply', 'discussions_id']
+        copy_keys = ['reply', 'discussion_id']
 
         copy_dict_values_to_object_attrs(copy_keys, item, reply)
 
