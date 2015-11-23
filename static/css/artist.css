@@ -8,7 +8,7 @@
 }
 
 /* A link in the main artist info selector */
-#artist_selector a {
+#artist_selector div {
     display: table-cell;
     padding: 10px 10px 10px 10px;
     background-color: #1E293E;
@@ -27,6 +27,10 @@
     display: inline-block;
     text-align: center;
     margin: 10px 10px 10px 10px;
+}
+
+.artist-release-link:hover {
+    text-decoration: none;
 }
 
 .artist_release img {

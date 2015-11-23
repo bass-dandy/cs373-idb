@@ -20,7 +20,7 @@
                 <th id="track-title">Track</th>
                 <th class="track-length">Length</th>
             </tr>
-            <tr ng-repeat="song in release.songs | orderBy:'song.track_num'" ng-click="togglePlayback(song.preview_url)" ng-mouseenter="song.hover = true" ng-mouseleave="song.hover = false">
+            <tr ng-repeat="song in release.songs | orderBy:'track_num' | orderBy:'disc_number'" ng-click="togglePlayback(song.preview_url)" ng-mouseenter="song.hover = true" ng-mouseleave="song.hover = false">
                 <td>
                     <div class="track-num" ng-show="audio.src != song.preview_url || audio.ended">{{ ::song.track_num }}</div>
                     <!-- Play button -->

@@ -12,8 +12,6 @@
             <div>
                 <strong class="subsection text-uppercase">Label</strong>
                 <a href="http://downing.club/labels/{{ ::artist.label.id }}">{{ ::artist.label.name }}</a>
-                <strong class="subsection text-uppercase">Genre</strong>
-                {{ ::artist.genre }}
             </div>
         </div>
 
@@ -22,17 +20,15 @@
 
             <!-- Selector links -->
             <div id="artist_selector">
-                <a href="#about">About</a>
-                <a class="selected" href="#releases">Releases</a>
+                <div class="selected">Releases</div>
             </div>
 
             <!-- Selector content -->
             <div class="padded text-center">
-                <a ng-href="http://downing.club/releases/{{ release.id }}" ng-repeat="release in artist.releases">
+                <a class="artist-release-link" ng-href="http://downing.club/releases/{{ release.id }}" ng-repeat="release in artist.releases | orderBy:'name'">
                     <div class="artist_release">
                         <img src="{{ ::release.large_image }}">
                         <i>{{ ::release.name }}</i>
-                        {{ ::release.year }}
                     </div>
                 </a>
             </div>
