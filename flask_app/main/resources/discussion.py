@@ -32,11 +32,8 @@ class ArtistDiscussionAPI(Resource):
         if errors:
             abort(app.config['UNPROCESSABLE_ENTITY'], message=jsonify(errors))
 
-        try:
-            db.session.add(discussion)
-            db.session.commit()
-        except Exception as e:
-            pass
+        db.session.add(discussion)
+        db.session.commit()
 
         discussion_dump, errors = DiscussionSchema().dump(discussion)
 
@@ -78,18 +75,4 @@ class DiscussionRepliesAPI(Resource):
             abort(app.config['UNPROCESSABLE_ENTITY'], message=jsonify(errors))
 
         return discussion_dump
-
-
-
-class DiscussionAPI(Resource):
-    def get(self, id):
-        """Get a discussion"""
-        try:
-            discussion = Discussion.query.get(id)
-            if discussion:
-                return DiscussionSchema().dump(discussion).data
-            else:
-                abort(app.config['NOT_FOUND'], message=app.config['DISCUSSION_NOT_FOUND'].format(id))
-        except (DataError, NoResultFound):
-            abort(app.config['NOT_FOUND'], message=app.config['DISCUSSION_NOT_FOUND'].format(id))
 

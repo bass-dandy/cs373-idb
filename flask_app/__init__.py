@@ -43,10 +43,9 @@ api.add_resource(ReleaseIDAPI, '/releases/<int:id>')
 api.add_resource(ReleaseNameAPI, '/releases/<string:releaseName>')
 api.add_resource(ReleaseAllAPI, '/releases', '/releases/')
 
-from flask.ext.app.main.resources.discussion import ArtistDiscussionAPI, DiscussionAPI, DiscussionRepliesAPI
+from flask.ext.app.main.resources.discussion import ArtistDiscussionAPI, DiscussionRepliesAPI
 api.add_resource(ArtistDiscussionAPI, '/artists/<int:artist_id>/discussions')
 api.add_resource(DiscussionRepliesAPI, '/discussions/<int:discussion_id>')
-api.add_resource(DiscussionAPI, '/discussions/<int:id>')
 
 from flask.ext.app.main.resources.tests import TestAPI
 api.add_resource(TestAPI, '/runtests/')

@@ -1,5 +1,4 @@
 from marshmallow import fields, Schema, post_load
-from flask_app import ma
 from flask_app.main.models import Discussion, Reply
 
 
@@ -36,7 +35,6 @@ class DiscussionSchema(Schema):
     id = fields.Integer()
     discussion = fields.String()
     artistsId = fields.Integer(attribute='artists_id')
-    uri = ma.URLFor('.discussionapi', id='<id>')
 
     reply = fields.Nested('ReplySchema', allow_none=True)
 
@@ -50,7 +48,7 @@ class DiscussionSchema(Schema):
         else:
             discussion = Discussion()
 
-        copy_keys = ['discussion', 'artists_id', 'uri', 'reply']
+        copy_keys = ['discussion', 'artists_id', 'reply']
 
         copy_dict_values_to_object_attrs(copy_keys, item, discussion)
 
